@@ -75,7 +75,7 @@ if(count($content['listings'])!=0){?>
 <?php echo anchor('deals/'.$listing['slug'],showAvatar($listing['picture'],$listing['title'],array('class'=>'pull-left')),array('class'=>'listing-img'));?>
 <div class="rating"></div>
 <div class="listing-details span7 pull-left">
-	<div class="listing-rating-container pull-right"><div class="rating-container" title="<?php echo $listing['review_score'];?>"></div><div class="users-count">Rated by <?php echo $listing['total_reviews'];?> Users</div></div>
+	<!--<div class="listing-rating-container pull-right"><div class="rating-container" title="<?php echo $listing['review_score'];?>"></div><div class="users-count">Rated by <?php echo $listing['total_reviews'];?> Users</div></div>-->
 	<h3><?php echo anchor('deals/'.$listing['slug'],$listing['title']);?></h3>  
 	<div class="details clearfix margintop-15"><span>at</span> <?php echo anchor('yellowpages/'.$business['slug'],$business['title']);?></div>
     <div class="details clearfix margintop-15"><span>Duration</span> : <?php echo date("d M, Y",strtotime($listing['starts_on'])).' - '.date("d M, Y",strtotime($listing['closes_on']));?><br /><span>Description</span> : <?php echo word_limiter(strip_tags(htmlspecialchars_decode($listing['description'])),5);?></div>

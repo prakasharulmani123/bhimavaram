@@ -82,7 +82,7 @@ class Deals extends CI_Controller {
 		$this->pagination->initialize($config);
 		$data['content']['navigation']=$this->pagination->create_links();
 		$data['content']['total']=$total;
-		$query="select * from offers_listings where cityid='$cityid' ".$catquery." and approved='1' and starts_on <= '$today' and closes_on >= '$today' order by visits desc limit $offset,$limit";
+		$query="select * from offers_listings where cityid='$cityid' ".$catquery." and approved='1' and starts_on <= '$today' and closes_on >= '$today' order by id,visits desc limit $offset,$limit";
 		$data['content']['listings']=$this->df->doquery($query);		
 		$data['header']['css']=array('jobs/list.css');
 //		$data['sidebar']['custom']='jobs_list_sidebar';

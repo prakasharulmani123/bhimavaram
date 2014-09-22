@@ -53,7 +53,7 @@ if(count($content['listings'])!=0){?>
 <?php echo anchor('movies/'.$listing['slug'],showAvatar($listing['picture'],$listing['name'],array('class'=>'pull-left')),array('class'=>'listing-img'));?>
 <div class="rating"></div>
 <div class="listing-details span6 pull-left">
-	<div class="listing-rating-container"><div class="rating-container" title="<?php echo $listing['review_score'];?>"></div><div class="users-count">Rated by <?php echo $listing['total_reviews'];?> Users</div></div>
+	<!--<div class="listing-rating-container"><div class="rating-container" title="<?php echo $listing['review_score'];?>"></div><div class="users-count">Rated by <?php echo $listing['total_reviews'];?> Users</div></div>-->
 	<h3><?php echo anchor('movies/'.$listing['slug'],$listing['name'].' ('.urldecode($this->df->get_field_value('movie_certificate',array('id'=>$listing['certificate']),'name')).')');?></h3> 
     <div class="details clearfix margintop-15"><span>Language </span> : <?php echo $this->df->get_field_value('movies_languages',array('id'=>$listing['language']),'name');?><span class="left15">Realesed on </span> : <?php echo date("d M, Y",strtotime($listing['release_date']));?></div>
     <div class="details clearfix margintop-15"><span>Cast</span> : <?php echo $listing['cast'];?></div>    
