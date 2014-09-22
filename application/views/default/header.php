@@ -20,8 +20,10 @@
              </div>
         </div><!--logo-container Ends-->
          <div class="span10 pull-left" id="header-ad-spot">
-            	<?php echo showAd('image','468','60');?>
+         		<?php echo showAds('image','468','60', '5'); ?>
        </div>    
+                
+            	
          <div class="span4 pull-right" id="profile-info">
             	<?php 
 				if(userdata('uid'))

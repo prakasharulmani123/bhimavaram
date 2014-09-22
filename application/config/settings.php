@@ -4,7 +4,8 @@
 *	Setting variables for site template and other defaults 	*	
 ************************************************************/
 //Path to Assets
-$config['baseUrl']				= 'http://maaswarnandhra.com/';
+//$config['baseUrl']				= 'http://maaswarnandhra.com/';
+$config['baseUrl']				= 'http://www.crowdfinch.in/bhimavaram_demo/';
 $config['imgPath']				= 'img/';
 $config['stylePath']				= 'css/';
 $config['scriptPath']			= 'js/';

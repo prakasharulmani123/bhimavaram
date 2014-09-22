@@ -176,6 +176,8 @@ class Layout
 		$output.=$this->getScriptLink('jquery.vticker.min.js');	
 		$output.=$this->getScriptLink('base.js');
 		$output.=$this->getScriptLink('parsley.js');
+		$output.=$this->getScriptLink('innerfade/jquery.innerfade.js');
+		$output.=$this->getScriptLink('external.js');
 		
 				
 		if(array_key_exists('js',$foot) && $foot['js']!==false)

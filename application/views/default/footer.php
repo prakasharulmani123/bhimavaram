@@ -64,19 +64,27 @@
     
   </div>
 </div>
+
 <div id="post-wish" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Post Wishes" aria-hidden="true">
   <div class="modal-header"> 
   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="twitterModal">Post Wishes</h3>
   </div>
   <div class="modal-body">
-   <?php
+   		<?php
    		echo form_open('start/postwish',array('class'=>'bigform','data-validate'=>'parsley'));
+		
 		echo $this->html->formField('label','wish','Posting as '.userdata('name'),array('class'=>'email'));
-		//echo $this->html->formField('dropdown','city-required',cityArray(),array('class'=>'span10','data-required'=>"true"),userdata('cityid'));
-   ?>
-    <?php  echo $this->html->formField('textarea','message-required--max_length:150','',array('placeholder'=>'Write your wish message (Maximum 150 Charaters)','class'=>'span10','rows'=>"4",'data-required'=>'true','data-maxlength'=>"150"));?>
-   	<input type="hidden" name="currenturl" value="<?php echo uri_string();?>" />
+		
+		echo $this->html->formField('input', 'name', '', array('placeholder'=>'Name', 'class'=>'span10', 'data-required'=>"true"));
+		
+		echo $this->html->formField('input', 'email', '', array('placeholder'=>'Email', 'class'=>'span10', 'data-required'=>"true", 'data-type'=>"email"));
+		
+		echo $this->html->formField('input', 'phone', '', array('placeholder'=>'Phone', 'class'=>'span10','data-type'=>"number"));
+		
+		echo $this->html->formField('textarea','message-required--max_length:150','',array('placeholder'=>'Write your wish message (Maximum 150 Charaters)','class'=>'span10','rows'=>"4",'data-required'=>'true','data-maxlength'=>"150"));
+   		?>
+   		<input type="hidden" name="currenturl" value="<?php echo uri_string();?>" />
    		<button class="btn btn-primary submit-btn span10" style="padding:7px">Submit Message</button>
         </form>
    

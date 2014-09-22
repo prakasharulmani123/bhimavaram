@@ -389,4 +389,46 @@ if ( ! function_exists('showAds'))
 	}
 }
 
+if ( ! function_exists('showAdsInArray'))
+{
+	function showAdsInArray($type,$width,$height,$count,$class='')
+	{
+		$CI =& get_instance();
+		$cityid=userdata('cityid');		
+		
+		//$ad=$CI->df->get_multi_row('ads',array('adtype'=>$type,'width'=>$width,'height'=>$height,'active'=>'1'),FALSE,1,array('id'=>'random'));
+		$ads=$CI->df->doquery("select distinct(id),title,adtype,linktype,adlink,width,height,picture,active from ads where adtype='$type' and width='$width' and height='$height' and active='1' ORDER BY RAND() limit $count");
+		$loopcnt=0;
+		$output=array();
+		if(count($ads)>0)
+		{
+				foreach($ads as $ad)
+				{	
+					if($loopcnt==0)	
+					{
+						$first=' first';
+					}
+					else
+					{
+						$first='';
+					}
+					$attrs=array(
+						'style'=>'width:'.$ad['width'].'px;height:'.$ad['height'].'px',
+						'class'=>'adunit '.$class.$first
+					);
+					if($ad['linktype']=='1')
+					{
+						$attrs['target']='_blank';
+					}
+					$output[]=anchor('ads/show/'.$ad['id'],showAvatar($ad['picture'],$ad['title'],array('style'=>'width:'.$ad['width'].'px;height:'.$ad['height'].'px')),$attrs);
+					$adid=$ad['id'];
+					$CI->db->simple_query("update ads set impressions=impressions+1 where id='$adid'");
+					$loopcnt++;
+				}
+				return $output;
+		}
+
+	}
+}
+
 /* End of file General_helper.php */

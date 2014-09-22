@@ -162,6 +162,7 @@ class Start extends CI_Controller {
 	function postwish()
 	{
 		$data=$this->general->get_post_values();
+		//print_r($data); exit;
 		if($this->general->validateForm($data))
 		{
 			$data=$this->general->processData($data);
@@ -170,6 +171,7 @@ class Start extends CI_Controller {
 			$data['posted_by']=userdata('name')?userdata('name'):'0';
 			$data['cityid']=userdata('cityid');
 			unset($data['currenturl']);
+			//print_r($data);
 			$insert=$this->df->insert_data('wishes',$data);
 			set_message('success','You wish submitted successfully!');
 			redirect($currenturl);

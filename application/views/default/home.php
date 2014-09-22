@@ -1,7 +1,32 @@
 <div class="full-width span20 home-page">
-<div class="ads300">
-    <?php echo showAds('image','300','60',3,'span6');?>
+
+<div class="carousel" id="executive_ads" data-ride="carousel">
+	<div class="carousel-inner">
+		<?php $executive_ads = showAdsInArray('image','300','60',15,'span6'); ?>
+		<div class="item active ads300">
+		<?php 
+        $initial_executive_ads_count=0;
+        $executive_ads_count=count($executive_ads);
+        
+        foreach($executive_ads as $executive_ad){
+            $initial_executive_ads_count++;
+            
+            echo $executive_ad;
+            
+            if($initial_executive_ads_count%3==0)	
+            {						
+                if($executive_ads_count > $initial_executive_ads_count)
+                {
+                    echo '</div>';
+                    echo '<div class="item ads300">';
+                }
+            }
+        }
+        ?>
 </div>
+</div>
+</div>
+
 	<div class="news-holder span6 tabs-holder">
     	<div class="span6 news-title home-tabs">
         	<a href="#city-news" class="span3 first"><?php echo userdata('city');?> News</a>
@@ -280,10 +305,6 @@
         </ul>
         </div><!--Carousel Ends-->    
     </div>
-    
-
-
-    
       <div class="news-holder span6 tabs-holder" id="poll-box" >
 		<div class="span6 news-title home-tabs single center">
             <span>Poll of the week</span>
