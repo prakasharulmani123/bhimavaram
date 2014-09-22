@@ -122,7 +122,18 @@ class Start extends CI_Controller {
 			{
 				//Sign in Successful
 				$this->auth->setLogin($user['uid']);
-				//print_r($user); exit;
+				
+				// Send Thank you mail for first login user. START
+				$timestamp = strtotime($user['last_login']);
+				if(empty($timestamp)){
+					$this->load->library('email');
+					$this->email->from('admin@admin.com', 'Admin');
+					$this->email->to($user['email']);
+					$this->email->subject('Thanking mail');
+					$this->email->message('Thank you for your first login.');
+					$this->email->send();
+				}
+				//Send Thank you mail for first login user. END
 				set_message('success','Welcome back '.userdata('name').'!');
 				$this->auth->checkRedirectSource();
 				redirect('profile/index');	

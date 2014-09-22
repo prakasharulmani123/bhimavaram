@@ -145,6 +145,7 @@ class Site extends CI_Controller {
 
 	function signout()
 	{
+		$this->df->update_record('users',array('last_login'=>date("Y-m-d H:i:s")),array('uid'=>$_SESSION['uid']));
 		$city=userdata('city');
 		$cityid=userdata('cityid');
 		session_destroy();
