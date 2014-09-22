@@ -122,6 +122,7 @@ class Start extends CI_Controller {
 			{
 				//Sign in Successful
 				$this->auth->setLogin($user['uid']);
+				//print_r($user); exit;
 				set_message('success','Welcome back '.userdata('name').'!');
 				$this->auth->checkRedirectSource();
 				redirect('profile/index');	
@@ -173,7 +174,15 @@ class Start extends CI_Controller {
 			unset($data['currenturl']);
 			//print_r($data);
 			$insert=$this->df->insert_data('wishes',$data);
-			set_message('success','You wish submitted successfully!');
+			set_message('success','Your wish submitted successfully!');
+			
+			$this->load->library('email');
+			$this->email->from('admin@admin.com', 'Admin');
+			$this->email->to($data['email']);
+			$this->email->subject('Thanking mail');
+			$this->email->message('Thank you for submit your wish.');
+			$this->email->send();
+			
 			redirect($currenturl);
 			
 		}
