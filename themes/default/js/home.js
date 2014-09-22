@@ -39,10 +39,6 @@ jQuery('.news-list .carousel').carousel({
 		jQuery('#photocarousel').carousel({
 		  cycle:false,
 		});
-		
-		jQuery('#executive_ads').carousel({
-			interval: 4000,
-		 	cycle:true,
-		});
-		
+
+
 });//jQuery Ends
