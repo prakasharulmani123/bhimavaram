@@ -1,0 +1,27 @@
+#header-container,#footer-container,#footer-ads{ display:none;}
+.item img{ width:100%;}
+.carousel-indicators li{ border:#DDD 1px solid;}
+#ad-content-holder{ padding:40px;}
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+border-radius: 5px;
+}
+
+h1 {
+font-size: 24px;
+padding: 0 15px;
+margin: 0;
+text-align: left;
+color:#C00;
+border:0;
+margin-top:-6px;
+line-height:120%;
+}
+div.data{ clear:both;font-size:18px;}
+div.data {
+padding: 10px 20px 0 20px;
+font-size: 16px;
+line-height: 140%;
+color: #444;
+}
+h2{ font-size:16px;clear:both; border:0;text-decoration: underline;}

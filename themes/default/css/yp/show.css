@@ -1,0 +1,24 @@
+.title-share-box{float:right;}
+#listing-details{ float:left;}
+h1{ text-shadow:0 0 0 #FFF; font-weight:bold; font-size:24px; color:#444; margin-top:-15px;}
+h1 div.list-title{}
+div.listing-rating-container{ clear:both;float:left;text-align:center; margin-left:-10px; font-size:13px; font-weight:normal;}
+div.users-count{ display:block;float:left; font-size:14px; line-height:170%; font-weight:normal; margin-left:-15px;}
+div.listing-meta{font-weight:normal; font-size:13px; clear:both; padding:15px 0px 10px 10px; margin:15px 0 0 0; line-height:160%;}
+.listing-img{ float:right;margin-top:10px;}
+.listing-img img{ width:200px; max-width:200px; border-radius:4px; }
+.share-btn{ margin:10px 0;}
+.meta-title{clear:both;}
+.meta-title span{ float:right;}
+.meta-data{padding-left:10px;}
+
+div.meta-divider{ height:8px; clear:both;}
+div.list-data div{ line-height:180%;}
+
+div.listing-meta-right{font-weight:normal; font-size:13px;padding:15px 10px 10px 10px; margin:15px 0 0 0; line-height:160%; float:right; margin-right:-100px;}
+
+div.description{ margin-right:50px; }
+#reviews-box{ border-top:1px solid #DDD; clear:both;}
+
+h3.review-title{ font-size:20px; padding:0 15px; font-weight:bold; color: #C00; text-shadow:0 0 0 #FFF; margin-bottom:-12px; text-decoration: underline;}
+.moderation-box{ padding:30px; font-size:16px; color:#999; font-style:italic;}

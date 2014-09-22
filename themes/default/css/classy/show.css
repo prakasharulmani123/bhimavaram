@@ -1,0 +1,14 @@
+.listing-img img{ width:275px; max-width:275px; border-radius:4px; margin:10px;}
+.share-btn{ margin:5px;}
+h1{ text-shadow:0 0 0 #FFF; font-weight:bold; font-size:24px; color:#444; margin-top:-15px; margin:0; padding:0 10px; line-height:100%;}
+.listing-details{ padding:10px;}
+.ad-meta{ padding:10px; font-size:16px;}
+.ad-details{ font-size:18px; font-weight:bold; line-height:250%;}
+.ad-details .meta-label{border-bottom:#CCC 1px dotted;}
+.ad-details .meta-label span{ font-size:14px; color:#666; font-weight:normal; min-width:120px; display:block; float:left;}
+
+div.meta-divider{ height:8px; clear:both;}
+.big-text{ font-size:18px;}
+a.bookmark-this{ margin-left:10px;}
+div.description{ padding:15px;}
+h4.underline{ font-weight:bold;}

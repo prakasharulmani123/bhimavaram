@@ -1,0 +1,12 @@
+h1.noline{ margin:0 20px; margin-top:-20px;}
+h1.noline p{ clear:both; font-size:13px; line-height:140%;}
+div.img-holder{ text-align:center; padding:10px; margin-left:30px;}
+div.img-holder img{ max-width:600px;}
+div.navi{text-align:center; font-size:14px; font-weight:bold;}
+div.navi a.pull-left{ margin-left:30px;}
+#galleries li{ width:150px; float:left; text-align:center; -moz-border-radius:4px; -webkit-border-radius:4px; -o-border-radius:4px; border-radius:4px; border:#EEE 1px solid; box-shadow:2px 2px 2px #DDD; padding:2px;}
+#galleries li a img{ width:150px; height:100px;}
+#galleries li div.details a{ background:#333; line-height:30px; text-align:center; display:block; width:190px; color:#FFF; padding:0 5px;}
+a.comment-item{ margin-left:30px;}
+h3.review-title{ margin-left:10px; margin-bottom:-17px;}
+#reviews-box{ margin-left:20px;}

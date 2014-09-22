@@ -1,0 +1,16 @@
+#listings{ margin:20px 0 20px 10px;}
+#listings li{display:block; padding:20px 0; border-bottom:#EEE 1px solid; box-shadow:0px 2px 3px #EEE}
+#listings li h3{ line-height:100%; margin:0px; font-size:18px; font-weight:bold; text-shadow:0 0 0 #FFF; margin-bottom:7px;}
+#listings .listing-details{ float:left; margin-left:10px;}
+#listings a.listing-img{ margin:0 0px 0 0; display:block; border-radius:4px; padding:2px; background:#DDD; border:#DDD 1px solid; overflow:hidden;}
+#listings a.listing-img{ float:left}
+#listings a.listing-img img{width:100px; height:100px;}
+div.details{ padding:2px 0; font-size:16px; color:#000;}
+div.details span{ color:#888; font-size:14px;}
+div.listing-rating-container{ float:right; width:150px; text-align:center; margin-right:-40px;}
+div.listing-rating-container .users-count{ clear:both;}
+.location{ /*background:url(../../img/location.png) no-repeat left center; padding-left:30px; clear:both;*/}
+ul.cat-list{ display:block; background:#F6F6F6; padding:15px; margin:0;margin:10px 14px; border:#EEE 2px solid; }
+ul.cat-list li{ float:left; width:33%; line-height:200%;}
+a.more-info-link{ clear:both;}
+.left10{ margin-left:20px;}
