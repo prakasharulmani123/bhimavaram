@@ -295,6 +295,10 @@ margin-left: -3px;
 margin-left: 0px;
 }
 
+#executive_ads {
+    margin-left: 0 !important;
+}
+
 #executive_ads .span6{
 	margin-left: 23px !important;
 }
