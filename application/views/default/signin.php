@@ -1,4 +1,3 @@
-<?php //$this->load->view('default/header');?>
 <div id="signin-with-facebook" class="span10 center-align">	
 	<div class="span10 fb-login center-align">
     	<?php echo anchor('facebook/connect','Create new account with facebook',array('class'=>'btn btn-primary btn-icon span6 center-align fb-login-link '));?>
