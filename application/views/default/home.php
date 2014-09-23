@@ -13,7 +13,7 @@
             
             echo $executive_ad;
             
-            if($initial_executive_ads_count%2==0)	
+            if($initial_executive_ads_count%3==0)	
             {						
                 if($executive_ads_count > $initial_executive_ads_count)
                 {
