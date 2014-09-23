@@ -5,7 +5,7 @@
 ************************************************************/
 //Path to Assets
 //$config['baseUrl']				= 'http://maaswarnandhra.com/';
-$config['baseUrl']				= 'http://www.crowdfinch.in/bhimavaram_demo/';
+$config['baseUrl']				= 'http://localhost/bhimavaram/branches/testing/';
 $config['imgPath']				= 'img/';
 $config['stylePath']				= 'css/';
 $config['scriptPath']			= 'js/';
