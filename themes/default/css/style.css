@@ -75,7 +75,7 @@ margin: 0 5px 5px 0;margin-left: -25px;}
 #menubar .menubar{ z-index:100;}
 #menubar .menubar li{ float:left; line-height:44px; list-style:none; border-right:#ffcaca 1px solid;}
 #menubar .menubar li.first{ margin-left:-18px;}
-#menubar .menubar li.first a{ font-size:24px; padding:8px 12px 8px 4px;}
+#menubar .menubar li.first a{ font-size:14px; line-height:15px; text-align:center; padding:5px 12px 6px 4px;}
 #menubar .menubar li.last{ border:0;}
 
 #menubar .menubar li a{ display:block; color:#FFF;padding:0 15px 0 14px;border-bottom:#FFF 1px solid;}

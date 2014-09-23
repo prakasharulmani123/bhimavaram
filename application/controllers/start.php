@@ -16,9 +16,15 @@ class Start extends CI_Controller {
 		//$data['content']['topnews']=$this->df->doquery("select * from news_listings where date_added between '$day_start' and '$day_end' order by visits desc limit 7");
 		$data['content']['topnews']=$this->df->doquery("select * from news_listings where cityid='$cityid' and category!='9' and approved='1' order by visits desc limit 10");
 		$data['content']['cinenews']=$this->df->doquery("select * from news_listings where cityid='$cityid' and category='9' and approved='1' order by id desc limit 7");
+		
 		$data['content']['events']=$this->df->doquery("select * from events_listings where cityid='$cityid' and approved='1' order by id desc limit 5");
-		$data['content']['movies']=$this->df->doquery("select * from movies_listings where theatres > '0' order by id desc limit 4");		
-		$data['content']['videos']=$this->df->doquery("select * from videos where find_in_set($cityid,cities) or cities='0' order by id desc limit 3");
+		
+		//$data['content']['movies']=$this->df->doquery("select * from movies_listings where theatres > '0' order by id desc limit 4");
+		$data['content']['movies']=$this->df->doquery("select * from movies_listings where theatres > '0' order by id desc");	
+			
+		//$data['content']['videos']=$this->df->doquery("select * from videos where find_in_set($cityid,cities) or cities='0' order by id desc limit 3");
+		$data['content']['videos']=$this->df->doquery("select * from videos where find_in_set($cityid,cities) or cities='0' order by id desc");
+		
 		$data['content']['numbers']=$this->df->doquery("select * from numbers where cityid='$cityid' order by name asc");
 		//Get photos
 		$totalalbums=$this->df->doquery("select id,cities from photo_albums where find_in_set($cityid,cities) or find_in_set('0',cities) order by id desc");
@@ -35,9 +41,12 @@ class Start extends CI_Controller {
 		$data['content']['pollcomment']=$pollcomment[0];
 		//print_r($data['content']['poll']);
 		$last_date=date("Y-m-d");
-		$data['content']['jobs']=$this->df->doquery("select * from jobs_listings where cityid='$cityid' and approved='1' and last_date > '$last_date' limit 3");
+		
+		//$data['content']['jobs']=$this->df->doquery("select * from jobs_listings where cityid='$cityid' and approved='1' and last_date > '$last_date' limit 3");
+		$data['content']['jobs']=$this->df->doquery("select * from jobs_listings where cityid='$cityid' and approved='1' and last_date > '$last_date'");
 		$today=date("Y-m-d");
-		$data['content']['deals']=$this->df->doquery("select * from offers_listings where cityid='$cityid' and approved='1' and starts_on <= '$today' and closes_on >= '$today' limit 4");
+		//$data['content']['deals']=$this->df->doquery("select * from offers_listings where cityid='$cityid' and approved='1' and starts_on <= '$today' and closes_on >= '$today' limit 4");
+		$data['content']['deals']=$this->df->doquery("select * from offers_listings where cityid='$cityid' and approved='1' and starts_on <= '$today' and closes_on >= '$today'");
 		$data['content']['classifieds']=$this->df->doquery("select * from classy_listings where approved='1' and cityid='$cityid' order by id desc limit 15");
 		}
 		$data['content']['template']='home';

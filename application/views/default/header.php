@@ -62,7 +62,7 @@
  	<div class="clear">&nbsp;</div>
     <div id="menubar" class="clearfix"> 
 		<ul class="menubar clearfix">
-        <li class="first"><?php echo anchor('start/index','<i class="icon-home"></i>');?></li>
+        <li class="first"><?php echo anchor('start/index','<i class="icon-home"></i><br>Home');?></li>
         <li><?php echo anchor('news/index','News');?></li>
         <li><?php echo anchor('yellowpages/index','Yellow Pages');?>
 <!--        	<ul>
