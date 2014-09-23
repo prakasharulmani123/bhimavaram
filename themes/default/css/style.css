@@ -529,7 +529,7 @@ border-left-width: 0;
 color: #FFF;
 }
 #plain_logo_holder{}
-.margin20.span10.center-align.well.clearfix{ padding:0;}
+.margin20.span10.center-align.well.clearfix{ padding:0;margin: 0px 0px 0px 197px;}
 
 #plain_logo_holder a img {
 background:url(../img/plain_header_bg.png) repeat-x center center;

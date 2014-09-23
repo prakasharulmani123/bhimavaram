@@ -76,10 +76,12 @@ class Start extends CI_Controller {
 		}
 		else
 		{
-			$data['header']['custom']='plain_header';
+			//$data['header']['custom']='plain_header';
+			$data['header']['custom']='signin-header';
 			$data['header']['css']=array('register.css');
 			$data['footer']['js']=array('parsley.js');		
-			$data['footer']['custom']='plain_footer';		
+			//$data['footer']['custom']='plain_footer';	
+			$data['footer']['custom']='signin-footer';		
 			$data['content']['template']='register';
 			$data['sidebar']=false;		
 			$this->layout->publish($data);
@@ -98,11 +100,15 @@ class Start extends CI_Controller {
 		}
 		else
 		{
-			$data['header']['custom']='plain_header';
+			//$this->load->view('default/header');
+			//$data['header']['custom']='plain_header';
+			$data['header']['custom']='signin-header';
 			$data['header']['css']=array('register.css');
 			$data['footer']['js']=array('parsley.js');		
-			$data['footer']['custom']='plain_footer';		
+		    //$data['footer']['custom']='plain_footer';	
+			$data['footer']['custom']='signin-footer';	
 			$data['content']['template']='signin';
+		
 			$data['sidebar']=false;			
 			$this->layout->publish($data);			
 		}
