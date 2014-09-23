@@ -125,7 +125,7 @@ class Start extends CI_Controller {
 				
 				// Send Thank you mail for first login user. START
 				$timestamp = strtotime($user['last_login']);
-				if(empty($timestamp)){
+				if(empty($timestamp) || $timestamp < 0){
 					$this->load->library('email');
 					$this->email->from('admin@admin.com', 'Admin');
 					$this->email->to($user['email']);

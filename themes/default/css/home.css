@@ -294,3 +294,11 @@ margin-left: -3px;
 .span13 {
 margin-left: 0px;
 }
+
+#executive_ads .span6{
+	margin-left: 23px !important;
+}
+
+#executive_ads .first{
+	margin-left: 0px !important;
+}
