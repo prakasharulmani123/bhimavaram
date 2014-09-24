@@ -81,6 +81,12 @@ class Start extends CI_Controller {
 			$this->load->library('auth');
 			$this->auth->addUser($insertData,true);	
 			$this->auth->checkRedirectSource();
+			
+			//Thank you mail for user after registration.
+			$this->load->library('emails');
+			$registration_success = $this->load->view('email/registration_success', '', TRUE);
+			$this->emails->send_mail($data['email'], 'Thank you for registration', $registration_success);
+			
 			redirect(base_url());
 		}
 		else
@@ -202,12 +208,10 @@ class Start extends CI_Controller {
 			$insert=$this->df->insert_data('wishes',$data);
 			set_message('success','Your wish submitted successfully!');
 			
-			$this->load->library('email');
-			$this->email->from('admin@admin.com', 'Admin');
-			$this->email->to($data['email']);
-			$this->email->subject('Thanking mail');
-			$this->email->message('Thank you for submit your wish.');
-			$this->email->send();
+			//Thank you mail for user who submit a wish.
+			$this->load->library('emails');
+			$email = $this->load->view('email/submit_a_wish', '', TRUE);
+			$this->emails->send_mail($data['email'], 'Thank you for submit a wish', $email);
 			
 			redirect($currenturl);
 			

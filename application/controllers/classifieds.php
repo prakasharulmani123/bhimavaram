@@ -103,6 +103,11 @@ class Classifieds extends CI_Controller {
 		if($send)
 		{
 			$this->df->insert_data('classy_responses',array('adid'=>$listing['id'],'uid'=>$uid,'message'=>$data['message'],'email'=>$data['email'],'phone'=>$data['phone'],'ipaddress'=>ip()));
+			
+			//Thank you mail for User who post the reply for this Ad.
+			$classified_content = $this->load->view('email/classified_success', '', TRUE);
+			$this->emails->send_mail($data['email'], 'Thank you for submit a reply for '.$listing['title'], $classified_content);
+			
 			set_message('success',"Your message has been sent successfully!");
 		}
 		else
