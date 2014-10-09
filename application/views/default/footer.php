@@ -28,6 +28,7 @@
   </div>
 </div>
 </div>
+</div>
 <!--Main-content Ends-->
 <div id="footer-container">
   <div class="container">
