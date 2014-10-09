@@ -1,0 +1,10 @@
+.answer-box{ margin-right:25px;}
+ul#listings li{ padding-left:20px;}
+.progress {
+margin-bottom: 8px;
+}
+ul#listings li div.right a{ margin-right:30px;}
+ul#listings li{ border-bottom:#ccc dotted 0px; line-height:200%; float:left;}
+h1.noline{ margin-left:35px; text-decoration:underline;}
+ul#listings li:hover{ background-color:#FFF; border:0px #FFF solid;}
+button.submit-btn{ margin-left:150px;}

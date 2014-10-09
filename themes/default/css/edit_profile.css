@@ -1,0 +1,12 @@
+.birthday-holder{clear:both;}
+.birthday-holder label{ width:60px; float:left; line-height:28px;}
+.birthday-holder select{ margin-left:2px; float:left;}
+.city-container{ background:#C00;clear:both;}
+.city-select{ margin:5px 0;}
+.submit-btn{ margin:8px 0;}
+.fb-login-link,.fb-login-link:hover{ background-image:url(../img/fb-icon-white.png); background-repeat:no-repeat; background-position:25px center; text-align:left;}
+#signin-with-facebook{ text-align:center;}
+.fb-login{color:#FFF;}
+.nav-tabs{ margin:0 20px;}
+.tab-content{ margin:15px 30px;}
+.controls .avatar{max-width:100px; max-height:100px; margin:0 10px 0 0; border-radius:4px; border:#DDD 1px solid;}
