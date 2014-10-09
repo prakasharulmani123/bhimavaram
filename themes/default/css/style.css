@@ -53,13 +53,13 @@ body{font-family: 'Open Sans', sans-serif; font-size:13px; color:#333;}
 a.wishes-button{padding-left:20px; color:#FFF; background:url(../img/topbar-right-arraow.png) no-repeat left center;font-size:14px;font-family: 'Varela Round', sans-serif;}
 a.wishes-button:hover{ text-decoration:none;background:url(../img/topbar-right-arraow.png) no-repeat left center;}
 a.wishes-button [class^="icon-"]{ margin-right:4px; margin-top: 3px;}
-#logo{ /*background:url(../img/logo.png) no-repeat left center;  */display:block;padding:8px 0 20px 0; margin-left:10px; margin-top:-3px}
+#logo{ /*background:url(../img/logo.png) no-repeat left center;  */display:block;padding:8px 0 5px 0; margin-left:10px; margin-top:-3px}
 #plain_logo{background:url(../img/plain_logo.png) no-repeat center center; width:291px; height:70px;display:block; text-indent:-9999px; margin-bottom:20px;}
 /*div.change-city{text-align:right; float:right; margin-right:75px; margin-top:-22px; color:#FFF; font-size:14px;margin-top: -17px;
 padding-bottom: 4px;}
 */div.change-city a{ font-size:12px; color:#FFF;}
-#header-ad-spot{ margin-left:20px;padding-top: 4px;}
-#header-ad-spot a{ padding:15px 0 0 0; display:block;}
+/*#header-ad-spot{ margin-left:50px;padding-top: 4px;}*/
+#header-ad-spot a{ padding:0px 0 0 0; display:block;}
 #profile-info{  padding:3px 0 0 0; margin-right: 12px;margin-bottom: -10px;}
 #profile-info .profile-img{ width: 40px;
 border-radius: 2px;
@@ -268,6 +268,7 @@ a.comment-item{ margin-left:12px;}
 	 /* Introducing a padding between the li and the a give the illusion spaced items */
 	float:none;
 	width:140px;
+	line-height:30px;
 }
 .menubar ul a{
 	white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
@@ -347,12 +348,12 @@ ul#search-dropdown{ background:#039;}
 
 .searchtext{text-align:right;}
 .searchtext .caret{ float:right;}
-#search-dropdown li ul li a{ color:#666;}
-#search-dropdown li ul li a:hover{ color:#FFF;}
+#search-dropdown li ul li a{ color:#666; line-height:20px !important;}
+#search-dropdown li ul li a:hover{ color:#156EAF;}
 #search-dropdown > li > a:hover, .nav > li > a:focus {
 text-decoration: none;
 background-color:#26505e;
-color:#FFF;
+color:#156EAF !important;
 }
 #search-dropdown .dropdown-toggle .caret {
 border-top-color: #FFF;
@@ -384,8 +385,9 @@ color: #000;
 width: 130px;
 line-height: 20px;
 padding: 4px 10px;
-border-radius: 2px;
-padding-left:115px;
+float:left;
+/*border-radius: 2px;
+padding-left:115px;*/
 }
 #menubar .menubar li.last form{ margin:0; padding:1px 0;margin: -2px 0 0 5px;}
 #menubar .menubar li.last{line-height:40px;}
@@ -465,7 +467,8 @@ line-height: 36px;
 
 .tickercontainer { /* the outer div with the black border */
 background: #fff; 
-width: 588px; 
+/*width: 588px; */
+height:25px;
 margin: 0; 
 padding: 0;
 padding: 2px 0 8px 0;

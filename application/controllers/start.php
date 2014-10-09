@@ -7,8 +7,10 @@ class Start extends CI_Controller {
 		$this->load->library('YoutubeVideoDetails');
 		$cityid=userdata('cityid');
 		$day_start=date("Y-m-d 00:00:00");
-		$day_end=date("Y-m-d 23:59:59");		
-		$data['header']['css']=array('home.css');
+		$day_end=date("Y-m-d 23:59:59");
+				
+		//**$data['header']['css']=array('home.css');**
+		
 		$data['footer']['js']=array('jquery.easing.1.3.js','jquery.anyslider.js','jquery.elastislide.js','timeago.js','jquery.vticker.min.js','home.js');		
 		if($cityid)
 		{

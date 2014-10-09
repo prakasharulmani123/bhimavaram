@@ -121,6 +121,12 @@ class Layout
 			$output.=$this->getStyleLink('bootstrap_todc.css');
 			$output.=$this->getStyleLink('style.css');
 			$output.=$this->getStyleLink('font-awesome.min.css');
+			
+			//New Design CSS start.
+			$output.=$this->getStyleLink('style_newdesign.css');
+			$output.=$this->getStyleLink('font-awesome_newdesign.css');
+			//New Design CSS end.
+			
 			//Generate custom styles
 			if(array_key_exists('css',$head) && $head['css']!==false)
 			{
@@ -166,7 +172,7 @@ class Layout
 	{
 		$CI =& get_instance();
 		$output="";
-//		$output.='<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>';
+		/*$output.='<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>';*/
                 $output.=$this->getScriptLink('jquery.min.js');
 		$output.='<script>var baseUrl="'.$CI->settings->baseUrl().'";</script>';
 		$output.=$this->getScriptLink('bootstrap.min.js');
@@ -179,6 +185,7 @@ class Layout
 		$output.=$this->getScriptLink('parsley.js');
 		$output.=$this->getScriptLink('innerfade/jquery.innerfade.js');
 		$output.=$this->getScriptLink('external.js');
+		$output.=$this->getScriptLink('ddsmoothmenu.js');
 		
 				
 		if(array_key_exists('js',$foot) && $foot['js']!==false)
