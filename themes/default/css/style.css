@@ -632,3 +632,7 @@ box-shadow:         0px 1px 4px 0px rgba(50, 50, 50, 0.5);
 .dashboard_tabs{
     width: 424px;
 }
+
+.testing{
+	float:left;
+}
