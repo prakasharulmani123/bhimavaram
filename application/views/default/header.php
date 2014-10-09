@@ -1,5 +1,6 @@
 </head>
 <body id="default-body">
+<div class="wrapper">
 <div id="page-loading">Please wait...</div>
 <div class="container" id="header-container">
 	<div class="span20 clearfix" id="topbar">
@@ -13,7 +14,7 @@
     <a href="#post-wish" class="span3 wishes-button pull-left h6 upper" role="button" data-toggle="modal"><i class="icon-plus-sign icon-white"></i>Submit a wish</a>
 	</div><!--TopBar Ends-->
     <div id="logobar" class="clearfix span20">
-    	<div class="span5 pull-left" id="logo-container">
+    	<div class=" pull-left" id="logo-container">
         	<?php echo anchor(base_url(),getLogo(),array('id'=>'logo'));?>
             <div class="change-city"><?php echo userdata('city');?>
                 <a href="#change-city" role="button" data-toggle="modal">(Change)</a>
@@ -49,9 +50,11 @@
 				<div class="clearbig">&nbsp;</div>
                 <div style="margin-top:18px;">
 				<?php
-					echo showAvatar(userdata('picture'),userdata('name'),array('class'=>'profile-img pull-left'));
+					//echo showAvatar(userdata('picture'),userdata('name'),array('class'=>'profile-img pull-left'));
 				?>
-                <div class="profile-data pull-left"><?php echo anchor('start/register','Another Guest');?><div class="profile-links"><?php echo anchor('start/register','Create Account');?> | <?php echo anchor('start/signin','Sign in');?></div></div>
+               <?php /*?> <div class="profile-data pull-left"><?php echo anchor('start/register','Another Guest');?><?php */?>
+                <div class="profile-links"><?php echo anchor('start/register','Create Account');?> | <?php echo anchor('start/signin','Sign in');?></div>
+                <!--</div>-->
                 </div>
                 <?php
 				}
@@ -60,7 +63,10 @@
          </div>        
     </div><!--LogoBar Ends-->
  	<div class="clear">&nbsp;</div>
+    
+    
     <div id="menubar" class="clearfix"> 
+    <div class="menu-left"></div>
 		<ul class="menubar clearfix">
         <li class="first"><?php echo anchor('start/index','<i class="icon-home"></i><br>Home');?></li>
         <li><?php echo anchor('news/index','News');?></li>
@@ -119,7 +125,9 @@
                         </li>
                    <!-- </ul>-->
              <!--</li>-->
-		</ul>    	
+		</ul> 
+        
+        <div class="menu-right"></div>   	
     </div><!--MenuBar Ends-->
     <!--============================================================================================-->
     <div class="clearbig">&nbsp;</div>
@@ -142,4 +150,4 @@
  <?php echo show_message();?><!--Flash-Message Ends-->
 <!--<div class="span20 center clearfix"><?php echo showAd('image','728','90');?></div>-->
 <div class="container" id="main-content">
-<div class="span13 pull-left" id="content-box">
+<div class=" pull-left" id="content-box">

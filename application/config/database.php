@@ -54,8 +54,8 @@ $db['default']['password'] = 'Hosting1234_';
 $db['default']['database'] = 'db175499_swarnandhra';*/
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'bhimavaramdemo';
-$db['default']['password'] = 'bhimavaram2014';
+$db['default']['username'] = 'root';
+$db['default']['password'] = '';
 $db['default']['database'] = 'bhimavaramdemo';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

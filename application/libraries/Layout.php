@@ -166,7 +166,8 @@ class Layout
 	{
 		$CI =& get_instance();
 		$output="";
-		$output.='<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>';
+//		$output.='<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>';
+                $output.=$this->getScriptLink('jquery.min.js');
 		$output.='<script>var baseUrl="'.$CI->settings->baseUrl().'";</script>';
 		$output.=$this->getScriptLink('bootstrap.min.js');
 		$output.=$this->getScriptLink('jquery.raty.min.js');
