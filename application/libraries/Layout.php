@@ -27,7 +27,7 @@ class Layout
 	/****************************************************
 	*	Publishes Layout Data							 	*	
 	****************************************************/		
-	function publish($data)
+	function publish($data,$layout = 'layout')
 	{
 	//	print_r($data);
 //		echo array_key_exists('header',$data);
@@ -99,7 +99,7 @@ class Layout
 		}
 					
 		$page['footer']=$CI->load->view($themeDirectory.'/'.$footerPath,$footer,true);
-		$CI->load->view('layout',$page);		
+		$CI->load->view($layout,$page);		
 	}//Publish Function Ends
 	
 	/****************************************************

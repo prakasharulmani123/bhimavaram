@@ -672,6 +672,10 @@ opacity: 0.8;
 	padding:20px 3%;
 }
 
+.bhi-footerrow1 a{
+	color:#FFFFFF;
+}
+
 .bhi-footerlinks
 {
 	width:100%;
@@ -749,6 +753,38 @@ opacity: 0.8;
 }
 
 .recent-classified-bg li {
-	margin: 14px 10px 10px 10px;
-	padding: 14px 10px 10px 10px;
+	margin: 13px 8px;
+	padding: 13px 10px;
+}
+
+
+.carousel-control.left {
+    background: url("../img/navi-left.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+    left: -20px;
+}
+.carousel-control {
+    border-radius: 0;
+    height: 56px;
+    opacity: 1;
+    text-indent: -9999px;
+    width: 26px;
+}
+
+.carousel-control.right {
+    background: url("../img/navi-right.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+    right: -3px;
+}
+.carousel-control.right {
+    left: auto;
+}
+
+.content-inner {
+  float: left;
+  margin: 25px 0 0;
+  width: 700px;
+}
+
+.content-sidebar {
+  float: right;
+  width: 240px;
 }

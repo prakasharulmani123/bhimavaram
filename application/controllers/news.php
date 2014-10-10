@@ -62,7 +62,7 @@ class News extends CI_Controller {
 		$data['content']['user']=$this->df->get_single_row('users',array('uid'=>userdata('uid')));
 		$data['content']['template']='news_browse.php';		
 		$data['content']['categories']=$this->df->get_multi_row('news_categories',false,false,false,array('id'=>'asc'));	
-		$this->layout->publish($data); 
+		$this->layout->publish($data,'layout_inner'); 
    }
    
    

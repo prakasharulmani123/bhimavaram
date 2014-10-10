@@ -282,7 +282,7 @@ if ( ! function_exists('newsPicture'))
 
 if ( ! function_exists('getLogo'))
 {
-	function getLogo()
+	function getLogo($restrize = false)
 	{
 		$CI =& get_instance();
 		$cityid=userdata('cityid');
@@ -297,6 +297,11 @@ if ( ! function_exists('getLogo'))
 		}
 //		$pic=$CI->df->doquery("select * from news_photos where id='$id' order by id desc");
 		//return '<a href="#report-item" role="button" data-toggle="modal" class="btn report-this" rel="'.$type.':'.$id.'">'.'<i class="icon-flag-alt"></i>&nbsp; Report'.'</a>';
+		if($restrize){
+			$image = "<img src='".base_url()."image-restrize.php?src=".$pic."' width='261' height='34' />";
+			return $image;
+		}
+		
 		return showAvatar($pic, 'logo', array('width'=>'261', 'height'=>'34'));	
 	}
 }

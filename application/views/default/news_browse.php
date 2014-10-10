@@ -14,7 +14,7 @@
                     echo $executive_ad;
 					echo '</div>';
 					
-                    if ($initial_executive_ads_count % 3 == 0) {
+                    if ($initial_executive_ads_count % 2 == 0) {
                         if ($executive_ads_count > $initial_executive_ads_count) {
                             echo '</div>';
                             echo '<div class="item ads300">';
@@ -26,8 +26,6 @@
     </div>
   </div>
 </div>
-  
-<div class="center clearfix"><?php echo showAd('image', '600', '90'); ?></div>
 
 <div class="clearfix">&nbsp;</div>
 

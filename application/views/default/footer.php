@@ -1,5 +1,5 @@
 <div class="bhi-footer">
-    <div class="bhi-footerrow1"> <?php echo getLogo();?>
+    <div class="bhi-footerrow1"> <?php echo getLogo(true);?>
       <div class="bhi-footerlinks"> <strong>Browse Cities </strong>
         <ul>
           <?php $citieslist=$this->df->get_multi_row('cities'); ?>

@@ -138,7 +138,7 @@
              
               <div class="carousel-inner">
                 <?php
-				foreach ($content['topnews'] as $m => $citynews) {
+				foreach ($content['citynews'] as $m => $citynews) {
 					echo '<div class="item ';
 					if ($m == 0)
 						echo ' active ';
@@ -167,7 +167,7 @@
             <ul>
               <?php
                     $citynewscnt = 0;
-                    foreach ($content['topnews'] as $citynews) {
+                    foreach ($content['citynews'] as $citynews) {
                         if ($citynewscnt < 5) {
                             ?>
               <li><?php echo anchor('news/' . $citynews['slug'], word_limiter($citynews['title'], 5)); ?></li>

@@ -21,8 +21,8 @@
     <div class="bhinew-logo-header-ad" id="header-ad-spot">
       <?php echo showAds('image', '468', '60', '5'); ?>
     </div>
-    <div class="bhinew-profilelink"> <a href="#">Create Account </a><br/>
-      <a href="#">Sign in</a></div>
+    <div class="bhinew-profilelink"><?php echo anchor('start/register', 'Create Account'); ?><br/>
+     <?php echo anchor('start/signin', 'Sign in'); ?></div>
     <div class="bhi-menucont">
       <div class="bhi-menuleft"> </div>
       <div class="bhi-menubg">
