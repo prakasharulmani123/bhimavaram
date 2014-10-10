@@ -57,7 +57,7 @@
                         -->        </li>
                     <li><?php echo anchor('movies/index', 'Movies'); ?></li>
                     <li><?php echo anchor('deals/index', 'Deals'); ?></li>
-                    <li><?php echo anchor('classifieds/index', 'Classifieds'); ?></li>
+                    <!--<li><?php echo anchor('classifieds/index', 'Classifieds'); ?></li>-->
                     <li><?php echo anchor('events/index', 'Events'); ?></li>
                     <li><?php echo anchor('jobs/index', 'Jobs'); ?></li>
                     <li><a href="#">More</a>
