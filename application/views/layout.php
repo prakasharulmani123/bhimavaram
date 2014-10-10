@@ -12,10 +12,10 @@
     <?php echo $header; ?>
     <?php echo $body; ?>
     </div>
+    <?php echo $sidebar; ?>
   </div>
 </div>
 <?php
-	echo $sidebar;
 	echo $footer;
 	echo $footerData;
 ?>

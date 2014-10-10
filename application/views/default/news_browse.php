@@ -1,4 +1,34 @@
+<div class="bhi-topscroll">
+    <div class="carousel" id="executive_ads" data-ride="carousel">
+      <div class="carousel-inner">
+        <?php $executive_ads = showAdsInArray('image', '300', '60', 15, 'span6'); ?>
+        <div class="item active ads300">
+          <?php
+                $initial_executive_ads_count = 0;
+                $executive_ads_count = count($executive_ads);
+
+                foreach ($executive_ads as $executive_ad) {
+                    $initial_executive_ads_count++;
+					
+					echo '<div class="topad">';
+                    echo $executive_ad;
+					echo '</div>';
+					
+                    if ($initial_executive_ads_count % 3 == 0) {
+                        if ($executive_ads_count > $initial_executive_ads_count) {
+                            echo '</div>';
+                            echo '<div class="item ads300">';
+                        }
+                    }
+                }
+          ?>
+      </div>
+    </div>
+  </div>
+</div>
+  
 <div class="center clearfix"><?php echo showAd('image', '600', '90'); ?></div>
+
 <div class="clearfix">&nbsp;</div>
 
 <ul class="span3 pull-left" id="categories-list">
