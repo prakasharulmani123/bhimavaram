@@ -8,14 +8,17 @@
 <body>
 <div class="bhinew-container">
   <div class="bhinew-inner-conatiner">
+  	<div class="bhinew-header">
     <?php echo $header; ?>
     <?php echo $body; ?>
+    </div>
   </div>
-  <?php
+</div>
+<?php
 	echo $sidebar;
 	echo $footer;
 	echo $footerData;
-  ?>
+?>
 <script type="text/javascript">
 
 ddsmoothmenu.init({

@@ -1,4 +1,4 @@
-<div class="bhinew-header">
+
   <div class="bhinew-scroll">
     <div class="bhinew-scrollheading"> Wishes </div>
     <div class="bhinew-scrolltxt">
@@ -12,6 +12,7 @@
     <a href="#post-wish" data-toggle="modal"> <i class="fa fa-plus-circle"></i> Submit a wish </a>
     </div>
   </div>
+  
   <div class="bhinew-inncontainer2">
     <div class="bhinew-logo">
 	<?php echo anchor(base_url(), getLogo(), array('id' => 'logo')); ?>
@@ -113,5 +114,5 @@
     <img src="<?php echo $this->settings->baseUrl(); ?>themes/default/images/twitter.png" width="22" height="21" alt=""> 
     <img src="<?php echo $this->settings->baseUrl(); ?>themes/default/images/gplus.png" width="22" height="21" alt="">
     </div>
-  </div>
-</div>
+ 
+

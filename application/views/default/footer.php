@@ -1,69 +1,26 @@
-<div class="clearbig">&nbsp;</div>
-<div class="span20" id="footer-ads">
-  <?php $bottom_footer_ads = showAdsInArray('image','175','60',25); ?>
-  <div class="carousel" id="bottom_footer_ads" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="item active">
-        <?php 
-        $initial_bottom_footer_ads_count = 0;
-        $bottom_footer_ads_count=count($bottom_footer_ads);
-        
-        foreach($bottom_footer_ads as $bottom_footer_ad){
-            $initial_bottom_footer_ads_count++;
-            
-            echo $bottom_footer_ad;
-            
-            if($initial_bottom_footer_ads_count%5==0)	
-            {						
-                if($bottom_footer_ads_count > $initial_bottom_footer_ads_count)
-                {
-                    echo '</div>';
-                    echo '<div class="item">';
-                }
-            }
-        }
-        ?>
+<div class="bhi-footer">
+    <div class="bhi-footerrow1"> <?php echo getLogo();?>
+      <div class="bhi-footerlinks"> <strong>Browse Cities </strong>
+        <ul>
+          <?php $citieslist=$this->df->get_multi_row('cities'); ?>
+      	  <?php	foreach($citieslist as $cl)	{ ?>
+      		<li><?php echo anchor('start/setcity/'.$cl['id'].'/'.str_replace('/','--',uri_string()),$cl['city']);?></li>
+      	  <?php	} ?>
+        </ul>
+      </div>
+      <div class="bhi-footerlinks"> <strong>Main Links </strong>
+        <ul>
+          <li><?php echo anchor(base_url(),'Home');?></li>
+      	  <li><a href="#about-us" role="button" data-toggle="modal"> About us </a></li>
+        </ul>
       </div>
     </div>
+    <div class="copyright">&copy; 2014 All rights reserved. Jaithra Business Solutions.</div>
   </div>
+<div class="shadow"> 
+  <img src="<?php echo $this->settings->baseUrl(); ?>themes/default/images/shadow.png" width="979" height="38" alt="">
 </div>
-</div>
-</div>
-<!--Main-content Ends-->
-<div id="footer-container">
-  <div class="container">
-    <ul id="footer-site-links" class="span4 pull-left">
-      <li>
-        <?php //echo $this->html->themeImg('footer-logo.png');?>
-        <?php echo getLogo();?></li>
-      <div class="clearbig">&nbsp;</div>
-      <li><?php echo anchor(base_url(),'Home');?></li>
-      <li><a href="#about-us" role="button" data-toggle="modal">About us </a></li>
-      <!--        <li><a href="#privacy-policy" role="button" data-toggle="modal">Privacy Policy</a></li>
-        <li><a href="#terms-use" role="button" data-toggle="modal">Terms of use</a></li>
--->
-    </ul>
-    <ul class="footer-cities pull-left span13">
-      <h2 class="choose-city">Browse Cities</h2>
-      <?php
-        $citieslist=$this->df->get_multi_row('cities');?>
-      <?php
-		foreach($citieslist as $cl)
-		{
-			//echo uri_string();
-		?>
-      <li><?php echo anchor('start/setcity/'.$cl['id'].'/'.str_replace('/','--',uri_string()),$cl['city']);?></li>
-      <?php
-		}
-		?>
-    </ul>
-    <div class="copyright-container">
-      <div class="span6 pull-left">&copy; 2014 All rights reserved. Jaithra Business Solutions.</div>
-      <div class="span5 pull-right right">Designed &amp; Developed by <?php echo anchor('http://wowji.com','Wowji',array('rel'=>'dofollow','style'=>'color:#FFF;font-size:13px;margin-right:10px;','target'=>'_blank'));?></div>
-    </div>
-  </div>
-</div>
-<!--footer-container Ends-->
+
 <input type="hidden" name="cityid" value="<?php echo userdata('cityid');?>" />
 <!-- Modal -->
 <div id="change-city" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Change City" aria-hidden="true">
@@ -84,7 +41,7 @@
 </div>
 <div id="post-wish" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Post Wishes" aria-hidden="true">
   <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ã—</button>
     <h3 id="twitterModal">Post Wishes</h3>
   </div>
   <div class="modal-body">
@@ -111,7 +68,7 @@
 <!--about model-->
 <div id="about-us" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="About us" aria-hidden="true">
   <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ã—</button>
     <h3 id="twitterModal">About us</h3>
   </div>
   <div class="modal-body">
@@ -124,7 +81,7 @@
 <!--privacy model-->
 <div id="privacy-policy" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="About us" aria-hidden="true">
   <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ã—</button>
     <h3 id="twitterModal">Privacy Policy</h3>
   </div>
   <div class="modal-body">
@@ -136,7 +93,7 @@
 <!--terms model-->
 <div id="terms-use" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="About us" aria-hidden="true">
   <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ã—</button>
     <h3 id="twitterModal">Terms of use</h3>
   </div>
   <div class="modal-body">
@@ -144,5 +101,4 @@
     <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
   </div>
   <div class="modal-footer"> </div>
-</div>
 </div>
