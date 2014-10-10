@@ -1,20 +1,21 @@
 <div class="bhi-bodycont">
-
   <div class="bhi-topscroll">
   
-  <div class="carousel" id="executive_ads" data-ride="carousel">
-        <div class="carousel-inner">
-            <?php $executive_ads = showAdsInArray('image', '300', '60', 15, 'span6'); ?>
-            <div class="item active ads300">
-                <?php
+    <div class="carousel" id="executive_ads" data-ride="carousel">
+      <div class="carousel-inner">
+        <?php $executive_ads = showAdsInArray('image', '300', '60', 15, 'span6'); ?>
+        <div class="item active ads300">
+          <?php
                 $initial_executive_ads_count = 0;
                 $executive_ads_count = count($executive_ads);
 
                 foreach ($executive_ads as $executive_ad) {
                     $initial_executive_ads_count++;
-
+					
+					echo '<div class="topad">';
                     echo $executive_ad;
-
+					echo '</div>';
+					
                     if ($initial_executive_ads_count % 3 == 0) {
                         if ($executive_ads_count > $initial_executive_ads_count) {
                             echo '</div>';
@@ -22,16 +23,12 @@
                         }
                     }
                 }
-                ?>
-            </div>
+          ?>
         </div>
+      </div>
     </div>
     
-    <!--<div class="topad"><img src="<?php echo $this->settings->baseUrl(); ?>themes/default/images/headerad1.jpg" width="300" height="60" alt=""> </div>
-    <div class="topad"><img src="<?php echo $this->settings->baseUrl(); ?>themes/default/images/headerad2.jpg" width="300" height="60" alt=""> </div>
-    <div class="topad"><img src="<?php echo $this->settings->baseUrl(); ?>themes/default/images/headerad3.jpg" width="300" height="60" alt=""> </div>-->
   </div>
-  
   <div class="slider"> <img src="<?php echo $this->settings->baseUrl(); ?>themes/default/images/slider.jpg" width="700" height="318" alt=""></div>
   <div class="slider-right">
     <div class="bhi-videocont">
@@ -39,7 +36,12 @@
         <h2> Video News </h2>
       </div>
       <div class="widget-content"> <img src="<?php echo $this->settings->baseUrl(); ?>themes/default/images/video-ad.jpg" width="239" height="154" alt=""></div>
-      <div class="ad"> <img src="<?php echo $this->settings->baseUrl(); ?>themes/default/images/ad1.jpg" width="240" height="107" alt=""></div>
+      <div class="ad"> 
+        <?php
+		$ads150 = showAds('image', '300', '150', 1, '');
+		echo $ads150;
+		?>
+      </div>
     </div>
   </div>
   <div class="home-left">
@@ -87,8 +89,15 @@
       </div>
     </div>
     <div class="adpart2">
-      <div class="ad"> <img src="<?php echo $this->settings->baseUrl(); ?>themes/default/images/ad2.jpg" width="240" height="140" alt=""> </div>
-      <div class="ad"> <img src="<?php echo $this->settings->baseUrl(); ?>themes/default/images/ad2.jpg" width="240" height="140" alt=""> </div>
+    <?php
+                $ads150_another = showAds('image', '300', '150', 2, '');
+                $adsList_another = explode('<a ', $ads150_another);
+                foreach ($adsList_another as $ad_another) {
+					echo '<div class="ad">';
+                    echo '<a ' . $ad_another . '</a>';
+					echo '</div>';
+                }
+                ?>
     </div>
     <div class="bhi-scrollad">
       <?php $bottom_footer_ads = showAdsInArray('image','175','60',25); ?>

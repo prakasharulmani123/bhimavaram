@@ -1,0 +1,697 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
+body
+{
+	margin:0px;
+	padding:0px;
+	font-family: 'Open Sans', sans-serif;
+	font-size:12px;
+	line-height:20px;
+	color:#4e4e4e;
+}
+
+img
+{
+	border:none;
+	vertical-align:top;
+}
+
+div, ul, li, h1, h2, h3, h4
+{
+	margin:0px;
+	padding:0px;
+}
+
+.bhinew-container
+{
+	width:1000px;
+	margin:0px auto;
+}
+
+.bhinew-inner-conatiner
+{
+	width:100%;
+	float:left;
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+-moz-box-shadow:    0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+box-shadow:         0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+.bhinew-header
+{
+	width:100%;
+	float:left;
+}
+
+.bhinew-scroll
+{
+	width:100%;
+	float:left;
+	border-bottom:#79bdee solid 3px;
+}
+
+.bhinew-scrollheading
+{
+	width:162px;
+	float:left;
+	color:#FFFFFF;
+	background:url(../images/wishes-headingbg.jpg) no-repeat;
+	height:36px;
+	text-transform:uppercase;
+	text-align:center;
+	font-size:15px;
+	line-height:35px;
+}
+
+.bhinew-scrolltxt
+{
+	width:660px;
+	float:left;
+	color:#000000;
+	font-size:15px;
+	line-height:35px;
+}
+
+.bhinew-wishbg
+{
+	width:173px;
+	float:right;
+	color:#FFFFFF;
+	background:url(../images/submit-wishbg.png) no-repeat;
+	height:36px;
+	text-align:center;
+	font-size:15px;
+	line-height:35px;
+	text-transform:uppercase;
+}
+
+.bhinew-wishbg a
+{
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+.bhinew-inncontainer2
+{
+	width:970px;
+	margin:0px auto;
+}
+
+
+.bhinew-logo
+{
+	width:261px;
+	float:left;
+	margin:15px 0px 0px 0px;
+	text-align:right;
+	line-height:22px;
+}
+
+.bhinew-logo a
+{
+	color:#4e4e4e;
+	text-decoration:none;
+}
+
+.bhinew-logo a:hover
+{
+	text-decoration:underline;
+}
+
+.bhinew-logo-header-ad
+{
+	width:auto;
+	float:left;
+	margin:15px 0px 15px 55px;
+}
+
+.bhinew-profilelink
+{
+	width:160px;
+	float:right;
+	text-align:center;
+	font-size:15px;
+	margin:25px 0px 0px 0px;
+}
+
+.bhinew-profilelink a
+{
+	color:#4e4e4e;
+	text-decoration:none;	
+}
+
+.bhinew-profilelink a:hover
+{
+	color:#000000;
+	text-decoration:underline;
+}
+
+.bhi-menucont
+{
+	width:970px;
+	float:left;
+	margin:15px 0px 0px 0px;
+}
+
+.bhi-menuleft
+{
+	width:10px;
+	float:left;
+	background:url(../images/menu-left.png) no-repeat;
+	height:41px;
+}
+
+.bhi-menubg
+{
+	width:950px;
+	float:left;
+	background:url(../images/menubg.jpg) repeat-x;
+	height:41px;
+}
+
+
+.bhi-menuright
+{
+	width:10px;
+	float:left;
+	background:url(../images/menu-right.png) no-repeat;
+	height:41px;
+}
+
+
+.bhi-menu
+{
+	width:950px;
+	float:left;
+}
+
+/*-----------drop down-----------*/
+
+
+.ddsmoothmenu
+{
+	width:100%;
+	float:left;
+	height:49px;
+	margin:0px 0px 0px 0px;
+	
+}
+
+.ddsmoothmenu ul
+{
+z-index:100;
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+.ddsmoothmenu ul li
+{
+list-style:none;
+float:left;
+display:inline;
+color:#FFFFFF;
+font-size:13px;
+padding:0px 0px 0px 0px;
+text-transform:uppercase;
+position: relative;
+display: inline;
+height:41px;
+float: left;
+line-height:41px;
+border-right:#ffffff solid 1px;
+}
+
+.ddsmoothmenu ul li:last-child
+{
+}
+
+.ddsmoothmenu ul li a
+{
+	padding:0px 10px 0px 10px;
+	color:#ffffff;
+	display:block;
+	float:left;
+	height:41px;
+	text-decoration:none;
+
+}
+
+
+
+* html .ddsmoothmenu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
+display: inline-block;
+}
+
+.ddsmoothmenu ul li a:link, .ddsmoothmenu ul li a:visited{
+color: #ffffff;
+}
+
+.ddsmoothmenu ul li a.selected{ /*CSS class that's dynamically added to the currently active menu items' LI A element*/
+color: #ffffff ;
+background:#e43333;
+
+}
+
+.ddsmoothmenu ul li a:hover{
+
+color: #ffffff;
+background:#e43333;
+}
+
+.active
+{color: #ffffff !important;
+background:#e43333 !important;
+}
+	
+/*1st sub level menu*/
+.ddsmoothmenu ul li ul{
+position: absolute;
+left: 0;
+display: none; /*collapse all sub menus to begin with*/
+visibility: hidden;
+-webkit-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.9);
+-moz-box-shadow:    0px 2px 5px 0px rgba(50, 50, 50, 0.9);
+box-shadow:         0px 2px 5px 0px rgba(50, 50, 50, 0.9);
+}
+
+/*Sub level menu list items (undo style from Top level List Items)*/
+.ddsmoothmenu ul li ul li{
+display: list-item;
+float: none;
+height:40px;
+font-size:13px;
+background:none;
+border-right:none;
+text-transform:capitalize;
+line-height:40px !important;
+text-transform:uppercase;
+}
+
+/*All subsequent sub menu levels vertical offset after 1st level sub menu */
+.ddsmoothmenu ul li ul li ul{
+top: 0;
+}
+
+/* Sub level menu links style */
+.ddsmoothmenu ul li ul li a{
+
+width: 160px; /*width of sub menus*/
+margin: 0;
+color:#ffffff !important;
+border-top-width: 0;
+background:#e43333;
+height:40px;
+border-bottom: 1px solid #ffffff;
+}
+
+.ddsmoothmenu ul li ul li a:hover
+{
+	border-bottom: 1px dotted #ffffff;
+	background:none;
+	background:#eaeaea;
+}
+
+.ddsmoothmenu ul li ul li  a.selected{ /*CSS class that's dynamically added to the currently active menu items' LI A element*/
+color: #ffffff;
+background:#e43333;
+color:#FFFFFF ;
+border-bottom: 1px dotted #ffffff;
+}
+
+/* Holly Hack for IE \*/
+* html .ddsmoothmenu{height: 1%;} /*Holly Hack for IE7 and below*/
+
+
+/* ######### CSS classes applied to down and right arrow images  ######### */
+
+.downarrowclass{
+position: absolute;
+top: 20px;
+right: 7px;
+display:none;
+}
+
+
+
+/* ######### CSS for shadow added to sub menus  ######### */
+
+.ddshadow{ /*shadow for NON CSS3 capable browsers*/
+position: absolute;
+left: 0;
+top: 0;
+width: 0;
+height: 0;
+background:000000;
+}
+
+.toplevelshadow{ /*shadow opacity for NON CSS3 capable browsers. Doesn't work in IE*/
+opacity: 0.8;
+}
+
+
+
+.search-field
+{
+	width:280px;
+	float:left;
+}
+
+.bhi-sponser
+{
+	width:850px;
+	float:left;
+	background:#f4f4f4;
+	border:#e1e1e1 solid 1px;
+	padding:5px;
+	font-size:14px;
+	margin:15px 0px 0px 0px;
+	color:#b60000;
+}
+
+.bhi-sponser span
+{
+	color:#000000;
+}
+
+.bhi-social
+{
+	width:auto;
+	float:right;
+	margin:20px 0px 0px 0px;
+}
+
+.search-menu-holder
+{
+	height:30px !important;
+	float:left !important;
+}
+
+
+.bhi-bodycont
+{
+	width:100%;
+	float:left;
+	margin:25px 0px 0px 0px;
+}
+
+.bhi-topscroll
+{
+	width:107%;
+	float:left;
+	margin:0px 0px 0px -15px;
+}
+
+.topad
+{
+	width:300px;
+	float:left;
+	margin:0px 17px 0px 16px;
+}
+
+.slider
+{
+	width:700px;
+	float:left;
+	margin:25px 0px 0px 0px;
+}
+
+.slider-right
+{
+	width:240px;
+	float:right;
+}
+
+.bhi-videocont
+{
+	width:100%;
+	float:left;
+	margin:22px 0px 0px 0px;
+}
+
+.widget-heading
+{
+	width:100%;
+	float:left;
+	background:url(../images/border.jpg) bottom repeat-x;
+
+	color:#156eaf;
+	
+	padding:0px 0px 12px 0px;
+}
+
+.widget-heading h2
+{
+		font-size:15px;
+		font-weight:normal;
+		float:left !important;
+}
+
+.widget-heading a
+{
+	float:right;
+	background:url(../images/icon.png) right no-repeat;
+	color:#156eaf;
+	text-decoration:none;
+	padding-right:10px;
+	font-size:14px;
+}
+
+.widget-content
+{
+	width:100%;
+	float:left;
+	margin:10px 0px 0px 0px;
+}
+
+.ad
+{
+	width:100%;
+	float:left;
+	margin:7px 0px 0px 0px;
+	border-top:#ca0000 solid 3px;
+	padding:10px 0px 0px 0px;
+}
+
+.home-left
+{
+	width:230px;
+	float:left;
+	margin:25px 0px 0px 0px;
+}
+
+.imp-cont
+{
+	width:230px;
+	float:left;
+	margin-bottom:15px;
+}
+
+.imp-bg
+{
+	width:210px;
+	float:left;
+	background:#ebebeb;
+	padding:10px;
+	margin:5px 0px 0px 0px;
+}
+
+.imp-bg ul
+{
+	margin:0px;
+	padding:px;
+}
+
+.imp-bg ul li
+{
+	list-style:none;
+	color:#2e2e2e;
+	padding:2px 0px 2px 0px;
+	font-size:14px;
+}
+
+.moviescroll
+{
+	width:230px;
+	float:left;
+}
+
+.movie-thumb
+{
+	width:204px;
+	margin:10px auto;
+}
+
+
+.movie-name
+{
+	width:194px;
+	background:#156eaf;
+	padding:5px;
+	text-align:center;
+	font-size:20px;
+}
+
+.movie-name a
+{
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+.home-right
+{
+	width:710px;
+	float:right;
+}
+
+.bhi-tabs-cont
+{
+	width:436px;
+	float:left;
+	margin:25px 0px 0px 0px;
+}
+
+.bhi-tabs-content
+{
+	width:100%;
+	float:left;
+	margin:10px 0px 0px 0px;
+	font-size:13px;
+}
+
+.bhi-tabs-content a
+{
+	color:#156eaf;
+	font-weight:bold;
+	text-decoration:none;
+	font-size:14px;
+	
+}
+
+.bhi-tabs-content a:hover
+{
+	text-decoration:underline;
+}
+
+.news-thumb
+{
+	width:127px;
+	float:left;
+}
+
+.tabsmall-content
+{
+	width:300px;
+	float:right;
+	border-bottom:#000000 dotted 1px;
+	padding-bottom:10px;
+}
+.bhi-tabs-content ul
+{
+	margin:15px 0px 0px 0px;
+	padding:0px;
+}
+
+.bhi-tabs-content ul li
+{
+	list-style:none;
+	background:url(../images/icon2.jpg) 0px 6px no-repeat;
+	padding:0px 0px 5px 10px;
+}
+
+.clr
+{
+	clear:both;
+}
+
+.adpart2
+{
+	width:240px;
+	float:right;
+}
+
+.bhi-scrollad
+{
+	width:100%;
+	float:left;
+	margin:10px 0px 0px 0px;
+}
+
+
+.recent-classified
+{
+	width:100%;
+	float:left;
+	margin-bottom:25px;
+}
+
+.recent-classified-bg
+{
+	width:96%;
+	float:left;
+	background:#ebebeb;
+	padding:2%;
+	margin:5px 0px 0px 0px;
+}
+
+.bhi-footer
+{
+	width:100%;
+	float:left;
+	background:#156eaf;
+	color:#FFFFFF;
+	font-size:15px;
+}
+
+.bhi-footerrow1
+{
+	width:94%;
+	float:left;
+	padding:20px 3%;
+}
+
+.bhi-footerlinks
+{
+	width:100%;
+	float:left;
+	margin:10px 0px 0px 0px;
+	border-top:#FFFFFF dotted 1px;
+	padding:10px 0px 10px 0px;
+}
+
+.bhi-footerlinks ul
+{
+	margin:0px;
+	float:left;
+}
+
+.bhi-footerlinks strong
+{
+	float:left;
+	padding-right:25px;
+}
+
+.bhi-footerlinks ul li
+{
+	list-style:none;
+	float:left;
+	padding:0px 10px 0px 10px;
+}
+
+.copyright
+{
+	width:98%;
+	float:left;
+	background:#0060a6;
+	padding:1%;
+}
+
+.shadow
+{
+	width:100%;
+	float:left;
+	text-align:center;
+}
