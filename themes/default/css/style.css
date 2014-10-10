@@ -612,31 +612,25 @@ box-shadow:         0px 1px 4px 0px rgba(50, 50, 50, 0.5);
 .widget_title{
     border-bottom: 2px dashed #b60000;
 }
-
+#jumbtron_carousel{
+    max-height: 318px;
+}
 #jumbtron_carousel .caption-news {
     background-color: #156eb0;
   color: #fff;
   float: left;
   height: 318px;
-  width: 35%;
+  max-width: 200px;
 }
 #jumbtron_carousel .caption-news a{
     color: #fff;
 }
 #jumbtron_carousel .news-image{
-    width: 65%;
+    max-width: 500px;
         float:right;
 }
 
-.sidebar{
-    width: 274px;
-    float: left;
-}
-.dashboard_tabs{
-    width: 424px;
-}
-
-
-.tyu{
-	color
+#jumbtron_carousel .news-image img{
+    width: 500px;
+height: 318px;
 }

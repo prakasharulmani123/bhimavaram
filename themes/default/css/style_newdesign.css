@@ -447,7 +447,9 @@ opacity: 0.8;
 {
 		font-size:15px;
 		font-weight:normal;
+		color:#156eaf;
 		float:left !important;
+		line-height:20px;
 }
 
 .widget-heading a
@@ -694,4 +696,15 @@ opacity: 0.8;
 	width:100%;
 	float:left;
 	text-align:center;
+}
+
+
+#phone-numbers.news-list {
+    height: 115px;
+    max-height: 115px;
+    overflow-y: scroll;
+}
+
+#latest_movie img{
+	height:152px !important;
 }
