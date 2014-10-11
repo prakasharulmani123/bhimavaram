@@ -106,7 +106,7 @@
         <a href="#">View All </a> </div>
       <div class="moviescroll">
         <div class="movie-thumb">
-          <div id="latest_movie" class="widget_body carousel slide">
+          <div id="latest_movie" class="widget_body carousel slide vertical">
             <div class="carousel-inner">
               <?php foreach($content['movies'] as $x => $movie){ ?>
               <div class="item <?php if($x == 0) echo "active"?>"> <img src="<?php echo $this->settings->uploaderPath().$movie['picture'] ?>" width="204" height="152" alt=""/>

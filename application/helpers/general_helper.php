@@ -376,7 +376,7 @@ if ( ! function_exists('showAds'))
 						$first='';
 					}
 					$attrs=array(
-						'style'=>'width:'.$ad['width'].'px;height:'.$ad['height'].'px',
+						//'style'=>'width:'.$ad['width'].'px;height:'.$ad['height'].'px',
 						'class'=>'adunit '.$class.$first
 					);
 					if($ad['linktype']=='1')

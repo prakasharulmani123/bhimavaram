@@ -114,5 +114,3 @@
     <img src="<?php echo $this->settings->baseUrl(); ?>themes/default/images/twitter.png" width="22" height="21" alt=""> 
     <img src="<?php echo $this->settings->baseUrl(); ?>themes/default/images/gplus.png" width="22" height="21" alt="">
     </div>
- 
-
