@@ -232,7 +232,7 @@ div, ul, li, h1, h2, h3, h4
 
 .ddsmoothmenu ul li a
 {
-    padding:0px 13px 0px 13px;
+    padding:0px 14px 0px 14px;
     color:#ffffff;
     display:block;
     float:left;
@@ -889,7 +889,7 @@ background:#e43333 !important;
 }
 .search_bar {
     float: right;
-    width: 300px;
+    width: 310px;
     height: 30px; 
     margin-top: 4px; 
     background-color: #fff;
@@ -898,7 +898,7 @@ background:#e43333 !important;
 
 #nav-search-in {
     float: left;
-    width: 100px;
+    width: 105px;
 }
 #nav-search-in #nav-search-in-content {
     color: #156eb0;
@@ -911,8 +911,8 @@ background:#e43333 !important;
     float: left;
     width: 70px; 
     overflow: visible;
-    font-size: 12px;
-	padding-left:10px;
+    font-size: 11px;
+	padding-left:5px;
 }
 #nav-search-in.nav-facade-active .nav-down-arrow {
   background: url("../img/search_arrow.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
@@ -921,7 +921,7 @@ background:#e43333 !important;
   position: absolute;
   top: 20px;
   width: 9px;
-  margin-left: 5px;
+  margin-left: 15px;
 }
 .nav-facade-active #searchdropdownbox {
     cursor: pointer;
@@ -963,7 +963,7 @@ background:#e43333 !important;
     margin: 6px 0 0;
     outline: medium none;
     padding: 0;
-    width: 68%;
+    width: 100%;
 }
 .nav-submit-button {
     background: url("../img/go_bttn.png") no-repeat;
@@ -971,6 +971,7 @@ background:#e43333 !important;
     margin: 0px 0px 0px 0px;
     overflow: hidden;
     padding: 0 0 0 3px;
+	width:38px;
 }
 .nav-submit-button .nav-submit-input {
     background: none repeat scroll 0 0 transparent;
