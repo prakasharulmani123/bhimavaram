@@ -72,7 +72,7 @@
                             <div class="search_bar">
                                 <span id="nav-search-in" class=" nav-facade-active">
                                     <span id="nav-search-in-content" data-value="search-alias=aps">
-                                        Yellow Pages
+                                        <?php echo userdata('searchtext') ? userdata('searchtext') : 'Yellow Pages';  ?>
                                     </span>
                                     <span class="nav-down-arrow nav-sprite"></span>
                                     <select name="search_category" id="searchdropdownbox" class="searchSelect">
@@ -86,7 +86,7 @@
                                 </span>
                                 <?php echo form_open('start/searchresults', array("class" => "form-search", 'data-validate' => 'parsley')); ?>
                                 <div class="nav-searchfield-outer nav-sprite">
-                                    <input type="text" id="twotabsearchtextbox" placeholder="Search..." name="q" data-required="true" placeholder="Search" value="<?php echo (uridata('2') == 'searchresults') ? uridata('3') : '';  ?>" autocomplete="off">
+                                    <input type="text" id="twotabsearchtextbox" placeholder="Search..." name="q" data-required="true"  value="<?php echo (uridata('2') == 'searchresults') ? uridata('3') : '';  ?>" autocomplete="off" />
                                 </div>
                                 <div class="nav-submit-button">
                                     <input type="hidden" name="searchtype" value="<?php echo userdata('searchtype') ? userdata('searchtype') : 'yellowpages';  ?>" />
