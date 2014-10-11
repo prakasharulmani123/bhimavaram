@@ -14,7 +14,7 @@ class News extends CI_Controller {
 		$cityid=userdata('cityid');
 		//pagination
 		$offset=uridata(4) ? uridata(4) : 0;
-		$limit=10;
+		$limit=8;
 		if($slug!='everything')
 		{
 			$category=$this->df->get_single_row('news_categories',array('slug'=>$slug));

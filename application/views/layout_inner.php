@@ -8,20 +8,15 @@
 <body>
 <div class="bhinew-container">
   <div class="bhinew-inner-conatiner">
-  	<div class="bhinew-header">
-    	<?php echo $header; ?>
-    </div>
+    <div class="bhinew-header"> <?php echo $header; ?> </div>
     <div class="bhinew-inncontainer2">
-
-<div class="bhi-bodycont">
-
-<div class="inner-left"> <?php echo $body; ?> </div>
-    
-   <div class="inner-right">  <?php echo $sidebar; ?> </div>
-        </div>
-    </div>
+      <div class="bhi-bodycont">
+        <div class="inner-left"> <?php echo $body; ?> </div>
+        <div class="inner-right"> <?php echo $sidebar; ?> </div>
+      </div>
     </div>
   </div>
+</div>
 <?php
 	echo $footer;
 	echo $footerData;
@@ -38,6 +33,5 @@ ddsmoothmenu.init({
 
 </script>
 </div>
-
 </body>
 </html>
