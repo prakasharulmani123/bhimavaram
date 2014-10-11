@@ -78,7 +78,7 @@
       </div>
       <div class="ad">
         <?php
-		$ads150 = showAds('image', '300', '150', 1, '');
+		$ads150 = showAds('image', '300', '150', 1, 'ad1');
 		echo $ads150;
 		?>
       </div>
