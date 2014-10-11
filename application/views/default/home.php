@@ -127,11 +127,12 @@
       <div class="bhi-tabs-content">
         <ul class="nav nav-tabs">
           <li><a data-toggle="tab" href="#news_tab">News</a> </li>
+          <li><a data-toggle="tab" href="#cinema_tab">Cinema</a></li>
           <li><a data-toggle="tab" href="#events_tab">Events</a></li>
           <li><a data-toggle="tab" href="#deals_tab">Deals</a></li>
           <li><a data-toggle="tab" href="#jobs_tab">Jobs</a> </li>
           <li><a data-toggle="tab" href="#videos_tab">Videos</a></li>
-          <li><a data-toggle="tab" href="#cinema_tab">Cinema</a></li>
+          
         </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="news_tab">
@@ -178,6 +179,22 @@
                     }
                     ?>
               <li class="more-link"><?php echo anchor('news/index', 'More News &nbsp;<i class="icon-circle-arrow-right"></i>'); ?></li>
+            </ul>
+          </div>
+          <div class="tab-pane" id="cinema_tab">
+            <ul id="cinema-news" class="news-list">
+              <?php
+				$pcount = 1;
+				foreach ($content['cinenews'] as $citynews) {
+					if ($pcount < 6) {
+			  ?>
+              	<li><?php echo anchor('news/' . $citynews['slug'], word_limiter($citynews['title'], 5)); ?></li>
+              <?php
+					$pcount++;
+					}
+				}
+		      ?>
+              <li class="more-link"><?php echo anchor('news/index/cinema', 'More News &nbsp;<i class="icon-circle-arrow-right"></i>'); ?></li>
             </ul>
           </div>
           <div class="tab-pane" id="events_tab">
@@ -256,22 +273,7 @@
             </div>
           </div>
           
-          <div class="tab-pane" id="cinema_tab">
-            <ul id="cinema-news" class="news-list">
-              <?php
-				$pcount = 1;
-				foreach ($content['cinenews'] as $citynews) {
-					if ($pcount < 6) {
-			  ?>
-              	<li><?php echo anchor('news/' . $citynews['slug'], word_limiter($citynews['title'], 5)); ?></li>
-              <?php
-					$pcount++;
-					}
-				}
-		      ?>
-              <li class="more-link"><?php echo anchor('news/index/cinema', 'More News &nbsp;<i class="icon-circle-arrow-right"></i>'); ?></li>
-            </ul>
-          </div>
+          
         </div>
       </div>
     </div>
