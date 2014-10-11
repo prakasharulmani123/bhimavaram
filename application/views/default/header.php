@@ -19,7 +19,7 @@
     <?php echo userdata('city'); ?><a href="#change-city" role="button" data-toggle="modal">(Change)</a>
     </div>
     <div class="bhinew-logo-header-ad" id="header-ad-spot">
-      <?php echo showAds('image', '468', '60', '5'); ?>
+      <?php echo showAds('image', '468', '60', '5', 'header_ad'); ?>
     </div>
     <div class="bhinew-profilelink"><?php echo anchor('start/register', 'Create Account'); ?><br/>
      <?php echo anchor('start/signin', 'Sign in'); ?></div>

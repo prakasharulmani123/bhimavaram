@@ -53,7 +53,7 @@ class Start extends CI_Controller {
 		}
 		$data['content']['template']='home';
 		$data['sidebar']=false;
-		$this->layout->publish($data);
+		$this->layout->publish($data, 'layout');
 	}
 	public function register()
 	{

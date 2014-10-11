@@ -27,7 +27,7 @@ class Layout
 	/****************************************************
 	*	Publishes Layout Data							 	*	
 	****************************************************/		
-	function publish($data,$layout = 'layout')
+	function publish($data,$layout = 'layout_inner')
 	{
 	//	print_r($data);
 //		echo array_key_exists('header',$data);

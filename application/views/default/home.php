@@ -48,7 +48,7 @@
                 echo anchor('news/' . $citynews['slug'], '<img src="' . newsPicture($citynews['id']) . '"/>');
                 echo '</div><div class="caption-news">';
                 echo '<div class="caption_title">'.anchor('news/' . $citynews['slug'], word_limiter($citynews['title'], 11)).'</div>';
-                echo '<div class="caption_desc">'.  word_limiter(strip_tags(html_entity_decode($citynews['content'])),50).'</div>';
+                echo '<div class="caption_desc">'.  word_limiter(strip_tags(html_entity_decode($citynews['content'])),30).'</div>';
                 echo '<div class="read_more">'.anchor('news/' . $citynews['slug'], 'Read More >>').'</div>';
                 echo '</div></div>';
             }
@@ -84,6 +84,7 @@
       </div>
     </div>
   </div>
+  <div class="clr"></div>
   <div class="home-left">
     <div class="imp-cont">
       <div class="widget-heading">
@@ -109,7 +110,7 @@
             <div class="carousel-inner">
               <?php foreach($content['movies'] as $x => $movie){ ?>
               <div class="item <?php if($x == 0) echo "active"?>"> <img src="<?php echo $this->settings->uploaderPath().$movie['picture'] ?>" width="204" height="152" alt=""/>
-                <div class="movie-name"> <?php echo anchor('movies/'.$movie['slug'], $movie['name'])?></div>
+                <div class="movie-name"> <?php echo anchor('movies/'.$movie['slug'], word_limiter($movie['name'], 10))?></div>
               </div>
               <?php } ?>
             </div>
