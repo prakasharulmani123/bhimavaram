@@ -82,10 +82,10 @@ jQuery(document).ready(function() {
         var searchType = jQuery(this).val();
         var searchText = jQuery(this).find("option:selected").text();
 //        console.log(searchText);
+		jQuery("#nav-search-in-content").text(searchText);
         jQuery.post(baseUrl + 'index.php/start/setsearch', {type: searchType, text: searchText}, function(data) {
             jQuery('.searchtext').empty().append(searchText + '<b class="caret"></b>');
             jQuery('input[name=searchtype]').val(searchType);
-            jQuery("#nav-search-in-content").text(searchText);
         });
     });
 });
