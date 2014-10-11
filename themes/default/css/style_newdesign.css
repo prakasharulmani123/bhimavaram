@@ -842,3 +842,8 @@ opacity: 0.8;
     left: 0;
 }
 
+
+#sidebar adbox img
+{
+	width:240px !important
+}
