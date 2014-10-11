@@ -349,7 +349,7 @@
         </div>
         <!--/carousel-inner-->
         <div class="clearbig">&nbsp;</div>
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">&nbsp;</a> <a class="right carousel-control" href="#myCarousel" data-slide="next">&nbsp;</a> <a class="class-links right span18" href="#myCarousel" data-slide="next">Browse more ads &nbsp;<i class="icon-circle-arrow-right"></i></a>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">&nbsp;</a> <a class="right carousel-control" href="#myCarousel" data-slide="next">&nbsp;</a> <!--<a class="class-links right span18" href="#myCarousel" data-slide="next">Browse more ads &nbsp;<i class="icon-circle-arrow-right"></i></a>-->
         <?php //echo anchor('classifieds/index','Browse more ads &nbsp;<i class="icon-circle-arrow-right"></i>',array('class'=>'class-links right span18'));   ?>
       </div>
     </div>
