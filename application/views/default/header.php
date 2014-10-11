@@ -90,7 +90,7 @@
                                 </div>
                                 <div class="nav-submit-button">
                                     <input type="hidden" name="searchtype" value="<?php echo userdata('searchtype') ? userdata('searchtype') : 'yellowpages';  ?>" />
-                                    <input type="submit" value="Go" class="nav-submit-input" title="Go">
+                                    <input type="submit" value="" class="nav-submit-input" title="Go">
                                 </div>
                                 </form>
                             </div>
