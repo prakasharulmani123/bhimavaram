@@ -81,7 +81,7 @@ jQuery(document).ready(function() {
     jQuery("#searchdropdownbox").change(function() {
         var searchType = jQuery(this).val();
         var searchText = jQuery(this).find("option:selected").text();
-        console.log(searchText);
+//        console.log(searchText);
         jQuery.post(baseUrl + 'index.php/start/setsearch', {type: searchType, text: searchText}, function(data) {
             jQuery('.searchtext').empty().append(searchText + '<b class="caret"></b>');
             jQuery('input[name=searchtype]').val(searchType);
