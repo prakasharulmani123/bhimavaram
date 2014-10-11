@@ -73,7 +73,7 @@ $itemtype = 'news';
             <!-- Carousel nav -->
         </div>
 
-                <?php echo htmlspecialchars_decode($content['news']['content']); ?>
+                <?php echo trim(htmlspecialchars_decode($content['news']['content'])); ?>
 
 
 
