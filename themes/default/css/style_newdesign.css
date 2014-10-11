@@ -5,187 +5,187 @@
 
 body
 {
-	margin:0px;
-	padding:0px;
-	font-family: 'Open Sans', sans-serif;
-	font-size:12px;
-	line-height:20px;
-	color:#4e4e4e;
+    margin:0px;
+    padding:0px;
+    font-family: 'Open Sans', sans-serif;
+    font-size:12px;
+    line-height:20px;
+    color:#4e4e4e;
 }
 
 img
 {
-	border:none;
-	vertical-align:top;
+    border:none;
+    vertical-align:top;
 }
 
 div, ul, li, h1, h2, h3, h4
 {
-	margin:0px;
-	padding:0px;
+    margin:0px;
+    padding:0px;
 }
 
 .bhinew-container
 {
-	width:1000px;
-	margin:0px auto;
+    width:1000px;
+    margin:0px auto;
 }
 
 .bhinew-inner-conatiner
 {
-	width:100%;
-	float:left;
-	-webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
--moz-box-shadow:    0px 1px 2px 0px rgba(0, 0, 0, 0.5);
-box-shadow:         0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+    width:100%;
+    float:left;
+    -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow:    0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+    box-shadow:         0px 1px 2px 0px rgba(0, 0, 0, 0.5);
 }
 
 .bhinew-header
 {
-	width:100%;
-	float:left;
+    width:100%;
+    float:left;
 }
 
 .bhinew-scroll
 {
-	width:100%;
-	float:left;
-	border-bottom:#79bdee solid 2px;
+    width:100%;
+    float:left;
+    border-bottom:#79bdee solid 2px;
 }
 
 .bhinew-scrollheading
 {
-	width:162px;
-	float:left;
-	color:#FFFFFF;
-	background:url(../images/wishes-headingbg.jpg) no-repeat;
-	height:36px;
-	text-transform:uppercase;
-	text-align:center;
-	font-size:15px;
-	line-height:35px;
+    width:162px;
+    float:left;
+    color:#FFFFFF;
+    background:url(../images/wishes-headingbg.jpg) no-repeat;
+    height:36px;
+    text-transform:uppercase;
+    text-align:center;
+    font-size:15px;
+    line-height:35px;
 }
 
 .bhinew-scrolltxt
 {
-	width:660px;
-	float:left;
-	color:#000000;
-	font-size:15px;
-	line-height:35px;
+    width:660px;
+    float:left;
+    color:#000000;
+    font-size:15px;
+    line-height:35px;
 }
 
 .bhinew-wishbg
 {
-	width:173px;
-	float:right;
-	color:#FFFFFF;
-	background:url(../images/submit-wishbg.png) no-repeat;
-	height:36px;
-	text-align:center;
-	font-size:15px;
-	line-height:35px;
-	text-transform:uppercase;
+    width:173px;
+    float:right;
+    color:#FFFFFF;
+    background:url(../images/submit-wishbg.png) no-repeat;
+    height:36px;
+    text-align:center;
+    font-size:15px;
+    line-height:35px;
+    text-transform:uppercase;
 }
 
 .bhinew-wishbg a
 {
-	color:#FFFFFF;
-	text-decoration:none;
+    color:#FFFFFF;
+    text-decoration:none;
 }
 
 .bhinew-inncontainer2
 {
-	width:970px;
-	margin:0px auto;
+    width:970px;
+    margin:0px auto;
 }
 
 
 .bhinew-logo
 {
-	width:261px;
-	float:left;
-	margin:15px 0px 0px 0px;
-	text-align:right;
-	line-height:22px;
+    width:261px;
+    float:left;
+    margin:15px 0px 0px 0px;
+    text-align:right;
+    line-height:22px;
 }
 
 .bhinew-logo a
 {
-	color:#4e4e4e;
-	text-decoration:none;
+    color:#4e4e4e;
+    text-decoration:none;
 }
 
 .bhinew-logo a:hover
 {
-	text-decoration:underline;
+    text-decoration:underline;
 }
 
 .bhinew-logo-header-ad
 {
-	width:auto;
-	float:left;
-	margin:15px 0px 15px 55px;
+    width:auto;
+    float:left;
+    margin:15px 0px 15px 55px;
 }
 
 .bhinew-profilelink
 {
-	width:160px;
-	float:right;
-	text-align:center;
-	font-size:15px;
-	margin:25px 0px 0px 0px;
+    width:160px;
+    float:right;
+    text-align:center;
+    font-size:15px;
+    margin:25px 0px 0px 0px;
 }
 
 .bhinew-profilelink a
 {
-	color:#4e4e4e;
-	text-decoration:none;	
+    color:#4e4e4e;
+    text-decoration:none;	
 }
 
 .bhinew-profilelink a:hover
 {
-	color:#000000;
-	text-decoration:underline;
+    color:#000000;
+    text-decoration:underline;
 }
 
 .bhi-menucont
 {
-	width:970px;
-	float:left;
-	margin:15px 0px 0px 0px;
+    width:970px;
+    float:left;
+    margin:15px 0px 0px 0px;
 }
 
 .bhi-menuleft
 {
-	width:10px;
-	float:left;
-	background:url(../images/menu-left.png) no-repeat;
-	height:41px;
+    width:10px;
+    float:left;
+    background:url(../images/menu-left.png) no-repeat;
+    height:41px;
 }
 
 .bhi-menubg
 {
-	width:950px;
-	float:left;
-	background:url(../images/menubg.jpg) repeat-x;
-	height:41px;
+    width:950px;
+    float:left;
+    background:url(../images/menubg.jpg) repeat-x;
+    height:41px;
 }
 
 
 .bhi-menuright
 {
-	width:10px;
-	float:left;
-	background:url(../images/menu-right.png) no-repeat;
-	height:41px;
+    width:10px;
+    float:left;
+    background:url(../images/menu-right.png) no-repeat;
+    height:41px;
 }
 
 
 .bhi-menu
 {
-	width:950px;
-	float:left;
+    width:950px;
+    float:left;
 }
 
 /*-----------drop down-----------*/
@@ -193,36 +193,36 @@ box-shadow:         0px 1px 2px 0px rgba(0, 0, 0, 0.5);
 
 .ddsmoothmenu
 {
-	width:100%;
-	float:left;
-	height:49px;
-	margin:0px 0px 0px 0px;
-	
+    width:100%;
+    float:left;
+    height:49px;
+    margin:0px 0px 0px 0px;
+
 }
 
 .ddsmoothmenu ul
 {
-z-index:100;
-margin: 0;
-padding: 0;
-list-style-type: none;
+    z-index:100;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
 .ddsmoothmenu ul li
 {
-list-style:none;
-float:left;
-display:inline;
-color:#FFFFFF;
-font-size:13px;
-padding:0px 0px 0px 0px;
-text-transform:uppercase;
-position: relative;
-display: inline;
-height:41px;
-float: left;
-line-height:41px;
-border-right:#ffffff solid 1px;
+    list-style:none;
+    float:left;
+    display:inline;
+    color:#FFFFFF;
+    font-size:13px;
+    padding:0px 0px 0px 0px;
+    text-transform:uppercase;
+    position: relative;
+    display: inline;
+    height:41px;
+    float: left;
+    line-height:41px;
+    border-right:#ffffff solid 1px;
 }
 
 .ddsmoothmenu ul li:last-child
@@ -231,95 +231,95 @@ border-right:#ffffff solid 1px;
 
 .ddsmoothmenu ul li a
 {
-	padding:0px 10px 0px 10px;
-	color:#ffffff;
-	display:block;
-	float:left;
-	height:41px;
-	text-decoration:none;
+    padding:0px 10px 0px 10px;
+    color:#ffffff;
+    display:block;
+    float:left;
+    height:41px;
+    text-decoration:none;
 
 }
 
 
 
 * html .ddsmoothmenu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
-display: inline-block;
+    display: inline-block;
 }
 
 .ddsmoothmenu ul li a:link, .ddsmoothmenu ul li a:visited{
-color: #ffffff;
+    color: #ffffff;
 }
 
 .ddsmoothmenu ul li a.selected{ /*CSS class that's dynamically added to the currently active menu items' LI A element*/
-color: #ffffff ;
-background:#e43333;
+    color: #ffffff ;
+    background:#e43333;
 
 }
 
 .ddsmoothmenu ul li a:hover{
 
-color: #ffffff;
-background:#e43333;
+    color: #ffffff;
+    background:#e43333;
 }
 
 /*.active
 {color: #ffffff !important;
 background:#e43333 !important;
 }*/
-	
+
 /*1st sub level menu*/
 .ddsmoothmenu ul li ul{
-position: absolute;
-left: 0;
-display: none; /*collapse all sub menus to begin with*/
-visibility: hidden;
--webkit-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.9);
--moz-box-shadow:    0px 2px 5px 0px rgba(50, 50, 50, 0.9);
-box-shadow:         0px 2px 5px 0px rgba(50, 50, 50, 0.9);
+    position: absolute;
+    left: 0;
+    display: none; /*collapse all sub menus to begin with*/
+    visibility: hidden;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.9);
+    -moz-box-shadow:    0px 2px 5px 0px rgba(50, 50, 50, 0.9);
+    box-shadow:         0px 2px 5px 0px rgba(50, 50, 50, 0.9);
 }
 
 /*Sub level menu list items (undo style from Top level List Items)*/
 .ddsmoothmenu ul li ul li{
-display: list-item;
-float: none;
-height:40px;
-font-size:13px;
-background:none;
-border-right:none;
-text-transform:capitalize;
-line-height:40px !important;
-text-transform:uppercase;
+    display: list-item;
+    float: none;
+    height:40px;
+    font-size:13px;
+    background:none;
+    border-right:none;
+    text-transform:capitalize;
+    line-height:40px !important;
+    text-transform:uppercase;
 }
 
 /*All subsequent sub menu levels vertical offset after 1st level sub menu */
 .ddsmoothmenu ul li ul li ul{
-top: 0;
+    top: 0;
 }
 
 /* Sub level menu links style */
 .ddsmoothmenu ul li ul li a{
 
-width: 160px; /*width of sub menus*/
-margin: 0;
-color:#ffffff !important;
-border-top-width: 0;
-background:#e43333;
-height:40px;
-border-bottom: 1px solid #ffffff;
+    width: 160px; /*width of sub menus*/
+    margin: 0;
+    color:#ffffff !important;
+    border-top-width: 0;
+    background:#e43333;
+    height:40px;
+    border-bottom: 1px solid #ffffff;
 }
 
 .ddsmoothmenu ul li ul li a:hover
 {
-	border-bottom: 1px dotted #ffffff;
-	background:none;
-	background:#eaeaea;
+    border-bottom: 1px dotted #ffffff;
+    background:none;
+    background:#eaeaea;
 }
 
 .ddsmoothmenu ul li ul li  a.selected{ /*CSS class that's dynamically added to the currently active menu items' LI A element*/
-color: #ffffff;
-background:#e43333;
-color:#FFFFFF ;
-border-bottom: 1px dotted #ffffff;
+    color: #ffffff;
+    background:#e43333;
+    color:#FFFFFF ;
+    border-bottom: 1px dotted #ffffff;
 }
 
 /* Holly Hack for IE \*/
@@ -329,10 +329,10 @@ border-bottom: 1px dotted #ffffff;
 /* ######### CSS classes applied to down and right arrow images  ######### */
 
 .downarrowclass{
-position: absolute;
-top: 20px;
-right: 7px;
-display:none;
+    position: absolute;
+    top: 20px;
+    right: 7px;
+    display:none;
 }
 
 
@@ -340,387 +340,387 @@ display:none;
 /* ######### CSS for shadow added to sub menus  ######### */
 
 .ddshadow{ /*shadow for NON CSS3 capable browsers*/
-position: absolute;
-left: 0;
-top: 0;
-width: 0;
-height: 0;
-background:000000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    background:000000;
 }
 
 .toplevelshadow{ /*shadow opacity for NON CSS3 capable browsers. Doesn't work in IE*/
-opacity: 0.8;
+    opacity: 0.8;
 }
 
 
 
 .search-field
 {
-	width:280px;
-	float:left;
+    width:280px;
+    float:left;
 }
 
 .bhi-sponser
 {
-	width:850px;
-	float:left;
-	background:#f4f4f4;
-	border:#e1e1e1 solid 1px;
-	padding:5px;
-	font-size:14px;
-	margin:15px 0px 0px 0px;
-	color:#b60000;
+    width:850px;
+    float:left;
+    background:#f4f4f4;
+    border:#e1e1e1 solid 1px;
+    padding:5px;
+    font-size:14px;
+    margin:15px 0px 0px 0px;
+    color:#b60000;
 }
 
 .bhi-sponser span
 {
-	color:#000000;
+    color:#000000;
 }
 
 .bhi-social {
-  float: right;
-  margin: 20px 0 0;
-  width: 154px;
-  text-align: center;
+    float: right;
+    margin: 20px 0 0;
+    width: 154px;
+    text-align: center;
 }
 
 .search-menu-holder
 {
-	height:30px !important;
-	float:left !important;
+    height:30px !important;
+    float:left !important;
 }
 
 
 .bhi-bodycont
 {
-	width:100%;
-	float:left;
-	margin:0px 0px 0px 0px;
+    width:100%;
+    float:left;
+    margin:0px 0px 0px 0px;
 }
 
 .bhi-topscroll
 {
-	width:107%;
-	float:left;
-	margin:0px 0px 0px -15px;
+    width:107%;
+    float:left;
+    margin:0px 0px 0px -15px;
 }
 
 .topad
 {
-	width:300px;
-	float:left;
-	margin:0px 17px 0px 16px;
+    width:300px;
+    float:left;
+    margin:0px 17px 0px 16px;
 }
 
 .slider
 {
-	width:700px;
-	float:left;
-	margin:25px 0px 0px 0px;
+    width:700px;
+    float:left;
+    margin:25px 0px 0px 0px;
 }
 
 .slider-right
 {
-	width:240px;
-	float:right;
+    width:240px;
+    float:right;
 }
 
 .bhi-videocont
 {
-	width:100%;
-	float:left;
-	margin:22px 0px 0px 0px;
+    width:100%;
+    float:left;
+    margin:22px 0px 0px 0px;
 }
 
 .widget-heading
 {
-	width:100%;
-	float:left;
-	background:url(../images/border.jpg) bottom repeat-x;
+    width:100%;
+    float:left;
+    background:url(../images/border.jpg) bottom repeat-x;
 
-	color:#156eaf;
-	
-	padding:0px 0px 12px 0px;
+    color:#156eaf;
+
+    padding:0px 0px 12px 0px;
 }
 
 .widget-heading h2,.widget-heading h1
 {
-		font-size:15px;
-		font-weight:normal;
-		color:#156eaf;
-		float:left !important;
-		line-height:20px;
+    font-size:15px;
+    font-weight:normal;
+    color:#156eaf;
+    float:left !important;
+    line-height:20px;
 }
 
 .widget-heading a
 {
-	float:right;
-	background:url(../images/icon.png) right no-repeat;
-	color:#156eaf;
-	text-decoration:none;
-	padding-right:10px;
-	font-size:14px;
+    float:right;
+    background:url(../images/icon.png) right no-repeat;
+    color:#156eaf;
+    text-decoration:none;
+    padding-right:10px;
+    font-size:14px;
 }
 
 .widget-content
 {
-	width:100%;
-	float:left;
-	margin:5px 0px 0px 0px;
+    width:100%;
+    float:left;
+    margin:5px 0px 0px 0px;
 }
 
 .ad
 {
-	width:100%;
-	float:left;
-	margin:7px 0px 0px 0px;
-	border-top:#ca0000 solid 3px;
-	padding:10px 0px 0px 0px;
+    width:100%;
+    float:left;
+    margin:7px 0px 0px 0px;
+    border-top:#ca0000 solid 3px;
+    padding:10px 0px 0px 0px;
 }
 
 .ad1 img
 {
-	height:107px !important;
+    height:107px !important;
 }
 
 .home-left
 {
-	width:230px;
-	float:left;
-	margin:20px 0px 0px 0px;
+    width:230px;
+    float:left;
+    margin:20px 0px 0px 0px;
 }
 
 .imp-cont
 {
-	width:230px;
-	float:left;
-	margin-bottom:15px;
+    width:230px;
+    float:left;
+    margin-bottom:15px;
 }
 
 .imp-bg
 {
-	width:210px;
-	float:left;
-	background:#ebebeb;
-	padding:10px;
-	margin:5px 0px 0px 0px;
+    width:210px;
+    float:left;
+    background:#ebebeb;
+    padding:10px;
+    margin:5px 0px 0px 0px;
 }
 
 .imp-bg ul
 {
-	margin:0px;
-	padding:px;
+    margin:0px;
+    padding:px;
 }
 
 .imp-bg ul li
 {
-	list-style:none;
-	color:#2e2e2e;
-	padding:2px 0px 2px 0px;
-	font-size:14px;
+    list-style:none;
+    color:#2e2e2e;
+    padding:2px 0px 2px 0px;
+    font-size:14px;
 }
 
 .moviescroll
 {
-	width:230px;
-	float:left;
+    width:230px;
+    float:left;
 }
 
 .movie-thumb
 {
-	width:204px;
-	margin:10px auto;
+    width:204px;
+    margin:10px auto;
 }
 
 
 .movie-name
 {
-	width:194px;
-	background:#156eaf;
-	padding:5px;
-	text-align:center;
-	font-size:20px;
+    width:194px;
+    background:#156eaf;
+    padding:5px;
+    text-align:center;
+    font-size:20px;
 }
 
 .movie-name a
 {
-	color:#FFFFFF;
-	text-decoration:none;
+    color:#FFFFFF;
+    text-decoration:none;
 }
 
 .home-right
 {
-	width:710px;
-	float:right;
+    width:710px;
+    float:right;
 }
 
 .bhi-tabs-cont
 {
-	width:436px;
-	float:left;
-	margin:20px 0px 0px 0px;
+    width:436px;
+    float:left;
+    margin:20px 0px 0px 0px;
 }
 
 .bhi-tabs-content
 {
-	width:100%;
-	float:left;
-	margin:10px 0px 0px 0px;
-	font-size:13px;
+    width:100%;
+    float:left;
+    margin:10px 0px 0px 0px;
+    font-size:13px;
 }
 
 .bhi-tabs-content a
 {
-	color:#156eaf;
-	font-weight:bold;
-	text-decoration:none;
-	font-size:17px;
-	margin-bottom:0px;
+    color:#156eaf;
+    font-weight:bold;
+    text-decoration:none;
+    font-size:17px;
+    margin-bottom:0px;
 }
 
 .bhi-tabs-content li a
 {
-	font-weight:normal;
-	font-size:15px !important;
+    font-weight:normal;
+    font-size:15px !important;
 }
 
 .bhi-tabs-content a:hover
 {
-	text-decoration:underline;
+    text-decoration:underline;
 }
 
 .news-thumb
 {
-	width:127px;
-	float:left;
+    width:127px;
+    float:left;
 }
 
 .tabsmall-content
 {
-	width:300px;
-	float:right;
-	border-bottom:#000000 dotted 1px;
-	padding-bottom:10px;
-	min-height:98px;
-	margin-bottom:15px;
+    width:300px;
+    float:right;
+    border-bottom:#000000 dotted 1px;
+    padding-bottom:10px;
+    min-height:98px;
+    margin-bottom:15px;
 }
 .bhi-tabs-content ul
 {
-	margin:0px 0px 0px 0px;
-	padding:0px;
+    margin:0px 0px 0px 0px;
+    padding:0px;
 }
 
 .bhi-tabs-content ul li
 {
-	list-style:none;
-	background:url(../images/icon2.jpg) 0px 6px no-repeat;
-	padding:0px 0px 2px 10px;
-	color:#4e4e4e;
-	font-size:13px;
+    list-style:none;
+    background:url(../images/icon2.jpg) 0px 6px no-repeat;
+    padding:0px 0px 2px 10px;
+    color:#4e4e4e;
+    font-size:13px;
 }
 
 .bhi-tabs-content ul li a
 {
-	color:#4e4e4e;
-	font-size:13px;
+    color:#4e4e4e;
+    font-size:13px;
 }
 
 .clr
 {
-	clear:both;
+    clear:both;
 }
 
 .adpart2
 {
-	width:240px;
-	float:right;
+    width:240px;
+    float:right;
 }
 
 .bhi-scrollad
 {
-	width:100%;
-	float:left;
-	margin:10px 0px 0px 0px;
+    width:100%;
+    float:left;
+    margin:10px 0px 0px 0px;
 }
 
 
 .recent-classified
 {
-	width:100%;
-	float:left;
-	margin-bottom:25px;
+    width:100%;
+    float:left;
+    margin-bottom:25px;
 }
 
 .recent-classified-bg
 {
-	width:96%;
-	float:left;
-	background:#ebebeb;
-	padding:0.5% 2%;
-	margin:5px 0px 0px 0px;
+    width:96%;
+    float:left;
+    background:#ebebeb;
+    padding:0.5% 2%;
+    margin:5px 0px 0px 0px;
 }
 
 .bhi-footer
 {
-	width:100%;
-	float:left;
-	background:#156eaf;
-	color:#FFFFFF;
-	font-size:15px;
+    width:100%;
+    float:left;
+    background:#156eaf;
+    color:#FFFFFF;
+    font-size:15px;
 }
 
 .bhi-footerrow1
 {
-	width:94%;
-	float:left;
-	padding:20px 3%;
+    width:94%;
+    float:left;
+    padding:20px 3%;
 }
 
 .bhi-footerrow1 a{
-	color:#FFFFFF;
+    color:#FFFFFF;
 }
 
 .bhi-footerlinks
 {
-	width:100%;
-	float:left;
-	margin:10px 0px 0px 0px;
-	border-top:#FFFFFF dotted 1px;
-	padding:10px 0px 10px 0px;
+    width:100%;
+    float:left;
+    margin:10px 0px 0px 0px;
+    border-top:#FFFFFF dotted 1px;
+    padding:10px 0px 10px 0px;
 }
 
 .bhi-footerlinks ul
 {
-	margin:0px;
-	float:left;
+    margin:0px;
+    float:left;
 }
 
 .bhi-footerlinks strong
 {
-	float:left;
-	padding-right:25px;
+    float:left;
+    padding-right:25px;
 }
 
 .bhi-footerlinks ul li
 {
-	list-style:none;
-	float:left;
-	padding:0px 10px 0px 10px;
+    list-style:none;
+    float:left;
+    padding:0px 10px 0px 10px;
 }
 
 .copyright
 {
-	width:98%;
-	float:left;
-	background:#0060a6;
-	padding:1%;
+    width:98%;
+    float:left;
+    background:#0060a6;
+    padding:1%;
 }
 
 .shadow
 {
-	width:100%;
-	float:left;
-	text-align:center;
+    width:100%;
+    float:left;
+    text-align:center;
 }
 
 
@@ -731,7 +731,7 @@ opacity: 0.8;
 }
 
 #latest_movie img{
-	height:152px !important;
+    height:152px !important;
 }
 
 
@@ -741,27 +741,27 @@ opacity: 0.8;
 
 .bhi-videocont img
 {
-	height:140px;
+    height:140px;
 }
 
 
 .news-thumb img
 {
-	width:127px;
-	height:112px;
+    width:127px;
+    height:112px;
 }
 
 .tabsmall-content p
 {
-	padding:10px 0px 0px 0px;
-	line-height:18px;
-	font-size:14px;
+    padding:10px 0px 0px 0px;
+    line-height:18px;
+    font-size:14px;
 }
 
 .recent-classified-bg li {
-	margin: 13px 8px;
-	padding: 0px 10px;
-	padding-top:15px;
+    margin: 13px 8px;
+    padding: 0px 10px;
+    padding-top:15px;
 }
 
 
@@ -786,57 +786,57 @@ opacity: 0.8;
 }
 
 .content-inner {
-  float: left;
-  margin: 25px 0 0;
-  width: 700px;
+    float: left;
+    margin: 25px 0 0;
+    width: 700px;
 }
 
 .content-sidebar {
-  float: right;
-  width: 240px;
+    float: right;
+    width: 240px;
 }
 
 .header_ad img
 {
-	height:60px;
+    height:60px;
 }
 
 /*Home page movie vertical slide*/
 .vertical .carousel-inner {
-  height: 100%;
+    height: 100%;
 }
 
 .carousel.vertical .item {
-  -webkit-transition: 0.6s ease-in-out top;
-     -moz-transition: 0.6s ease-in-out top;
-      -ms-transition: 0.6s ease-in-out top;
-       -o-transition: 0.6s ease-in-out top;
-          transition: 0.6s ease-in-out top;
+    -webkit-transition: 0.6s ease-in-out top;
+    -moz-transition: 0.6s ease-in-out top;
+    -ms-transition: 0.6s ease-in-out top;
+    -o-transition: 0.6s ease-in-out top;
+    transition: 0.6s ease-in-out top;
 }
 
 .carousel.vertical .active {
-  top: 0;
+    top: 0;
 }
 
 .carousel.vertical .next {
-  top: 400px;
+    top: 400px;
 }
 
 .carousel.vertical .prev {
-  top: -400px;
+    top: -400px;
 }
 
 .carousel.vertical .next.left,
 .carousel.vertical .prev.right {
-  top: 0;
+    top: 0;
 }
 
 .carousel.vertical .active.left {
-  top: -400px;
+    top: -400px;
 }
 
 .carousel.vertical .active.right {
-  top: 400px;
+    top: 400px;
 }
 
 .carousel.vertical .item {
@@ -855,30 +855,129 @@ opacity: 0.8;
 
 .inner-left
 {
-	margin:0px 20px 0px 0px;
-	 width:700px;
-	  float:left;
+    margin:0px 20px 0px 0px;
+    width:700px;
+    float:left;
 }
 
 
 
 .inner-right
 {
-	margin:0px 0px 0px 0px; 
-	width:250px; 
-	float:left;
+    margin:0px 0px 0px 0px; 
+    width:250px; 
+    float:left;
 }
 
 .classified_link
 {
-	text-align:center;
-	width:100%;
-	float:left;
-	margin:10px 0px 0px 0px;
+    text-align:center;
+    width:100%;
+    float:left;
+    margin:10px 0px 0px 0px;
 }
 
 
 .classified-holder img
 {
-	height:83px !important;
+    height:83px !important;
+}
+
+.ddsmoothmenu ul li.search-menu{
+    float: right;
+}
+.search_bar {
+    float: right;
+    width: 300px;
+    height: 30px; 
+    margin-top: 4px; 
+    background-color: #fff;
+     border: 1px solid #ccc;
+}
+
+#nav-search-in {
+    float: left;
+    width: 100px;
+}
+#nav-search-in #nav-search-in-content {
+    color: #777777;
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    text-indent: 1px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+    width: 70px; 
+    overflow: visible;
+    font-size: 12px;
+}
+#nav-search-in.nav-facade-active .nav-down-arrow {
+  background: url("../img/search_arrow.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  display: inline-block;
+  height: 5px;
+  position: absolute;
+  top: 20px;
+  width: 9px;
+  margin-left: 5px;
+}
+.nav-facade-active #searchdropdownbox {
+    cursor: pointer;
+    height: 29px;
+    left: 0;
+    opacity: 0;
+    top: 0;
+    visibility: visible;
+    width: 100px;
+}
+#searchdropdownbox {
+    background: none repeat scroll 0 0 white;
+    border: 1px solid #dddddd;
+    color: black;
+
+    left: 5px;
+    margin: 0;
+    outline: medium none;
+    padding: 0;
+    position: absolute;
+    top: 3px;
+    visibility: hidden;
+    width: 190px;
+}
+.nav-searchfield-outer {
+    float: left;
+    height: 30px;
+    width: 158px;
+    border-left: 1px solid #ccc;
+    padding-left: 5px;
+}
+#twotabsearchtextbox {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    box-shadow: none;
+    color: #333;
+    float: left;
+    height: 17px;
+    margin: 6px 0 0;
+    outline: medium none;
+    padding: 0;
+    width: 68%;
+}
+.nav-submit-button {
+    background: url("../img/go_bttn.png") no-repeat;
+    height: 27px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 0 0 3px;
+}
+.nav-submit-button .nav-submit-input {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    color: white;
+    cursor: pointer;
+    height: 28px;
+    line-height: 15px;
+    margin: 0;
+    padding: 0;
+    width: 34px;
 }

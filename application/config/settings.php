@@ -5,7 +5,7 @@
 ************************************************************/
 //Path to Assets
 //$config['baseUrl']				= 'http://maaswarnandhra.com/';
-$config['baseUrl']				= 'http://localhost/bhimavaram/branches/testing/';
+$config['baseUrl']				= 'http://localhost/bhimavaram/branches/testing_newdesign/';
 $config['imgPath']				= 'img/';
 $config['stylePath']				= 'css/';
 $config['scriptPath']			= 'js/';
