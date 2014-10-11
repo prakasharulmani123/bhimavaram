@@ -5,7 +5,7 @@
 #categories-list li.active a{ color:#FFF; font-weight:bold;}
 #news-list{ padding-left:10px; margin-right:-40px;}
 #news-list h1{ line-height:100%; padding:0px 0 10px 0 ; margin:0; border-bottom:#CCC 1px dotted;}
-#listings{ margin:20px 0 20px 10px;}
+#listings{ margin:20px 0 20px 10px; float:left; width:96%}
 #listings li{display:block; padding:20px 0; border-bottom:#EEE 1px solid; box-shadow:0px 2px 3px #EEE}
 #listings li h3{ line-height:100%; margin:0px; font-size:16px; text-shadow:0 0 0 #FFF; margin-bottom:7px;}
 #listings .listing-details{  margin-left:10px; margin-right:-20px;}

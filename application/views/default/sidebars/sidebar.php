@@ -1,4 +1,4 @@
-<div class="span6 pull-right" id="sidebar">
+<div class="span5 pull-right" id="sidebar">
 	<?php if($content['single_page'])
 	{
 		?>

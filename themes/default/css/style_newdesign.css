@@ -845,5 +845,26 @@ opacity: 0.8;
 
 #sidebar .adbox img
 {
-	width:240px !important
 }
+
+#sidebar .adbox {
+    margin:0px 0px 15px 0px !important;
+}
+
+
+.inner-left
+{
+	margin:0px 20px 0px 0px;
+	 width:700px;
+	  float:left;
+}
+
+
+
+.inner-right
+{
+	margin:0px 0px 0px 0px; 
+	width:250px; 
+	float:left;
+}
+
