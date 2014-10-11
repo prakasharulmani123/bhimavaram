@@ -383,7 +383,7 @@ if ( ! function_exists('showAds'))
 					{
 						$attrs['target']='_blank';
 					}
-					$output.=anchor('ads/show/'.$ad['id'],showAvatar($ad['picture'],$ad['title'],array('style'=>'width:'.$ad['width'].'px;height:'.$ad['height'].'px')),$attrs);
+					$output.=anchor('ads/show/'.$ad['id'],showAvatar($ad['picture'],$ad['title'],array('width'=>$ad['width'],'height'=>$ad['height'])),$attrs);
 					$adid=$ad['id'];
 					$CI->db->simple_query("update ads set impressions=impressions+1 where id='$adid'");
 					$loopcnt++;
