@@ -227,11 +227,12 @@ div, ul, li, h1, h2, h3, h4
 
 .ddsmoothmenu ul li:last-child
 {
+	border:none;
 }
 
 .ddsmoothmenu ul li a
 {
-    padding:0px 10px 0px 10px;
+    padding:0px 13px 0px 13px;
     color:#ffffff;
     display:block;
     float:left;
@@ -474,7 +475,7 @@ background:#e43333 !important;
     width:100%;
     float:left;
     margin:7px 0px 0px 0px;
-    border-top:#ca0000 solid 3px;
+    border-top:#ca0000 solid 2px;
     padding:10px 0px 0px 0px;
 }
 
@@ -900,7 +901,7 @@ background:#e43333 !important;
     width: 100px;
 }
 #nav-search-in #nav-search-in-content {
-    color: #777777;
+    color: #156eb0;
     display: inline-block;
     height: 32px;
     line-height: 32px;
@@ -911,6 +912,7 @@ background:#e43333 !important;
     width: 70px; 
     overflow: visible;
     font-size: 12px;
+	padding-left:10px;
 }
 #nav-search-in.nav-facade-active .nav-down-arrow {
   background: url("../img/search_arrow.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
@@ -965,8 +967,8 @@ background:#e43333 !important;
 }
 .nav-submit-button {
     background: url("../img/go_bttn.png") no-repeat;
-    height: 27px;
-    margin: 0;
+    height: 30px;
+    margin: 0px 0px 0px 0px;
     overflow: hidden;
     padding: 0 0 0 3px;
 }
