@@ -29,7 +29,8 @@
 
 <div class="clearfix">&nbsp;</div>
 
-<ul class="span3 pull-left" id="categories-list">
+<div class="span3">
+<ul class="pull-left" id="categories-list">
     <li <?php if (!uridata('3')) {
     echo ' class="active" ';
 } ?>><?php echo anchor('news/index', 'Everything'); ?></li>
@@ -43,6 +44,13 @@
     }
     ?>
 </ul><!--Categories-List Ends-->
+<div>
+<?php
+$ads150 = showAds('image', '175', '60', 4, 'adbox');
+echo $ads150;
+?>
+</div>
+</div>
 <div id="news-list" class="span10 pull-left">
     <div class=" widget-heading">
         <h1>News : <?php if (!uridata('3')) {
