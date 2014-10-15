@@ -68,7 +68,7 @@
                                 <li><?php echo anchor('areas/index', 'Area Information'); ?></li>
                             </ul>
                         </li>   
-                        <li class="search-menu">
+                        <li class="search-menu" style="border-right:none;">
                             <div class="search_bar">
                                 <span id="nav-search-in" class=" nav-facade-active">
                                     <span id="nav-search-in-content" data-value="search-alias=aps">

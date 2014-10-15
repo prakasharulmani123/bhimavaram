@@ -76,7 +76,7 @@ jQuery(function() {
 	});
 	
 	jQuery('.tab-content .carousel').carousel({
-        interval: 8000,
+        interval: 9000,
         cycle: true
     })
 	
