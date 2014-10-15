@@ -1,7 +1,7 @@
 <div class="bhi-topscroll">
     <div class="carousel" id="executive_ads" data-ride="carousel">
       <div class="carousel-inner">
-        <?php $executive_ads = showAdsInArray('image', '300', '60', 15, 'span6'); ?>
+        <?php $executive_ads = showAdsInArray('image', '600', '90', 15, 'span6'); ?>
         <div class="item active ads300">
           <?php
                 $initial_executive_ads_count = 0;
@@ -14,7 +14,7 @@
                     echo $executive_ad;
 					echo '</div>';
 					
-                    if ($initial_executive_ads_count % 2 == 0) {
+                    if ($initial_executive_ads_count % 1 == 0) {
                         if ($executive_ads_count > $initial_executive_ads_count) {
                             echo '</div>';
                             echo '<div class="item ads300">';

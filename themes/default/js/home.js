@@ -55,11 +55,6 @@ jQuery(function() {
 
     jQuery(".timeago").timeago();
 
-    jQuery('#executive_ads').carousel({
-        interval: 4000,
-        cycle: true,
-    });
-	
 	jQuery("#jumbtron_carousel").carousel({
 		interval: 5000,
 		cycle: true	

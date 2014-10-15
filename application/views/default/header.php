@@ -21,6 +21,7 @@
     <div class="bhinew-logo-header-ad" id="header-ad-spot">
         <?php echo showAds('image', '468', '60', '5', 'header_ad'); ?>
     </div>
+    <div class="jaithra-logo"> <img src="<?php echo $this->settings->baseUrl(); ?>themes/default/images/jaithra.png" width="150" height="59" alt=""></div>
     <div class="bhinew-profilelink"><?php echo anchor('start/register', 'Create Account'); ?><br/>
         <?php echo anchor('start/signin', 'Sign in'); ?></div>
     <div class="bhi-menucont">

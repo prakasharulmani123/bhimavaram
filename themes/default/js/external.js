@@ -11,4 +11,9 @@ jQuery(document).ready(function(){
 		 	cycle:true,
 	});
 	
+	jQuery('#executive_ads').carousel({
+        interval: 4000,
+        cycle: true,
+    });
+	
 });
