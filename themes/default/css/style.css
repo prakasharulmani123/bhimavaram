@@ -691,7 +691,7 @@ ul.nav-tabs li
 ul.nav-tabs li a
 {
 	
-	font-weight:normal !important;
+	font-weight:bold !important;
 	padding:0px 10px 0px 10px !important;
 }
 
@@ -707,4 +707,5 @@ ul.nav-tabs li a
 .ad img
 {
 	height:105px;
+	width:241px;
 }
