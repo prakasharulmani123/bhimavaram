@@ -181,6 +181,7 @@
               <li class="more-link"><?php echo anchor('news/index', 'More News &nbsp;<i class="icon-circle-arrow-right"></i>'); ?></li>
             </ul>
           </div>
+          
           <div class="tab-pane" id="cinema_tab">
             <ul id="cinema-news" class="news-list">
               <?php
@@ -197,6 +198,7 @@
               <li class="more-link"><?php echo anchor('news/index/cinema', 'More News &nbsp;<i class="icon-circle-arrow-right"></i>'); ?></li>
             </ul>
           </div>
+          
           <div class="tab-pane" id="events_tab">
             <ul id="events" class="news-list">
               <?php
@@ -273,14 +275,13 @@
             </div>
           </div>
           
-          
         </div>
       </div>
     </div>
     
     <div class="adpart2">
       <?php
-		$ads150_another = showAds('image', '300', '150', 2, '');
+		$ads150_another = showAds('image', '300', '150', 3, '');
 	
 		$adsList_another = explode('<a ', $ads150_another);
 		foreach ($adsList_another as $ad_another) {

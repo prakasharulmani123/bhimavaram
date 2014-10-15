@@ -55,15 +55,6 @@ jQuery(function() {
 
     jQuery(".timeago").timeago();
 
-    jQuery('.news-list .carousel').carousel({
-        interval: 4000,
-        cycle: true
-    })
-
-    jQuery('#photocarousel').carousel({
-        cycle: false,
-    });
-
     jQuery('#executive_ads').carousel({
         interval: 4000,
         cycle: true,
@@ -83,6 +74,15 @@ jQuery(function() {
 		interval: 7000,
 		cycle: true	
 	});
+	
+	jQuery('.tab-content .carousel').carousel({
+        interval: 8000,
+        cycle: true
+    })
+	
+	/*jQuery('#photocarousel').carousel({
+        cycle: false,
+    });*/
 	
 	
 });//jQuery Ends
