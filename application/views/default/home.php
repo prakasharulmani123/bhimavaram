@@ -110,7 +110,7 @@
             <div class="carousel-inner">
             <marquee direction="up" behavior="scroll" style="overflow: hidden;">
               <?php foreach($content['movies'] as $x => $movie){ ?>
-              <div class="item <?php if($x == 0) echo "active"?>"> <img src="<?php echo $this->settings->uploaderPath().$movie['picture'] ?>" width="204" height="152" alt=""/>
+              <div class="item <?php if($x == 0) echo "active"?>" movie_thumb> <img src="<?php echo $this->settings->uploaderPath().$movie['picture'] ?>" width="204" height="152" alt=""/>
                 <div class="movie-name"> <?php echo anchor('movies/'.$movie['slug'], word_limiter($movie['name'], 10))?></div>
               </div>
               <?php } ?>
