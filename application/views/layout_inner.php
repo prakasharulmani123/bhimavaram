@@ -8,7 +8,9 @@
 <body>
 <div class="bhinew-container">
   <div class="bhinew-inner-conatiner">
-    <div class="bhinew-header"> <?php echo $header; ?> </div>
+    <div class="bhinew-header">
+      <div class="bhinew-inncontainer2"><?php echo $header; ?></div> 
+    </div>
     <div class="bhinew-inncontainer2">
       <div class="bhi-bodycont">
         <div class="inner-left"> <?php echo $body; ?> </div>

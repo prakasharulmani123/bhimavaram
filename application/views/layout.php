@@ -10,7 +10,9 @@
 <div class="bhinew-container">
   <div class="bhinew-inner-conatiner">
   	<div class="bhinew-header">
-    <?php echo $header; ?>
+      <div class="bhinew-inncontainer2">
+        <?php echo $header; ?>
+      </div>
     <?php echo $body; ?>
     </div>
     <?php echo $sidebar; ?>
