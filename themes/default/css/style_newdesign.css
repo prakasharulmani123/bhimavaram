@@ -733,6 +733,7 @@ background:#e43333 !important;
 
 #latest_movie img{
     height:152px !important;
+	width:204px !important;
 }
 
 
@@ -742,7 +743,8 @@ background:#e43333 !important;
 
 .bhi-videocont img
 {
-    height:140px;
+    height:107px;
+	width:239px;
 }
 
 
