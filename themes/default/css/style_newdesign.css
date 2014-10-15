@@ -125,16 +125,16 @@ div, ul, li, h1, h2, h3, h4
 {
     width:auto;
     float:left;
-    margin:15px 0px 15px 55px;
+    margin:15px 0px 15px 20px;
 }
 
 .bhinew-profilelink
 {
-    width:160px;
-    float:right;
-    text-align:center;
-    font-size:15px;
-    margin:25px 0px 0px 0px;
+	width:120px;
+	float:right;
+	text-align:center;
+	font-size:15px;
+	margin:25px 0px 0px 0px;
 }
 
 .bhinew-profilelink a
@@ -525,12 +525,13 @@ background:#e43333 !important;
 {
     width:230px;
     float:left;
+	margin-top:10px;
 }
 
 .movie-thumb
 {
     width:204px;
-    margin:10px auto;
+    margin:0px auto;
 }
 
 
@@ -642,7 +643,7 @@ background:#e43333 !important;
 {
     width:100%;
     float:left;
-    margin:10px 0px 0px 0px;
+    margin:0px 0px 0px 0px;
 }
 
 
@@ -989,3 +990,18 @@ background:#e43333 !important;
     width: 34px;
 }
 
+
+.listing-img img {
+    height: 80px;
+    width: 80px;
+	display:block;
+	float:none !important;
+}
+
+
+.jaithra-logo
+{
+	width:150px;
+	float:left;
+	margin:15px 0px 0px 20px;
+}
