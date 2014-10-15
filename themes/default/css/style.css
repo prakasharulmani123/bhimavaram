@@ -662,7 +662,7 @@ height: 267px;
 
 .read_more a
 {
-	color:#FFFFFF;
+	color:#FFFFFF !important;
 }
 
 .carousel-indicators .active {
@@ -704,3 +704,7 @@ ul.nav-tabs li a
 	margin:0px 15px 0px 25px;
 }
 
+.ad img
+{
+	height:105px;
+}
