@@ -714,3 +714,8 @@ ul.nav-tabs li a
 {
 	margin-bottom:15px;
 }
+
+.movie-thumb img
+{
+	width:205px;
+}
