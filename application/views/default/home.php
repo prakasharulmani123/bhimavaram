@@ -48,7 +48,7 @@
                 echo anchor('news/' . $citynews['slug'], '<img src="' . newsPicture($citynews['id']) . '"/>');
                 echo '</div><div class="caption-news">';
                 echo '<div class="caption_title">'.anchor('news/' . $citynews['slug'], word_limiter($citynews['title'], 11)).'</div>';
-                echo '<div class="caption_desc">'.  word_limiter(strip_tags(html_entity_decode($citynews['content'])),30).'</div>';
+                echo '<div class="caption_desc">'.  word_limiter(strip_tags(html_entity_decode($citynews['content'])),25).'</div>';
                 echo '<div class="read_more">'.anchor('news/' . $citynews['slug'], 'Read More >>').'</div>';
                 echo '</div></div>';
             }
@@ -63,7 +63,7 @@
         <h2> Video News </h2>
       </div>
       <div class="widget-content">
-        <div class="carousel slide">
+        <div class="carousel slide" id="video_news">
           <div class="carousel-inner">
             <?php 
 			  $utube = new YoutubeVideoDetails();

@@ -68,8 +68,21 @@ jQuery(function() {
         interval: 4000,
         cycle: true,
     });
-    jQuery('.carousel').carousel({
-        interval: 4000,
-        cycle: true
-    });
+	
+	jQuery("#jumbtron_carousel").carousel({
+		interval: 5000,
+		cycle: true	
+	});
+	
+	jQuery("#video_news").carousel({
+		interval: 6000,
+		cycle: true	
+	});
+	
+	jQuery("#latest_movie").carousel({
+		interval: 7000,
+		cycle: true	
+	});
+	
+	
 });//jQuery Ends
