@@ -11,3 +11,12 @@
 	height:20px !important;
 	float:left !important;
 }
+
+
+.bhinew-inner-conatiner
+{
+    width:99.6%;
+    float:left;
+	border-left:#d0d0d0 solid 2px;
+	border-right:#d0d0d0 solid 2px;
+}
