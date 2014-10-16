@@ -765,8 +765,7 @@ background:#e43333 !important;
 
 .recent-classified-bg li {
     margin: 13px 8px;
-    padding: 0px 10px;
-    padding-top:15px;
+    padding: 0;
 }
 
 
@@ -1004,4 +1003,18 @@ background:#e43333 !important;
 	width:150px;
 	float:left;
 	margin:15px 0px 0px 20px;
+}
+
+.carousel-inner > .active {
+    left: 13px;
+}
+
+.movie
+{
+	width: 165px !important;
+}
+
+.detail-img img
+{
+	height:auto !important;
 }
