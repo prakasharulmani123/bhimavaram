@@ -58,8 +58,9 @@
 </ul><!--Categories-List Ends-->
 <div id="news-list" class="span10 pull-left">
 
- 
+<div class=" widget-heading">
 <h1><?php if($content['category']=='0'){echo 'Browse Deals';} echo $this->df->get_field_value('yp_categories',array('id'=>$content['category']),'name');?> (<?php echo $content['total'];?> Deals)</h1>
+</div>
 <?php 
 //print_r($content['listings']);
 if(count($content['listings'])!=0){?>

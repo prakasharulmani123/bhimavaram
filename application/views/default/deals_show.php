@@ -6,13 +6,13 @@ $itemtype='deals';
 <div class="clearfix span12 abovePadding10 sidePadding10 center " style="margin-left:10px;">
 <?php echo showAd('image','468','60');?>
 </div>
-<div class="clear">&nbsp;</div>
+<div class="clr">&nbsp;</div>
 
 <ul class="breadcrumb">
   <li><?php echo anchor(base_url(),'Home');?><span class="divider">/</span></li>
   <li><?php echo anchor('deals/index','Deals');?> <span class="divider">/</span></li>
  <li><?php echo word_limiter($content['deal']['title'],8);?></li></ul>
-<div class="listing-img">
+<div class="listing-img detail-img">
  <?php echo showBigAvatar($content['deal']['picture'],$content['deal']['title'],array('class'=>''));?>
 </div>
 <div id="listing-details"><h1 class="noline"><div class="span8"><?php echo anchor('deals/'.$content['deal']['slug'],$content['deal']['title']);?></div></h1>

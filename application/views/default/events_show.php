@@ -6,7 +6,7 @@ $itemtype='events';
 <div class="clearfix span12 abovePadding10 sidePadding10 center " style="margin-left:10px;">
 <?php echo showAd('image','468','60');?>
 </div>
-<div class="clear">&nbsp;</div>
+<div class="clr">&nbsp;</div>
 
 <ul class="breadcrumb">
   <li><?php echo anchor(base_url(),'Home');?><span class="divider">/</span></li>
