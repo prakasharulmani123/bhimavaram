@@ -65,7 +65,7 @@
                             <ul>
                                 <li><?php echo anchor('photos/index', 'Photo Galleries'); ?></li>
                                 <li><?php echo anchor('videos/index', 'Videos'); ?></li>
-                                <li><?php echo anchor('polls/index', 'Polls'); ?></li>
+                                <!--<li><?php echo anchor('polls/index', 'Polls'); ?></li>-->
                                 <li><?php echo anchor('areas/index', 'Area Information'); ?></li>
                             </ul>
                         </li>   
