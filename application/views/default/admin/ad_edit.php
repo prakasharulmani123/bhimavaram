@@ -8,6 +8,24 @@
       <?php  echo $this->html->formField('input','title-required',$content['ad']['title'],array('placeholder'=>'','class'=>'span4','data-required'=>"true"));?>
     </div>
   </div>
+  
+  <div class="control-group">
+    <label class="control-label" for="inputName">Category*</label>
+    <div class="controls">
+    	<select name="category" data-required='true'>
+        	<option value=""></option>
+        	<option value="news" <?php if($content['ad']['category']=='news'){ echo ' selected="selected" ';} ?>>News</option>
+            <option value="movies" <?php if($content['ad']['category']=='movies'){ echo ' selected="selected" ';} ?>>Movies</option>
+            <option value="deals" <?php if($content['ad']['category']=='deals'){ echo ' selected="selected" ';} ?>>Deals</option>
+            <option value="events" <?php if($content['ad']['category']=='events'){ echo ' selected="selected" ';} ?>>Events</option>
+            <option value="jobs" <?php if($content['ad']['category']=='jobs'){ echo ' selected="selected" ';} ?>>Jobs</option>
+            <option value="yellowpages" <?php if($content['ad']['category']=='yellowpages'){ echo ' selected="selected" ';} ?>>Yellow Pages</option>
+            <option value="photos" <?php if($content['ad']['category']=='photos'){ echo ' selected="selected" ';} ?>>Photos</option>
+            <option value="videos" <?php if($content['ad']['category']=='videos'){ echo ' selected="selected" ';} ?>>Videos</option>
+            <option value="areas" <?php if($content['ad']['category']=='areas'){ echo ' selected="selected" ';} ?>>Areas</option>
+        </select>
+    </div>
+  </div>
 
   <div class="control-group">
     <label class="control-label" for="inputName">Type*</label>
@@ -35,7 +53,8 @@
         <option value="300_150" <?php if($adsize=='300_150'){ echo ' selected="selected" ';} ?>>300px * 150px</option>
         <option value="750_24" <?php if($adsize=='750_24'){ echo ' selected="selected" ';} ?>>750px * 24px</option>
         <option value="175_60"<?php if($adsize=='175_60'){ echo ' selected="selected" ';} ?>>175px * 60px</option>
-         <option value="600_90"<?php if($adsize=='600_90'){ echo ' selected="selected" ';} ?>>600px * 90px (Category Special)</option>        
+         <option value="650_90"<?php if($adsize=='650_90'){ echo ' selected="selected" ';} ?>>650px * 90px (Category Special)</option>        
+        <option value="120_250"<?php if($adsize=='120_250'){ echo ' selected="selected" ';} ?>>120px * 250px</option>
       </select>
     </div>
   </div>    
@@ -63,7 +82,7 @@
     <label class="control-label" for="inputPicture">Ad Image</label>
     <div class="controls">    
     <?php //echo showavatar($content['user']['picture'],$content['user']['name'],array('class'=>'avatar'));?>
-      <?php  //echo $this->html->formField('upload','picture','',array('placeholder'=>'Change Picture','class'=>'span5'));?>
+    <?php  //echo $this->html->formField('upload','picture','',array('placeholder'=>'Change Picture','class'=>'span5'));?>
 		<input type="file" name="userfile" class="offset1" >
     </div>
 	  </div>

@@ -69,5 +69,10 @@
        <ul>
        <li><?php  echo anchor('admin/yellowpages/managelistings','Manage Listings');?></li>
        </ul>
+       <li class="nav-header"><a href="javascript:void(0)">Important News</a></li>
+       <ul>
+       <li><?php  echo anchor('admin/importantnews/add','Add a new important news');?></li>
+       <li><?php  echo anchor('admin/importantnews/managenews','Edit / Delete News');?></li>                   
+       </ul>
     </ul>
 </div><!--SideBar Ends-->

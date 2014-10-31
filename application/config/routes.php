@@ -127,5 +127,8 @@ $route['areas/index'] = "areas/index";
 //$route['movies/add'] = "movies/add";
 $route['areas/:any'] = "areas/show/$1";
 
+//Important News
+$route['importantnews/:any'] = "importantnews/show/$1";
+
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

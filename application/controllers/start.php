@@ -11,12 +11,16 @@ class Start extends CI_Controller {
 				
 		//**$data['header']['css']=array('home.css');**
 		
-		$data['footer']['js']=array('jquery.easing.1.3.js','jquery.anyslider.js','jquery.elastislide.js','timeago.js','jquery.vticker.min.js','home.js');		
+		$data['header']['css']=array('jquery.flexisel.css', 'slider/js-image-slider.css');
+		$data['footer']['js']=array('jquery.easing.1.3.js','jquery.anyslider.js','jquery.elastislide.js','timeago.js','jquery.vticker.min.js','home.js','jquery.flexisel.js', 'js-image-slider.js');		
 		if($cityid)
 		{
 		$data['content']['citynews']=$this->df->doquery("select * from news_listings where cityid='$cityid' and category!='9' and approved='1' order by id desc limit 10");
 		//$data['content']['topnews']=$this->df->doquery("select * from news_listings where date_added between '$day_start' and '$day_end' order by visits desc limit 7");
-		$data['content']['topnews']=$this->df->doquery("select * from news_listings where cityid='$cityid' and category!='9' and approved='1' order by visits desc limit 10");
+		//$data['content']['topnews']=$this->df->doquery("select * from news_listings where cityid='$cityid' and category!='9' and approved='1' order by visits desc limit 10");
+		
+		$data['content']['topnews']=$this->df->doquery("select * from important_news where cityid='$cityid' and approved='1' order by visits desc limit 10");
+		
 		$data['content']['cinenews']=$this->df->doquery("select * from news_listings where cityid='$cityid' and category='9' and approved='1' order by id desc limit 7");
 		
 		$data['content']['events']=$this->df->doquery("select * from events_listings where cityid='$cityid' and approved='1' order by id desc limit 5");
@@ -68,6 +72,7 @@ class Start extends CI_Controller {
 			unset($data['birthday_month']);
 			unset($data['birthday_date']);			
 			$this->load->library('encrypt');
+			$before_encrpyt_password = $data['password'];
 			$data['password']=$this->encrypt->encode($data['password']);
 			$insertData=array(
 				'name'=>$data['name'],
@@ -77,19 +82,25 @@ class Start extends CI_Controller {
 				'cityid'=>$data['city'],
 				'registration_source'=>'manual',
 				'ipaddress'=>ip(),
-				'password'=>$data['password']
-			);	
-		//Add new user
+				'password'=>$data['password'],
+				'question_id' => $data['question_id'],
+				'answer' => $data['answer']
+			);
+			
+			//Add new user
 			$this->load->library('auth');
 			$this->auth->addUser($insertData,true);	
 			$this->auth->checkRedirectSource();
 			
 			//Thank you mail for user after registration.
+			$data['password'] = $before_encrpyt_password;
 			$this->load->library('emails');
-			$registration_success = $this->load->view('email/registration_success', '', TRUE);
+			$registration_success = $this->load->view('email/registration_success', $data, TRUE);
 			$this->emails->send_mail($data['email'], 'Thank you for registration', $registration_success);
 			
-			redirect(base_url());
+//			redirect(base_url());
+			$this->session->set_flashdata('success', 'Thanks for creating a/c with Bhimavaram.com');
+			redirect(current_url());
 		}
 		else
 		{

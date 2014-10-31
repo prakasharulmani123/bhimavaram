@@ -1,12 +1,73 @@
-<div class="full-width span20">
+<style>
+.breadcrumb {
+  margin: 0px 0 5px !important;
+  padding: 8px 6px !important;
+}
+
+.widget-heading h1 {
+  border-bottom: 1px dotted #cccccc;
+  line-height: 100%;
+  margin: 0;
+  padding: 0 0 20px;
+}
+
+.widget-heading {
+	padding:0 !important;
+	margin-top:15px;
+}
+
+#area-data{
+	margin:0 !important;
+}
+
+#area-data p.description {
+  padding-left: 0 !important;
+}
+
+.carousel-indicators {
+  top: 20px !important;
+}
+</style>
+
+<div class="bhi-topscroll">
+    <div class="carousel" data-ride="carousel" id="inner-topad">
+      <div class="carousel-inner">
+        <?php $executive_ads = showAdsInArray('image', '650', '90', 15, 'span6',$this->uri->segment(1)); ?>
+        <div class="item active ads300">
+          <?php
+                $initial_executive_ads_count = 0;
+                $executive_ads_count = count($executive_ads);
+
+                foreach ($executive_ads as $executive_ad) {
+                    $initial_executive_ads_count++;
+					
+					echo '<div class="topad">';
+                    echo $executive_ad;
+					echo '</div>';
+					
+                    if ($initial_executive_ads_count % 1 == 0) {
+                        if ($executive_ads_count > $initial_executive_ads_count) {
+                            echo '</div>';
+                            echo '<div class="item ads300">';
+                        }
+                    }
+                }
+          ?>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="">
+<!--<div class="full-width span20">-->
 <?php 
 $itemtitle=$content['area']['name'];
 $itemid=$content['area']['id'];
 $itemtype='areas';
 ?>
-<div class="clearfix span12 abovePadding10 sidePadding10 center " style="margin-left:10px;">
+<!--<div class="clearfix span12 abovePadding10 sidePadding10 center " style="margin-left:10px;">
 <?php echo showAd('image','468','60');?>
-</div>
+</div>-->
 <div class="clear">&nbsp;</div>
 
 <ul class="breadcrumb">
@@ -14,17 +75,25 @@ $itemtype='areas';
   <li><?php echo anchor('areas/index',userdata('city').' Areas List');?> <span class="divider">/</span></li>
  <li><?php echo word_limiter($content['area']['name'],8);?></li>
  </ul>
-
-<div class="span11 pull-left" id="area-data">
-		<h1 class="noline"><?php echo $content['area']['name'].', '.userdata('city').' - '.$content['area']['pincode'];?></h1>
+<div class="widget-heading"><h1><?php echo ucfirst($content['area']['name'].', '.userdata('city').' - '.$content['area']['pincode']);?></h1></div>
+<div id="listing-details">
+<div class="sidePadding10" id="area-data">
+		
         <?php if(strlen($content['area']['description'])>3){?>
-        <p class="description">
-		<?php echo htmlspecialchars_decode($content['area']['description']);?>
-        </p>
+        
+        <div class="sidePadding10 span8">
+            <div style="text-align:justify; margin:10px 0;" class="description">
+	            <?php echo htmlspecialchars_decode($content['area']['description']);?>
+            </div>
+        </div>
+
 		<?php }?>
 </div><!--Area-data Ends-->
-<div class="span7 pull-right" id="picture-holder">
-<div id="myCarousel" class="carousel slide span7">
+</div>
+
+
+<div class="span4 pull-right" id="picture-holder">
+<div id="myCarousel" class="carousel slide span4">
   <ol class="carousel-indicators">
   <?php
 	 $pictures=explode(',',$content['area']['pictures']);
@@ -47,7 +116,7 @@ $itemtype='areas';
 	?>
   </ol>
   <!-- Carousel items -->
-  <div class="carousel-inner">
+  <div class="carousel-inner listing-img detail-img">
   <?php
   $i=0;
   foreach($pictures as $pic)
@@ -67,21 +136,21 @@ $itemtype='areas';
    }?>
   </div>
   <!-- Carousel nav -->
-  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+  <!--<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>-->
 </div>
 </div><!--picture-holder Ends-->
 <div class="clearbig">&nbsp;</div>
-<div class="span13">
+<div class="span13" style="margin:0 0 10px;">
 <?php echo showBookmark('areas',$content['area']['id']);?>    
  	<div class="share-btn pull-right">
         <!-- AddThis Button BEGIN -->
         <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-        <a class="addthis_button_facebook"></a>
+       <!-- <a class="addthis_button_facebook"></a>
         <a class="addthis_button_twitter"></a>
         <a class="addthis_button_google_plusone_share"></a>
         <a class="addthis_button_pinterest_share"></a>
-        <a class="addthis_button_email"></a>
+        <a class="addthis_button_email"></a>-->
         </div>
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-51ed30806c650b5f"></script>
         <!-- AddThis Button END -->

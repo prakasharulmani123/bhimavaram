@@ -298,11 +298,12 @@ if ( ! function_exists('getLogo'))
 //		$pic=$CI->df->doquery("select * from news_photos where id='$id' order by id desc");
 		//return '<a href="#report-item" role="button" data-toggle="modal" class="btn report-this" rel="'.$type.':'.$id.'">'.'<i class="icon-flag-alt"></i>&nbsp; Report'.'</a>';
 		if($restrize){
-			$image = "<img src='".base_url()."image-restrize.php?src=".$pic."' width='200' height='26' />";
+			$image = "<img src='".base_url()."image-restrize.php?src=".$pic."'/>";
+//			$image = "<img src='".base_url()."image-restrize.php?src=".$pic."' width='200' height='26' />";
 			return $image;
 		}
 		
-		return showAvatar($pic, 'logo', array('width'=>'200', 'height'=>'26'));	
+		return showAvatar($pic, 'logo'/*, array('width'=>'200', 'height'=>'26')*/);	
 	}
 }
 
@@ -354,13 +355,22 @@ if ( ! function_exists('showAd'))
 
 if ( ! function_exists('showAds'))
 {
-	function showAds($type,$width,$height,$count,$class='')
+	function showAds($type,$width,$height,$count,$class='',$category='')
 	{
 		$CI =& get_instance();
 		$cityid=userdata('cityid');		
 		
 		//$ad=$CI->df->get_multi_row('ads',array('adtype'=>$type,'width'=>$width,'height'=>$height,'active'=>'1'),FALSE,1,array('id'=>'random'));
-		$ads=$CI->df->doquery("select distinct(id),title,adtype,linktype,adlink,width,height,picture,active from ads where adtype='$type' and width='$width' and height='$height' and active='1' ORDER BY RAND() limit $count");
+		if($category == ''){
+			$ads=$CI->df->doquery("select distinct(id),title,adtype,linktype,adlink,width,height,picture,active from ads where adtype='$type' and width='$width' and height='$height' and active='1' ORDER BY RAND() limit $count");
+		}
+		else{
+			//$ads=$CI->df->doquery("select distinct(id),title,adtype,linktype,adlink,width,height,picture,active from ads where adtype='$type' and width='$width' and height='$height' and active='1' ORDER BY RAND() limit $count");
+			
+			//changes for category wise ads
+			$ads=$CI->df->doquery("select distinct(id),title,adtype,linktype,adlink,width,height,picture,active from ads where adtype='$type' and width='$width' and height='$height' and active='1' and category = '$category' ORDER BY RAND() limit $count");
+		}
+		
 		$loopcnt=0;
 		$output='';
 		if(count($ads)>0)
@@ -396,13 +406,19 @@ if ( ! function_exists('showAds'))
 
 if ( ! function_exists('showAdsInArray'))
 {
-	function showAdsInArray($type,$width,$height,$count,$class='')
+	function showAdsInArray($type,$width,$height,$count,$class='',$category='')
 	{
 		$CI =& get_instance();
 		$cityid=userdata('cityid');		
 		
 		//$ad=$CI->df->get_multi_row('ads',array('adtype'=>$type,'width'=>$width,'height'=>$height,'active'=>'1'),FALSE,1,array('id'=>'random'));
-		$ads=$CI->df->doquery("select distinct(id),title,adtype,linktype,adlink,width,height,picture,active from ads where adtype='$type' and width='$width' and height='$height' and active='1' ORDER BY RAND() limit $count");
+		
+		if($category == ''){
+			$ads=$CI->df->doquery("select distinct(id),title,adtype,linktype,adlink,width,height,picture,active from ads where adtype='$type' and width='$width' and height='$height' and active='1' ORDER BY RAND() limit $count");
+		}
+		else{
+			$ads=$CI->df->doquery("select distinct(id),title,adtype,linktype,adlink,width,height,picture,active from ads where adtype='$type' and width='$width' and height='$height' and active='1' and category = '$category' ORDER BY RAND() limit $count");
+		}
 		$loopcnt=0;
 		$output=array();
 		if(count($ads)>0)
@@ -433,6 +449,57 @@ if ( ! function_exists('showAdsInArray'))
 				return $output;
 		}
 
+	}
+}
+
+if ( ! function_exists('importantnewsPicture'))
+{
+	function importantnewsPicture($id)
+	{
+		$CI =& get_instance();
+		$pic=$CI->df->get_single_row('important_news_photos',array('newsid'=>$id));
+//		$pic=$CI->df->doquery("select * from news_photos where id='$id' order by id desc");
+		//return '<a href="#report-item" role="button" data-toggle="modal" class="btn report-this" rel="'.$type.':'.$id.'">'.'<i class="icon-flag-alt"></i>&nbsp; Report'.'</a>';
+		return base_url().'uploads/thumb/'.$pic['photo'];		
+	}
+}
+
+/**
+ * get Session Value
+ * @access	public
+ * @return	null
+ */	
+if ( ! function_exists('hiddencities'))
+{
+	function hiddencities($cityid)
+	{
+		$hidden_cities = array(13,14,15);
+//		$CI =& get_instance();
+		return in_array($cityid, $hidden_cities);//$CI->session->userdata($name);			
+	}
+}
+
+if ( ! function_exists('eventsPicture'))
+{
+	function eventsPicture($id)
+	{
+		$CI =& get_instance();
+		$pic=$CI->df->get_single_row('events_listings',array('id'=>$id));
+//		$pic=$CI->df->doquery("select * from news_photos where id='$id' order by id desc");
+		//return '<a href="#report-item" role="button" data-toggle="modal" class="btn report-this" rel="'.$type.':'.$id.'">'.'<i class="icon-flag-alt"></i>&nbsp; Report'.'</a>';
+		return base_url().'uploader/files/'.$pic['picture'];		
+	}
+}
+
+if ( ! function_exists('importantnewsOrgPicture'))
+{
+	function importantnewsOrgPicture($id)
+	{
+		$CI =& get_instance();
+		$pic=$CI->df->get_single_row('important_news_photos',array('newsid'=>$id));
+//		$pic=$CI->df->doquery("select * from news_photos where id='$id' order by id desc");
+		//return '<a href="#report-item" role="button" data-toggle="modal" class="btn report-this" rel="'.$type.':'.$id.'">'.'<i class="icon-flag-alt"></i>&nbsp; Report'.'</a>';
+		return base_url().'uploads/thumb/'.$pic['photo'];		
 	}
 }
 

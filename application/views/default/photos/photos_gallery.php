@@ -1,7 +1,63 @@
-<div class="center clearfix"><?php echo showAd('image','600','90');?></div>
-<div class="clearfix">&nbsp;</div>
+<style>
+/*
+.inner-left {
+  margin: 20px 0 !important;
+  width: 965px !important;
+}
+*/
+.widget-heading h1 {
+  border-bottom: 1px dotted #cccccc;
+  line-height: 100%;
+  margin: 0;
+  padding: 0 0 20px;
+}
 
-<h1 class="noline">Photo Galleries</h1>
+.widget-heading {
+	padding:0 !important;
+	margin-top:15px;
+}
+
+#galleries{
+margin: 15px 0;
+float: left;
+}
+
+</style>
+<div class="bhi-topscroll">
+    <div class="carousel" data-ride="carousel" id="inner-topad">
+      <div class="carousel-inner">
+        <?php $executive_ads = showAdsInArray('image', '650', '90', 15, 'span6',$this->uri->segment(1)); ?>
+        <div class="item active ads300">
+          <?php
+                $initial_executive_ads_count = 0;
+                $executive_ads_count = count($executive_ads);
+
+                foreach ($executive_ads as $executive_ad) {
+                    $initial_executive_ads_count++;
+					
+					echo '<div class="topad">';
+                    echo $executive_ad;
+					echo '</div>';
+					
+                    if ($initial_executive_ads_count % 1 == 0) {
+                        if ($executive_ads_count > $initial_executive_ads_count) {
+                            echo '</div>';
+                            echo '<div class="item ads300">';
+                        }
+                    }
+                }
+          ?>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="center clearfix"><?php echo showAd('image','600','90');?></div>-->
+
+<div class="widget-heading">
+<h1>Photo Galleries</h1>
+</div>
+
 <?php if(count($content['listings'])==0){?>
 <div class="center-align center abovePadding20">No galleries found!</div>
 <?php }else{

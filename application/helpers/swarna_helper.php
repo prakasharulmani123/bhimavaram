@@ -340,4 +340,22 @@ if ( ! function_exists('getWishes'))
 		return $output;
 	}
 }
+
+if ( ! function_exists('questionArray'))
+{
+	function questionArray()
+	{
+		$CI =& get_instance();
+		$questions=$CI->df->get_multi_row('questions');
+		$questionList['']="Choose Security Question";
+		foreach($questions as $question)
+		{
+			$questionList[$question['id']]=$question['question'];
+		}
+		return $questionList;
+//		return array(''=>'Choose Your City','guntur'=>'Guntur','bhimavaram'=>'Bhimavaram','nellore'=>'Nellore');		
+	}
+}
+
+
 /* End of file General_helper.php */

@@ -3,9 +3,55 @@ $itemtitle=$content['video']['title'];
 $itemid=$content['video']['id'];
 $itemtype='videos';
 ?>
-<div class="clearfix span12 abovePadding10 sidePadding10 center " style="margin-left:10px;">
-<?php echo showAd('image','468','60');?>
+<style>
+.breadcrumb {
+  margin: 0px 0 5px !important;
+  padding: 8px 3px !important;
+  float: left;
+}
+
+.related-news{
+	float:left;
+	margin:15px 0;
+}
+
+#galleries{
+margin: 15px 0;
+float: left;
+}
+</style>
+<div class="bhi-topscroll">
+    <div class="carousel" data-ride="carousel" id="inner-topad">
+      <div class="carousel-inner">
+        <?php $executive_ads = showAdsInArray('image', '650', '90', 15, 'span6',$this->uri->segment(1)); ?>
+        <div class="item active ads300">
+          <?php
+                $initial_executive_ads_count = 0;
+                $executive_ads_count = count($executive_ads);
+
+                foreach ($executive_ads as $executive_ad) {
+                    $initial_executive_ads_count++;
+					
+					echo '<div class="topad">';
+                    echo $executive_ad;
+					echo '</div>';
+					
+                    if ($initial_executive_ads_count % 1 == 0) {
+                        if ($executive_ads_count > $initial_executive_ads_count) {
+                            echo '</div>';
+                            echo '<div class="item ads300">';
+                        }
+                    }
+                }
+          ?>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!--<div class="clearfix span12 abovePadding10 sidePadding10 center " style="margin-left:10px;">
+<?php echo showAd('image','468','60');?>
+</div>-->
 <div class="clear">&nbsp;</div>
 
 <ul class="breadcrumb">
@@ -14,7 +60,7 @@ $itemtype='videos';
   <li><?php echo anchor('videos/'.$this->df->get_field_value('videos',array('id'=>$content['video']['id']),'slug'),$this->df->get_field_value('videos',array('id'=>$content['video']['id']),'title'));?></li>
 </ul>
 
-<h1 class="noline"><?php echo $content['video']['title'];?></h1>
+<div class="widget-heading" style="margin-bottom:15px;"><h1 style="line-height:normal;"><?php echo $content['video']['title'];?></h1></div>
 <div class="span12 navi">
 <?php
 if($content['prev']!='0')
@@ -68,7 +114,7 @@ else
 <div class="related-news">
 <?php if(count($content['related'])>0){?>
 <ul id="galleries">
-<h4>Related Videos</h4>
+<div class="widget-heading" style="margin-bottom:15px;"><h4>Related Videos</h4></div>
 <?php
 	$utube=new YoutubeVideoDetails();
 	foreach($content['related'] as $listing)

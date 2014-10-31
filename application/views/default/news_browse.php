@@ -1,7 +1,7 @@
 <div class="bhi-topscroll">
-    <div class="carousel" id="executive_ads" data-ride="carousel">
+    <div class="carousel" data-ride="carousel" id="inner-topad">
       <div class="carousel-inner">
-        <?php $executive_ads = showAdsInArray('image', '600', '90', 15, 'span6'); ?>
+        <?php $executive_ads = showAdsInArray('image', '650', '90', 15, 'span6',$this->uri->segment(1)); ?>
         <div class="item active ads300">
           <?php
                 $initial_executive_ads_count = 0;
@@ -42,7 +42,50 @@
         }
     }
     ?>
-</ul><!--Categories-List Ends-->
+    
+    <li>
+<?php   
+	$sidebar_show_ads = showAds('image','120','250',5, 'adbox',$this->uri->segment(1));
+	$sidebar_show_ads_array = explode('<a ', $sidebar_show_ads);
+	$sidebar_show_ad_count = count($sidebar_show_ads_array) - 1;
+	
+	foreach ($sidebar_show_ads_array as $key => $sidebar_show_ad) {
+		if($sidebar_show_ad){?>
+        <div data-ride="carousel" class="carousel left-side-ad ad side sidebar_image slide">
+          <div class="carousel-inner" style="height:256px;">
+        	<?php
+			for($j=1; $j<=$sidebar_show_ad_count ; $j++){
+				$array_key = $j+$key > $sidebar_show_ad_count ? $j+$key - $sidebar_show_ad_count : $j+$key; ?>
+                <div class="item ads300 <?php echo $j == 1 ? 'active' : '' ?>">
+                <?php echo '<a ' . $sidebar_show_ads_array[$array_key] . '</a>'; ?>
+                </div>
+			<?php } ?>
+            </div>
+        </div>
+        <?php
+		}
+	}
+?>
+
+    </li>
+</ul>
+<?php 
+/*
+$sidebar_show_ads = showAds('image','120','250',5, 'adbox','');
+echo '<div id="categories-list">';
+$sidebar_show_ads_array = explode('<a ', $sidebar_show_ads);
+foreach ($sidebar_show_ads_array as $sidebar_show_ad) {
+	if($sidebar_show_ad){
+	echo '<div class="ad side sidebar_image">';
+	echo '<a ' . $sidebar_show_ad . '</a>';
+	echo '</div>';
+	}
+}
+echo '</div>';
+*/
+?>
+
+<!--Categories-List Ends-->
 <div id="news-list" class="span10 pull-left">
     <div class=" widget-heading">
         <h1>News : <?php if (!uridata('3')) {

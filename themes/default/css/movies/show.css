@@ -1,12 +1,12 @@
 .title-share-box{float:right;}
 #listing-details{ float:left;}
-h1{ text-shadow:0 0 0 #FFF; font-weight:bold; font-size:24px; color:#444; margin-top:-15px;}
+h1{ text-shadow:0 0 0 #FFF; font-weight:bold; font-size:24px; color:#444; margin-top:-15px; margin-left:10px;}
 h1 div.list-title{}
-div.listing-rating-container{ clear:both;float:left;text-align:center; margin-left:-10px; font-size:13px; font-weight:normal;}
+div.listing-rating-container{ clear:both;float:left;text-align:center; margin-left:-10px; font-size:13px; font-weight:normal; margin-top:4px;}
 div.users-count{ display:block;float:left; font-size:14px; line-height:170%; font-weight:normal; margin-left:-15px;}
 div.listing-meta{font-weight:normal; font-size:14px; clear:both; padding:0 10px 10px 10px; margin:15px 0 0 0; line-height:160%;}
-.listing-img{ float:right; margin-top:10px;}
-.listing-img img{ width:200px; max-width:200px; border-radius:4px; }
+.listing-img{ float:right; /*margin-top:10px;*/ width:37%; margin: 20px 16px 20px 0;}
+.listing-img img{ width:275px; max-width:275px; border-radius:4px; }
 .share-btn{ margin:10px 0;}
 .meta-title{clear:both;}
 .meta-title span{ float:right;}

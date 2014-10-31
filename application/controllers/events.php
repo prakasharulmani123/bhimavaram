@@ -150,7 +150,7 @@ class Events extends CI_Controller {
 		$data['content']['event']=$this->df->get_single_row('events_listings',array('slug'=>$slug));
 		$this->db->simple_query("update events_listings set visits=visits+1 where slug='$slug'");
 		$data['content']['single_page']=true;
-		$data['header']['css']=array('events/show.css');
+		$data['header']['css']=array('events/show.css', 'jobs/show.css');
 		$data['footer']['js']=array('jquery.raty.min.js','yp_listings.js','wysihtml5-0.3.0.min.js','bootstrap-wysihtml5.js','news_show.js');
 		$data['content']['user']=$this->df->get_single_row('users',array('uid'=>userdata('uid')));
 		$data['content']['template']='events_show.php';

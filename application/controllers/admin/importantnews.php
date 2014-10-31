@@ -1,20 +1,15 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class News extends CI_Controller {
+class ImportantNews extends CI_Controller {
    public function __construct()
    {
 	parent::__construct();
 	$this->load->library('auth');  
 	$this->auth->checkAdminLogin();
    }
-   function index()
-   {
-	   set_session('adminid',1);
-   }
    
 	function add()
 	{
-		
 		//$this->auth->checkLogin();
 		$data=$this->general->get_post_values();
 		if($this->general->validateForm($data))
@@ -36,7 +31,7 @@ class News extends CI_Controller {
 		//echo '<pre>';
 		$userfile=$data['userfile'];
 		unset($data['userfile']);
-		$insert=$this->df->insert_data_id('news_listings',$data);
+		$insert=$this->df->insert_data_id('important_news',$data);
 		//print_r($insert);
 		for($i=0; $i<=$cpt; $i++)
 		{
@@ -53,17 +48,20 @@ class News extends CI_Controller {
 				$photodata=$this->upload->data();
 				$this->resize_image($photodata['file_name']);
 				$insertdata=array('newsid'=>$insert,'photo'=>$photodata['file_name']);
-				$this->df->insert_data('news_photos',$insertdata);				
+				$this->df->insert_data('important_news_photos',$insertdata);				
 			}
 		}
 		
 		
 		if($insert)
 		{
-			$slug=url_title($insert.'-'.$data['title']);
-			$this->df->update_record('news_listings',array('slug'=>$slug),array('id'=>$insert));
+			if($data['slug'] == ''){
+				$slug=url_title($insert.'-'.$data['title']);
+				$this->df->update_record('important_news',array('slug'=>$slug),array('id'=>$insert));
+			}
 			set_message('success','News submitted successfully! It will be available online once its approved.');
-			redirect('news/'.$slug);
+			redirect('admin/importantnews/managenews');
+			//redirect('news/'.$slug);
 		}
 		else
 		{
@@ -80,8 +78,7 @@ class News extends CI_Controller {
 			//$data['header']['custom']='plain_header';
 			$data['footer']['js']=array('parsley.js','plugins/jquery.ui.widget.js','plugins/jquery.iframe-transport.js','plugins/jquery.fileupload.js','chained.js','edit_profile.js','picture_upload.js','news_photos.js','newsadd.js');		
 			$data['content']['user']=$this->df->get_single_row('users',array('uid'=>userdata('uid')));
-			$data['content']['template']='admin/news_add.php';	
-			$data['content']['categories']=$this->df->get_multi_row('news_categories');		
+			$data['content']['template']='admin/important_news_add.php';	
 			$this->layout->admin_publish($data);						
 		}
 	}  
@@ -116,39 +113,13 @@ class News extends CI_Controller {
 		echo '<div class="span10 center-align center padding10">Photos uploaded successfully!</div>';
 	}
 
-	function theatre_movie_delete_timing()
-	{
-		$theatreid=uridata('4');
-		$movieid=uridata('5');
-		$timing=urldecode(uridata('6'));
-		$alltimings=$this->df->get_field_value('movie_shows',array('theatreid'=>$theatreid,'movieid'=>$movieid),'timings');
-		if(strpos($alltimings,',')>0)
-		{
-			$alltimings=explode(',',$alltimings);
-			
-			if(($key = array_search($timing, $alltimings)) !== false) {
-   				 unset($alltimings[$key]);
-				}
-			$alltimings=implode(',',$alltimings);
-			$this->df->update_record('movie_shows',array('timings'=>$alltimings),array('theatreid'=>$theatreid,'movieid'=>$movieid));
-		}
-		else
-		{
-			$this->df->update_record('movie_shows',array('timings'=>'0'),array('theatreid'=>$theatreid,'movieid'=>$movieid));
-			$this->db->simple_query("update movies_listings set theatres=theatres-1 where id='$movieid'");			
-		}
-		redirect('admin/movies/manage_shows/'.$theatreid);
-		
-	}
-	
-
 	
 	private function set_upload_options()
 	{   
 	//  upload an image options
 		$config = array();
 		$config['upload_path'] = './uploads/';
-		$config['allowed_types'] = 'gif|jpg|png';
+		$config['allowed_types'] = 'gif|jpg|png|jpeg';
 		$config['max_size']      = '0';
 		$config['overwrite']     = FALSE;
 	
@@ -163,8 +134,8 @@ class News extends CI_Controller {
 	$img_cfg_thumb['new_image'] = "./uploads/thumb/" . $image;
 	$img_cfg_thumb['maintain_ratio'] = TRUE;
 	//$img_cfg_thumb['new_image'] = $new_name;
-	$img_cfg_thumb['width'] = 350;
-	$img_cfg_thumb['height'] = 225;
+	$img_cfg_thumb['width'] = 520;
+	$img_cfg_thumb['height'] = 271;
 	$this->load->library('image_lib');
 	$this->image_lib->initialize($img_cfg_thumb);
 	return $this->image_lib->resize();
@@ -175,15 +146,15 @@ class News extends CI_Controller {
 		//$data['header']['custom']='plain_header';
 		//$data['footer']['custom']='plain_footer';				
 		//$data['content']['news']=$this->df->get_multi_row('news_listings');		
-		$data['content']['template']='admin/manage_news';
+		$data['content']['template']='admin/manage_important_news';
 		$offset=uridata(4) ? uridata(4) : 0;
 		$limit=10;
 		$cityid=userdata('cityid');
-		$totallistings=$this->df->doquery("select id from news_listings");
+		$totallistings=$this->df->doquery("select id from important_news");
 		//fecthing result from db
 		$total=count($totallistings);
 		$this->load->library('pagination');					
-		$config['base_url'] = base_url()."index.php/admin/news/managenews/";
+		$config['base_url'] = base_url()."index.php/admin/importantnews/managenews/";
 		$config['total_rows'] = $total;
 		$config['per_page'] = $limit;
 		$config['uri_segment'] = 4;
@@ -207,7 +178,7 @@ class News extends CI_Controller {
 		$this->pagination->initialize($config);
 		$data['content']['navigation']=$this->pagination->create_links();
 		$data['content']['total']=$total;
-		$data['content']['news']=$this->df->doquery("select * from news_listings order by id desc limit $offset,$limit");	
+		$data['content']['news']=$this->df->doquery("select * from important_news order by id desc limit $offset,$limit");	
 				
 		//$data['sidebar']=false;		
 		$this->layout->admin_publish($data);		
@@ -224,9 +195,14 @@ class News extends CI_Controller {
 			$data['content']=htmlspecialchars($data['content']);
 			unset($data['_wysihtml5_mode']);
 			
-			$insert=$this->df->update_record('news_listings',$data,array('id'=>$id));
-			set_message('success','News updated successfully!');
-			redirect('news/'.$slug);
+			if(substr($data['slug'],0,4) != 'http'){
+				$data['slug'] = url_title($id.'-'.$data['title']);
+			}
+
+			$insert=$this->df->update_record('important_news',$data,array('id'=>$id));
+			set_message('success','Important News updated successfully!');
+			//redirect('news/'.$slug);
+			redirect('admin/importantnews/managenews');
 		}
 		else
 		{		
@@ -234,11 +210,10 @@ class News extends CI_Controller {
 			//$data['sidebar']['custom']='news_add_sidebar';
 			//$data['footer']['custom']='plain_footer';
 			//$data['header']['custom']='plain_header';
-			$data['content']['news']=$this->df->get_single_row('news_listings',array('id'=>$id));
+			$data['content']['news']=$this->df->get_single_row('important_news',array('id'=>$id));
 			$data['footer']['js']=array('parsley.js','plugins/jquery.ui.widget.js','plugins/jquery.iframe-transport.js','plugins/jquery.fileupload.js','chained.js','edit_profile.js','picture_upload.js','news_photos.js','newsadd.js');		
 			$data['content']['user']=$this->df->get_single_row('users',array('uid'=>userdata('uid')));
-			$data['content']['template']='admin/news_edit.php';	
-			$data['content']['categories']=$this->df->get_multi_row('news_categories');		
+			$data['content']['template']='admin/important_news_edit.php';	
 			$this->layout->admin_publish($data);						
 		}
 	} 
@@ -247,9 +222,10 @@ class News extends CI_Controller {
 	function deletenews()
 	{
 		$id=uridata(4);
-		$this->df->delete_record('news_listings',array('id'=>$id));
-		set_message('success','News delted successfully!');
-		redirect('admin/news/managenews');
+		$this->df->delete_record('important_news',array('id'=>$id));
+		$this->df->delete_record('important_news_photos',array('newsid'=>$id));
+		set_message('success','Important News delted successfully!');
+		redirect('admin/importantnews/managenews');
 	}
 	
 }/* End of file welcome.php */

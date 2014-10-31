@@ -29,7 +29,7 @@ class Yellowpages extends CI_Controller {
 		
 		//pagination
 		$offset=uridata(4) ? uridata(4) : 0;
-		$limit=10;
+		$limit=7;
 
 
 		if($category['parentid']=='0')
@@ -244,10 +244,13 @@ class Yellowpages extends CI_Controller {
 		$data['content']['listing']=$this->df->get_single_row('yp_listings',array('slug'=>$slug));
 		$this->db->simple_query("update yp_listings set visits=visits+1 where slug='$slug'");
 		$data['header']['css']=array('yp/show.css');
-		$data['sidebar']['custom']='yp_add_sidebar';
+		$data['sidebar']['custom']='sidebar';
+//		$data['sidebar']['custom']='yp_add_sidebar';
 		//$data['footer']['js']=array('parsley.js','plugins/jquery.ui.widget.js','plugins/jquery.iframe-transport.js','plugins//jquery.fileupload.js','chained.js','edit_profile.js','picture_upload.js','ypadd.js');		
 		$data['footer']['js']=array('jquery.raty.min.js','yp_listings.js','wysihtml5-0.3.0.min.js','bootstrap-wysihtml5.js');
 		$data['content']['user']=$this->df->get_single_row('users',array('uid'=>userdata('uid')));
+		$data['content']['category']=$this->df->doquery("select * from yp_categories where id = ".$data['content']['listing']['category']);
+
 		$data['content']['template']='yp_show.php';	
 		$this->layout->publish($data);						
 	}

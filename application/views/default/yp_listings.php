@@ -1,7 +1,49 @@
-<div class="center clearfix"><?php echo showAd('image','600','90');?></div>
-<div class="clearfix">&nbsp;</div>
+<style>
+.widget-heading a{
+	float:none !important;
+}
+</style>
 
-<h1><?php echo anchor('yellowpages/index','Browse Listings');?> / <?php echo anchor('yellowpages/listings/'.$content['category']['id'],$content['category']['name']);?></h1>
+<div class="bhi-topscroll">
+    <div class="carousel" data-ride="carousel" id="inner-topad">
+      <div class="carousel-inner">
+        <?php $executive_ads = showAdsInArray('image', '650', '90', 15, 'span6',$this->uri->segment(1)); ?>
+        <div class="item active ads300">
+          <?php
+                $initial_executive_ads_count = 0;
+                $executive_ads_count = count($executive_ads);
+
+                foreach ($executive_ads as $executive_ad) {
+                    $initial_executive_ads_count++;
+					
+					echo '<div class="topad">';
+                    echo $executive_ad;
+					echo '</div>';
+					
+                    if ($initial_executive_ads_count % 1 == 0) {
+                        if ($executive_ads_count > $initial_executive_ads_count) {
+                            echo '</div>';
+                            echo '<div class="item ads300">';
+                        }
+                    }
+                }
+          ?>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="center clearfix"><?php echo showAd('image','600','90');?></div>-->
+<div class="clearfix">&nbsp;</div>
+<ul class="breadcrumb">
+  <li><?php echo anchor('yellowpages/index','Browse Listings');?><span class="divider">/</span></li>
+  <li><?php echo $content['category']['name'];?></li>
+</ul>
+ 
+<div class="widget-heading">
+<h1 style="line-height:normal;"><?php echo $content['category']['name'];?></h1>
+</div>
+<div class="clearfix">&nbsp;</div>
 <?php if(count($content['listings'])==0){?>
 <?php 
 	if(count($content['categories'])>0)	
@@ -28,6 +70,13 @@
 	}
 ?>
 
+
+
+
+
+
+
+
 <ul id="listings">
 <?php
 foreach($content['listings'] as $listing)
@@ -35,23 +84,31 @@ foreach($content['listings'] as $listing)
 	//echo $listing['title'].'|'.$listing['slug'].'<br>';
 ?>
 <li class="clearfix">
-<?php echo anchor('yellowpages/'.$listing['slug'],showAvatar($listing['picture'],$listing['title'],array('class'=>'pull-left')),array('class'=>'listing-img'));?>
+
 <div class="rating"></div>
-<div class="listing-details span9">
+<div class="listing-details span10">
 	<div class="listing-rating-container"><div class="rating-container" title="<?php echo $listing['review_score'];?>"></div><div class="users-count">Rated by <?php echo $listing['total_reviews'];?> Users</div></div>
 	<h3><?php echo anchor('yellowpages/'.$listing['slug'],$listing['title']);?></h3>    
     <div class="details clearfix top-15"><span>Category :</span> <?php echo anchor('yellowpages/listings/'.$listing['category'],$this->df->get_field_value('yp_categories',array('id'=>$listing['category']),'name')).'</span> | <span>Location :</span> '.$listing['areaname'];?><br /></div><div class="details clearfix"><span>Address :</span> <?php echo $listing['address'];?></div>
     <div class="details clearfix"><span>Phone : </span><?php echo $listing['phone']; if(strlen($listing['mobile'])>1){?> | <span>Mobile : </span><?php echo $listing['mobile'];}?></div>
     <div class="details span7"><?php echo anchor('yellowpages/'.$listing['slug'],'View more details &rarr;',array('class'=>'more-info-link'));?></div>
 </div>
+<?php echo anchor('yellowpages/'.$listing['slug'],showAvatar($listing['picture'],$listing['title'],array('class'=>'pull-left')),array('class'=>'listing-img'));?>
 </li>
 <?php
 }
 
 ?>
 </ul>
+        
+        
+        
+        
+
+
 <div class="clear">&nbsp;</div>
 <?php 
 echo $content['navigation'];
 }
 ?>
+

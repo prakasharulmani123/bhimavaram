@@ -73,7 +73,12 @@ jQuery(function() {
 	jQuery('.tab-content .carousel').carousel({
         interval: 9000,
         cycle: true
-    })
+    });
+	
+	jQuery('.home_page_right_side_ad').carousel({
+        interval: 10000,
+        cycle: true
+    });
 	
 	/*jQuery('#photocarousel').carousel({
         cycle: false,
@@ -81,3 +86,32 @@ jQuery(function() {
 	
 	
 });//jQuery Ends
+
+ //fix for IE7 and IE8
+ $(function () {
+	$("#flexiselDemo3").flexisel({
+        visibleItems: 3,
+        animationSpeed: 1000,
+        autoPlay: true,
+        autoPlaySpeed: 5000,            
+        pauseOnHover: true,
+        enableResponsiveBreakpoints: true,
+        responsiveBreakpoints: { 
+            portrait: { 
+                changePoint:480,
+                visibleItems: 1
+            }, 
+            landscape: { 
+                changePoint:640,
+                visibleItems: 2
+            },
+            tablet: { 
+                changePoint:768,
+                visibleItems: 3
+            }
+        }
+    });
+
+ });
+ 
+

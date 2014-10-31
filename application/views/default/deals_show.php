@@ -3,19 +3,52 @@ $itemtitle=$content['deal']['title'];
 $itemid=$content['deal']['id'];
 $itemtype='deals';
 ?>
-<div class="clearfix span12 abovePadding10 sidePadding10 center " style="margin-left:10px;">
-<?php echo showAd('image','468','60');?>
+<div class="bhi-topscroll">
+    <div class="carousel" data-ride="carousel" id="inner-topad">
+      <div class="carousel-inner">
+        <?php $executive_ads = showAdsInArray('image', '650', '90', 15, 'span6',$this->uri->segment(1)); ?>
+        <div class="item active ads300">
+          <?php
+                $initial_executive_ads_count = 0;
+                $executive_ads_count = count($executive_ads);
+
+                foreach ($executive_ads as $executive_ad) {
+                    $initial_executive_ads_count++;
+					
+					echo '<div class="topad">';
+                    echo $executive_ad;
+					echo '</div>';
+					
+                    if ($initial_executive_ads_count % 1 == 0) {
+                        if ($executive_ads_count > $initial_executive_ads_count) {
+                            echo '</div>';
+                            echo '<div class="item ads300">';
+                        }
+                    }
+                }
+          ?>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!--<div class="center clearfix" style="text-align:left !important"><?php echo showAd('image','600','90');?></div>-->
+<?php /*?><div class="clearfix span12 abovePadding10 sidePadding10 center " style="margin-left:10px;">
+<?php echo showAd('image','468','60');?>
+</div><?php */?>
 <div class="clr">&nbsp;</div>
 
 <ul class="breadcrumb">
   <li><?php echo anchor(base_url(),'Home');?><span class="divider">/</span></li>
   <li><?php echo anchor('deals/index','Deals');?> <span class="divider">/</span></li>
  <li><?php echo word_limiter($content['deal']['title'],8);?></li></ul>
+ 
+<div class="widget-heading"><h1 style="margin-left:10px; line-height:normal"><?php echo anchor('deals/'.$content['deal']['slug'],$content['deal']['title'], array('style' => 'background:none'));?></h1></div>
+
 <div class="listing-img detail-img">
  <?php echo showBigAvatar($content['deal']['picture'],$content['deal']['title'],array('class'=>''));?>
 </div>
-<div id="listing-details"><h1 class="noline"><div class="span8"><?php echo anchor('deals/'.$content['deal']['slug'],$content['deal']['title']);?></div></h1>
+<div id="listing-details">
 <div class="listing-rating-container"><div class="rating-container" title="<?php echo $content['deal']['review_score'];?>"></div></div><div class="users-count"><?php echo '<a href="#reviews-box">'.$content['movie']['total_reviews'].' Reviews</a>';?>
    <?php
 	if(userdata('uid'))

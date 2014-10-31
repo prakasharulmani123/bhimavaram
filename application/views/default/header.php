@@ -1,5 +1,5 @@
 
-<div class="bhinew-scroll">
+<div class="bhinew-scroll" style="visibility:hidden" id="bhinew-scroll">
     <div class="bhinew-scrollheading"> Wishes </div>
     <div class="bhinew-scrolltxt">
         <div class="wish-container sidePadding10">    	
@@ -13,17 +13,25 @@
     </div>
 </div>
 
+
 <div class="bhinew-inncontainer2">
     <div class="bhinew-logo">
         <?php echo anchor(base_url(), getLogo(), array('id' => 'logo')); ?>
         <?php echo userdata('city'); ?><a href="#change-city" role="button" data-toggle="modal">(Change)</a>
     </div>
-    <div class="bhinew-logo-header-ad" id="header-ad-spot">
+    <div class="bhinew-logo-header-ad" id="header-ad-spot" style="display:none;">
         <?php echo showAds('image', '468', '60', '5', 'header_ad'); ?>
     </div>
     <div class="jaithra-logo"> <img src="<?php echo $this->settings->baseUrl(); ?>themes/default/images/jaithra.png" width="150" height="59" alt=""></div>
-    <div class="bhinew-profilelink"><?php echo anchor('start/register', 'Create Account'); ?><br/>
-        <?php echo anchor('start/signin', 'Sign in'); ?></div>
+    <div class="bhinew-profilelink">
+    	<?php if($_SESSION['uid']){ ?>
+			<?php echo anchor('profile/index', 'My Account'); ?><br/>
+            <?php echo anchor('site/signout', 'Sign Out'); ?>
+		<?php }else{ ?>
+			<?php echo anchor('start/register', 'Create Account'); ?><br/>
+            <?php echo anchor('start/signin', 'Sign in'); ?>
+        <?php } ?>            
+    </div>
     <div class="bhi-menucont">
         <div class="bhi-menuleft"> </div>
         <div class="bhi-menubg">
@@ -128,8 +136,8 @@
         </div>
         <div class="bhi-menuright"> </div>
     </div>
-    <div class="span16" id="header-scroll-ad">
-        <div class="span2 pull-left upper center">Sponsored :</div>
+    <div class="span19" id="header-scroll-ad" style="visibility:hidden">
+        <div class="span2 pull-left upper center" style="color:#156EAF;">Sponsored :</div>
         <div class="span14 pull-left scrolller">
             <ul>
                 <li><?php echo showAd('text', '750', '24'); ?></li>

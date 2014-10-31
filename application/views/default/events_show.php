@@ -3,15 +3,115 @@ $itemtitle=$content['event']['name'];
 $itemid=$content['event']['id'];
 $itemtype='events';
 ?>
-<div class="clearfix span12 abovePadding10 sidePadding10 center " style="margin-left:10px;">
-<?php echo showAd('image','468','60');?>
+<!--<div class="center clearfix" style="text-align:left !important"><?php echo showAd('image','600','90');?></div>-->
+<div class="bhi-topscroll">
+    <div class="carousel" data-ride="carousel" id="inner-topad">
+      <div class="carousel-inner">
+        <?php $executive_ads = showAdsInArray('image', '650', '90', 15, 'span6',$this->uri->segment(1)); ?>
+        <div class="item active ads300">
+          <?php
+                $initial_executive_ads_count = 0;
+                $executive_ads_count = count($executive_ads);
+
+                foreach ($executive_ads as $executive_ad) {
+                    $initial_executive_ads_count++;
+					
+					echo '<div class="topad">';
+                    echo $executive_ad;
+					echo '</div>';
+					
+                    if ($initial_executive_ads_count % 1 == 0) {
+                        if ($executive_ads_count > $initial_executive_ads_count) {
+                            echo '</div>';
+                            echo '<div class="item ads300">';
+                        }
+                    }
+                }
+          ?>
+      </div>
+    </div>
+  </div>
 </div>
+<?php /*?><div class="clearfix span12 abovePadding10 sidePadding10 center " style="margin-left:10px;">
+<?php echo showAd('image','468','60');?>
+</div><?php */?>
 <div class="clr">&nbsp;</div>
 
 <ul class="breadcrumb">
   <li><?php echo anchor(base_url(),'Home');?><span class="divider">/</span></li>
   <li><?php echo anchor('events/index/'.$content['event']['category'].'/everything','Events / '.$this->df->get_field_value('events_categories',array('id'=>$content['event']['category']),'name'));?> <span class="divider">/</span></li>
  <li><?php echo word_limiter($content['event']['name'],8);?></li></ul>
+ 
+ 
+<div class="widget-heading"><h1 style="line-height:normal"><div class="span12"><?php echo $content['event']['name'];?></div></h1></div>
+
+<!-- New content -->
+<div class="listing-img detail-img">
+	<?php if(strlen($content['event']['picture'])>2){?>
+	    <?php echo showBigAvatar($content['event']['picture'],$content['event']['title'],array('class'=>''));?>
+    <?php }?>
+</div>
+
+<div id="listing-details">
+<div class="listing-rating-container" style="width:75%;">
+    Posted on <?php echo date("d M, Y",strtotime($content['event']['date_posted']));?> in <?php echo anchor('events/index/'.$content['event']['category'].'/everything',$this->df->get_field_value('events_categories',array('id'=>$content['event']['category']),'name'));?>
+<!-- | <a href="#comments-box"><i class="icon-comment-alt"></i>&nbsp; <?php echo $content['event']['total_comments']?> Comments</a> | <a href="#comment-item" role="button" data-toggle="modal">Post a comment</a>-->
+
+    </div>
+<?php /*?>
+<div class="listing-rating-container"><div class="rating-container" title="<?php echo $content['deal']['review_score'];?>"></div></div>
+<div class="users-count"><?php echo '<a href="#reviews-box">'.$content['movie']['total_reviews'].' Reviews</a>';?>
+   <?php
+	if(userdata('uid'))
+	{
+?>
+ | <a href="#review-item" role="button" data-toggle="modal">Rate this</a>
+ <?php }?> </div>
+ <?php */?>
+
+<div class="listing-meta span8">
+<div class="meta-title span3">Date<span>:</span></div>
+<div class="meta-data span4"><?php echo date("d M ",strtotime($content['event']['start_date'].' 00:00:00')).' - '.date("d M Y",strtotime($content['event']['end_date'].' 00:00:00'));?></div>
+<div class="meta-divider">&nbsp;</div>
+<div class="meta-title span3">Timings<span>:</span></div>
+<div class="meta-data span4"><?php echo $content['event']['start_time'].' - '.$content['event']['end_time'];?></div>
+<div class="meta-divider">&nbsp;</div>
+<div class="meta-title span3">Venue<span>:</span></div>
+<div class="meta-data span4"><?php echo $content['event']['venue_name'];?></div>
+
+<?php if(strlen($content['event']['url'])>4){?>
+<div class="meta-divider">&nbsp;</div>
+<div class="meta-title span3">Website<span>:</span></div>
+<div class="meta-data span4"><?php echo anchor($content['event']['url'],'Click here to visit',array('class'=>'','target'=>'_blank'));?></div>
+<?php }?>
+
+<div class="meta-divider">&nbsp;</div>
+<div class="meta-title span3">Ticket Price<span>:</span></div>
+<div class="meta-data span4"><?php echo $price=($content['event']['price']=='0')?'Free':'<i class="icon-rupee"></i>&nbsp; '.$content['event']['price'];?> <?php if(strlen($content['event']['price'])>3){echo anchor($content['event']['ticket_url'],'Buy Tickets',array('class'=>'span2 pull-right btn btn-primary top-15','target'=>'_blank'));}?></div>
+
+<div class="meta-divider">&nbsp;</div>
+<div class="meta-title span3">Address<span>:</span></div>
+<div class="meta-data span4"><?php echo $content['event']['venue_address'];?></div>
+<div class="meta-divider">&nbsp;</div>
+<div class="meta-title span3">Contact<span>:</span></div>
+<div class="meta-data span4"><?php echo $content['event']['phone'];?> / <?php echo $content['event']['email'];?></div>
+
+</div><!--Listing-meta Ends-->
+</div><!--Listing-Details Ends-->
+<div class="sidePadding10 span11">
+<div class="description" style="text-align:justify; padding:0px !important;">
+<h4 class="underline">Description</h4>
+<?php echo htmlspecialchars_decode($content['event']['description']);?>
+</div>
+
+
+
+</div><!--Listing-Meta-Right Ends-->
+
+
+
+<!-- Old content --->
+<?php /*?>
 <div id="listing-details span13">
 <h1 class="noline"><?php echo $content['event']['name'];?>
 </h1>
@@ -50,23 +150,26 @@ $itemtype='events';
 </div><!--Listing-Meta-Right Ends-->
 
 <div class="meta-divider">&nbsp;</div>
-        <div class="description span12">
-        <div class="span5 pull-left">
-        <span class="heading-title">Address </span>   <div class="meta-divide">&nbsp;</div> <div class="address"><?php echo $content['event']['venue_address'];?></div>
-        </div>
-        <div class="span6 pull-left offset1">
-		<span class="heading-title">Contact </span> <div class="meta-divide">&nbsp;</div> <div class="address"><?php echo $content['event']['phone'];?> / <?php echo $content['event']['email'];?></div>        
-        </div>
 
-    <div class="meta-divider">&nbsp;</div>
-    <span class="heading-title">Description</span>
-	<div class="meta-divider">&nbsp;</div>
-    <div style="text-align:justify">
-    <?php echo htmlspecialchars_decode($content['event']['description']);?>
-    </div>
-    </div>
-    <div class="meta-divider">&nbsp;</div>
-<div class="span13" style="margin-left:0px;">
+<div class="description span12">
+<div class="span5 pull-left">
+<span class="heading-title">Address </span>   <div class="meta-divide">&nbsp;</div> <div class="address"><?php echo $content['event']['venue_address'];?></div>
+</div>
+<div class="span6 pull-left offset1">
+<span class="heading-title">Contact </span> <div class="meta-divide">&nbsp;</div> <div class="address"><?php echo $content['event']['phone'];?> / <?php echo $content['event']['email'];?></div>        
+</div>
+
+<div class="meta-divider">&nbsp;</div>
+<span class="heading-title">Description</span>
+<div class="meta-divider">&nbsp;</div>
+<div style="text-align:justify">
+<?php echo htmlspecialchars_decode($content['event']['description']);?>
+</div>
+</div>
+<?php */?>
+
+<div class="meta-divider">&nbsp;</div>
+<div class="span13 well well-mini" style="margin-left:0px;">
 <!--<a href="#comment-item" class="btn btn-primary comment-item" role="button" data-toggle="modal"><i class="icon-comment-alt"></i>&nbsp; Post a comment</a>
 --><?php echo showBookmark('events',$content['event']['id']);?>    
 <?php echo showReport('events',$content['event']['id']);?>

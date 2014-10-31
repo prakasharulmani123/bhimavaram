@@ -10,7 +10,7 @@ h1{ text-shadow:0 0 0 #FFF; font-weight:bold; font-size:24px; color:#444; margin
 
 div.meta-divider{ height:8px; clear:both;}
 .big-text{ font-size:18px;}
-a.bookmark-this{ margin-left:20px;}
+a.bookmark-this{ /*margin-left:20px;*/}
 div.description{ padding:15px;}
 h4.underline{ font-weight:bold;}
 a.comment-item{ margin-left:12px;}

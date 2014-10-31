@@ -25,7 +25,7 @@ class Areas extends CI_Controller {
 	function show()
 	{
 		$slug=uridata(2);
-		$data['sidebar']=false;
+		//$data['sidebar']=false;
 		$data['content']['area']=$this->df->get_single_row('areas',array('slug'=>$slug));
 		$data['content']['single_page']=true;
 		$this->db->simple_query("update areas set visits=visits+1 where slug='$slug'");

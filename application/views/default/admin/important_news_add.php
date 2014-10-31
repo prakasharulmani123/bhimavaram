@@ -1,34 +1,22 @@
-<!--<script type="text/javascript">
-function slug_open(cat_id)
-{
-	if(cat_id == 10){
-		document.getElementById('slug_div').style.display = 'block';
-	}
-	else{
-		document.getElementById('slug_div').style.display = 'none';
-	}
-}
-</script>-->
-
-<h1>Submit News</h1>
+<h1>Submit Important News</h1>
 <div class="clearbig">&nbsp;</div>
-       <?php echo form_open_multipart('admin/news/add',array('class'=>'form-horizontal password-form','data-validate'=>'parsley','style'=>'margin-left:-70px'));?>
+       <?php echo form_open_multipart('admin/importantnews/add',array('class'=>'form-horizontal password-form','data-validate'=>'parsley','style'=>'margin-left:-70px'));?>
+   
   <div class="control-group">
-    <label class="control-label" for="inputName">News Category*</label>
+    <label class="control-label" for="inputName">News Title*</label>
     <div class="controls">
-<?php 
-echo $this->html->formField('dropdown','category-required',News_Category(),array('class'=>'span6 offset1 city-select','data-required'=>"true",'id'=>'category', 'onchange' => 'slug_open(this.value)'));
-?>    
-</div>
-  </div> 
+      <?php  echo $this->html->formField('input','title-required','',array('placeholder'=>'','class'=>'span6','data-required'=>"true"));?>
+   
+    </div>
+  </div>
   
-  <?php /*?><div class="control-group" style="display:none" id="slug_div">
+  <div class="control-group" id="slug_div">
     <label class="control-label" for="inputName">Link</label>
     <div class="controls">
-<?php  echo $this->html->formField('input','slug-required','',array('placeholder'=>'','class'=>'span6','data-type'=>"url"));?>  <br />
+<?php  echo $this->html->formField('input','slug','',array('placeholder'=>'','class'=>'span6','data-type'=>"url"));?>  <br />
 Leave empty for internal link
 </div>
-  </div><?php */?>    
+  </div>    
 
   <div class="control-group">
     <label class="control-label" for="inputName">City*</label>
@@ -40,13 +28,6 @@ echo $this->html->formField('dropdown','cityid-required',cityArray(),array('clas
 </div>
   </div>    
 
-  <div class="control-group">
-    <label class="control-label" for="inputName">News Title*</label>
-    <div class="controls">
-      <?php  echo $this->html->formField('input','title-required','',array('placeholder'=>'','class'=>'span6','data-required'=>"true"));?>
-   
-    </div>
-  </div>
   <div class="control-group">
     <label class="control-label" for="inputBio">Content*</label>
     <div class="controls">
@@ -68,7 +49,7 @@ echo $this->html->formField('dropdown','cityid-required',cityArray(),array('clas
 	  </div>
  
 <div class="span6" style="margin-left:250px;">
- <button type="submit" class="btn btn-danger  span6 abovePadding10">Submit News</button>
+ <button type="submit" class="btn btn-danger  span6 abovePadding10">Submit Important News</button>
 </div>
 </form> 
 <div class="clearbig">&nbsp;</div>

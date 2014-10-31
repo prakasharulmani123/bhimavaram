@@ -8,6 +8,23 @@
       <?php  echo $this->html->formField('input','title-required','',array('placeholder'=>'','class'=>'span4','data-required'=>"true"));?>
     </div>
   </div>
+  
+  <div class="control-group">
+    <label class="control-label" for="inputName">Category*</label>
+    <div class="controls">
+    	<select name="category">
+        	<option value="news">News</option>
+            <option value="movies">Movies</option>
+            <option value="deals">Deals</option>
+            <option value="events">Events</option>
+            <option value="jobs">Jobs</option>
+            <option value="yellowpages">Yellow Pages</option>
+            <option value="photos">Photos</option>
+            <option value="videos">Videos</option>
+            <option value="areas">Areas</option>
+        </select>
+    </div>
+  </div>
 
   <div class="control-group">
     <label class="control-label" for="inputName">Type*</label>
@@ -32,7 +49,8 @@
         <option value="300_150">300px * 150px</option>
         <option value="750_24">750px * 24px</option>
         <option value="175_60">175px * 60px</option>
-         <option value="600_90">600px * 90px (Category Special)</option>        
+         <option value="650_90">650px * 90px (Category Special)</option>        
+        <option value="120_250">120px * 250px</option>
       </select>
     </div>
   </div>    

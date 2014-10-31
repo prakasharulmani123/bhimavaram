@@ -3,37 +3,7 @@ $itemtitle = $content['news']['title'];
 $itemid = $content['news']['id'];
 $itemtype = 'news';
 ?>
-
-<div class="bhi-topscroll">
-    <div class="carousel" data-ride="carousel" id="inner-topad">
-      <div class="carousel-inner">
-        <?php $executive_ads = showAdsInArray('image', '650', '90', 15, 'span6',$this->uri->segment(1)); ?>
-        <div class="item active ads300">
-          <?php
-                $initial_executive_ads_count = 0;
-                $executive_ads_count = count($executive_ads);
-
-                foreach ($executive_ads as $executive_ad) {
-                    $initial_executive_ads_count++;
-					
-					echo '<div class="topad">';
-                    echo $executive_ad;
-					echo '</div>';
-					
-                    if ($initial_executive_ads_count % 1 == 0) {
-                        if ($executive_ads_count > $initial_executive_ads_count) {
-                            echo '</div>';
-                            echo '<div class="item ads300">';
-                        }
-                    }
-                }
-          ?>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--<div class="center clearfix" style="text-align:left !important"><?php echo showAd('image','600','90');?></div>-->
+<div class="center clearfix" style="text-align:left !important"><?php echo showAd('image','600','90');?></div>
 
 <?php /*?><div class="clearfix span12 abovePadding10 sidePadding10 center " style="margin-left:10px;">
     <?php echo showAd('image', '468', '60'); ?>
@@ -41,21 +11,20 @@ $itemtype = 'news';
 <div class="clr">&nbsp;</div>
 <ul class="breadcrumb">
     <li><?php echo anchor(base_url(), 'Home'); ?><span class="divider">/</span></li>
-    <li><?php echo anchor('news/index/' . $this->df->get_field_value('news_categories', array('id' => $content['news']['category']), 'slug'), 'News / ' . $this->df->get_field_value('news_categories', array('id' => $content['news']['category']), 'name')); ?> <span class="divider">/</span></li>
     <li><?php echo word_limiter($content['news']['title'], 8); ?></li></ul>
 <div id="listing-details span13">
     <div class="widget-heading">
         <h1 class="noline"><?php echo $content['news']['title']; ?></h1>
     </div>
     <div class="ad-meta">
-        Posted on <?php echo date("d M, Y", strtotime($content['news']['date_added'])); ?> in <?php echo anchor('news/index/' . $this->df->get_field_value('news_categories', array('id' => $content['news']['category']), 'slug'), $this->df->get_field_value('news_categories', array('id' => $content['news']['category']), 'name')); ?>
+        Posted on <?php echo date("d M, Y", strtotime($content['news']['date_added'])); ?> <?php /*?>in <?php echo anchor('news/index/' . $this->df->get_field_value('news_categories', array('id' => $content['news']['category']), 'slug'), $this->df->get_field_value('news_categories', array('id' => $content['news']['category']), 'name')); ?>
         | <a href="#comments-box"><i class="icon-comment-alt"></i>&nbsp; <?php echo $content['news']['total_comments'] ?> Comments</a>   
         <?php
         if (userdata('uid')) {
             ?> | <a href="#comment-item" role="button" data-toggle="modal">Post a comment</a>
             <?php
         }
-        ?>
+        ?><?php */?>
 
     </div>
 
@@ -142,16 +111,44 @@ if (userdata('uid')) {
                     <li class="clearfix">
                         <div class="rating"></div>
                         <div class="listing-details span8 pull-left">
-                            <h3><?php echo anchor('news/' . $listing['slug'], $listing['title']); ?></h3>  
+                            <h3>
+                            <?php
+							if(substr($listing['slug'],0,4) == 'http'){
+								echo '<a href="'.$listing['slug'].'">'.$listing['title'].'</a>';
+							}
+							else{
+								echo anchor('importantnews/' . $listing['slug'], $listing['title']);
+							}
+							?>
+                            
+						<?php //echo anchor('news/' . $listing['slug'], $listing['title']); ?></h3>  
                             <div class="details clearfix margintop-15"><span>Posted on </span><?php echo date("d M, Y", strtotime($listing['date_added'])); ?></div>
-                            <div class="details clearfix"><span><?php echo word_limiter(strip_tags(htmlspecialchars_decode($listing['content'])), 16); ?><?php echo anchor('news/' . $listing['slug'], 'Read news'); ?></span></div>
+                            <div class="details clearfix"><span><?php echo word_limiter(strip_tags(htmlspecialchars_decode($listing['content'])), 16); ?>
+							<?php
+							if(substr($listing['slug'],0,4) == 'http'){
+								echo '<a href="'.$listing['slug'].'">Read news</a>';
+							}
+							else{
+								echo anchor('importantnews/' . $listing['slug'], 'Read news'); 
+							}
+							?>
+                            
+                            </span></div>
                         </div>
                         <div class="span2 pull-left"></div>
 						<?php
-                        $newpic = $this->df->get_field_value('news_photos', array('newsid' => $listing['id']), 'photo');
+                        $newpic = $this->df->get_field_value('important_news_photos', array('newsid' => $listing['id']), 'photo');
                         $img = '<img src="' . $this->settings->baseUrl() . '/uploads/thumb/' . $newpic . '" alt="' . $listing['title'] . '" class="pull-left" style="max-width: none;" />';
-                        echo anchor('news/' . $listing['slug'], $img, array('class' => 'listing-img'));
+                        //echo anchor('importantnews/' . $listing['slug'], $img, array('class' => 'listing-img'));
                         ?>
+                        <?php
+							if(substr($listing['slug'],0,4) == 'http'){
+								echo '<a href="'.$listing['slug'].'" class="listing-img">'.$img.'</a>';
+							}
+							else{
+								echo anchor('importantnews/' . $listing['slug'], $img, array('class' => 'listing-img'));
+							}
+							?>
                     </li>
                         <?php
                     }

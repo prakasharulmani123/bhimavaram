@@ -16,6 +16,10 @@ jQuery(document).ready(function(){
         cycle: true,
     });
 	
+	jQuery('#header-ad-spot').show();
+	
+	jQuery("#bhinew-scroll,#header-scroll-ad").css("visibility", "visible");
+	
 });
 
 (function ($) {
@@ -40,4 +44,56 @@ jQuery(document).ready(function(){
 			 });
 		 });
 	 }
+	 
+	 /*
+	 
+	 $('#myCarousel').carousel({
+		interval: 5000,
+	});
+	
+
+	$('#myCarousel .item').each(function(){
+	  var next = $(this).next();
+	  if (!next.length) {
+		next = $(this).siblings(':first');
+	  }
+	  next.children(':first-child').clone().appendTo($(this));
+	  
+	  for (var i=0;i<3;i++) {
+		next=next.next();
+		if (!next.length) {
+			next = $(this).siblings(':first');
+		}
+		
+		next.children(':first-child').clone().appendTo($(this));
+	  }
+	});
+	*/
+	
+	/*
+	$("#flexiselDemo3").flexisel({
+        visibleItems: 3,
+        animationSpeed: 1000,
+        autoPlay: true,
+        autoPlaySpeed: 5000,            
+        pauseOnHover: true,
+        enableResponsiveBreakpoints: true,
+        responsiveBreakpoints: { 
+            portrait: { 
+                changePoint:480,
+                visibleItems: 1
+            }, 
+            landscape: { 
+                changePoint:640,
+                visibleItems: 2
+            },
+            tablet: { 
+                changePoint:768,
+                visibleItems: 3
+            }
+        }
+    });
+	*/
+
  });
+ 

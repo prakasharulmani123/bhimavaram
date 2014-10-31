@@ -31,7 +31,7 @@ class Auth
 //			$msg.=base_url()."index.php/site/verify/".$user['uid'].'/'.$key;
 			$content.=anchor('site/verify/'.$user['uid'].'/'.$key).'<br><br>'."To make the most of ".$CI->settings->siteName().", please take a second to verify your email address by clicking the link above.<br>we can't wait to see what you're doing";
 			
-			//$message="Welcome ".$user['name'].'. Please Confirm Your Email Address!';
+			$message='Thanks for creating a/c with Bhimavaram.com';
 			$CI->emails->send_mail($user['email'],'Please Confirm Your Email Address ('.$user['email'].')',$content);
 		}
 		else

@@ -1,15 +1,61 @@
+<style>
+.widget-heading a{
+	float:none !important;
+}
+</style>
 <?php $itemtitle=$content['listing']['title'];
 $itemid=$content['listing']['id'];
 $itemtype='yellowpages';
 ?>
-<div class="clearfix span12 abovePadding10 center sidePadding10" style="margin-left:10px;">
-<?php echo showAd('image','468','60');?>
+
+<div class="bhi-topscroll">
+    <div class="carousel" data-ride="carousel" id="inner-topad">
+      <div class="carousel-inner">
+        <?php $executive_ads = showAdsInArray('image', '650', '90', 15, 'span6',$this->uri->segment(1)); ?>
+        <div class="item active ads300">
+          <?php
+                $initial_executive_ads_count = 0;
+                $executive_ads_count = count($executive_ads);
+
+                foreach ($executive_ads as $executive_ad) {
+                    $initial_executive_ads_count++;
+					
+					echo '<div class="topad">';
+                    echo $executive_ad;
+					echo '</div>';
+					
+                    if ($initial_executive_ads_count % 1 == 0) {
+                        if ($executive_ads_count > $initial_executive_ads_count) {
+                            echo '</div>';
+                            echo '<div class="item ads300">';
+                        }
+                    }
+                }
+          ?>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!--<div class="center clearfix" style="text-align:left !important">
+<?php echo showAd('image','600','90');?>
+</div>-->
 <div class="clear">&nbsp;</div>
-<div class="listing-img">
+<ul class="breadcrumb">
+  <li><?php echo anchor('yellowpages/index','Browse Listings');?><span class="divider">/</span></li>
+  <li><?php echo anchor('yellowpages/listings/'.$content['category'][0]['id'],$content['category'][0]['name']);?><span class="divider">/</span></li>
+  <li><?php echo $content['listing']['title']?></li>
+</ul>
+
+<div class="widget-heading">
+<h1 style="line-height:normal;"><?php echo $content['listing']['title']?></h1>
+</div>
+
+<div class="listing-img detail-img">
  <?php echo showBigAvatar($content['listing']['picture'],$content['listing']['title'],array('class'=>''));?>
 </div>
-<div id="listing-details"><h1 class="noline"><div class="span8"><?php echo $content['listing']['title'];?></div></h1>
+
+<div id="listing-details">
 <div class="listing-rating-container"><div class="rating-container" title="<?php echo $content['listing']['review_score'];?>"></div></div><div class="users-count"><?php echo '<a href="#reviews-box">'.$content['listing']['total_reviews'].' Reviews</a>';?>
    <?php
 	if(userdata('uid'))

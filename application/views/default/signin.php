@@ -1,3 +1,9 @@
+<style>
+.inner-left{
+	width:1000px !important;
+}
+</style>
+
 <div id="signin-with-facebook" class="span10 center-align">	
 	<div class="span10 fb-login center-align">
     	<?php echo anchor('facebook/connect','Create new account with facebook',array('class'=>'btn btn-primary btn-icon span6 center-align fb-login-link '));?>
@@ -10,6 +16,7 @@
         <?php if(validation_errors()){?>
         	<div class="validation-errors center-align span7"><?php echo validation_errors();?></div>
         <?php }
+		echo '<div class="center-align span7">'.$this->session->flashdata('success').'</div>';
 		echo form_open('start/signin',array('class'=>'form-horizontal center big-form','data-validate'=>'parsley'));?>
         
         <?php

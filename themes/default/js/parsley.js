@@ -1295,7 +1295,7 @@
     , validateIfUnchanged: false                                          // false: validate once by field value change
     , errors: {
         classHandler: function ( elem, isRadioOrCheckbox ) {}             // specify where parsley error-success classes are set
-      , container: function ( elem, isRadioOrCheckbox ) {}                // specify an elem where errors will be **apened**
+      , container: function ( elem, isRadioOrCheckbox ) {console.log(elem)}                // specify an elem where errors will be **apened**
       , errorsWrapper: '<ul></ul>'                                        // do not set an id for this elem, it would have an auto-generated id
       , errorElem: '<li></li>'                                            // each field constraint fail in an li
       }

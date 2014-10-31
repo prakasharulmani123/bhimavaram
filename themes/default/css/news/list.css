@@ -67,6 +67,7 @@
 	float:none;
 }
 #listings a.listing-img img {
+	max-width:none !important;
 	width:80px;
 	height:80px;
 }
