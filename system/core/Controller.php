@@ -60,6 +60,7 @@ class CI_Controller {
 			set_session('city',$data['cityname']);
 			set_session('cityid',$data['city']);
 		}
+		
 	}
 
 	public static function &get_instance()
