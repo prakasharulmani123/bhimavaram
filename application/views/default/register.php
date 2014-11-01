@@ -1,3 +1,4 @@
+<?php echo $this->session->flashdata('message') ? $this->session->flashdata('message') : ''; ?>
 <div id="signin-with-facebook" class="span10 center-align">	
 	<div class="span10 fb-login center-align">
     	<?php echo anchor('facebook/connect','Create new account with facebook',array('class'=>'btn btn-primary btn-icon span6 center-align fb-login-link '));?>
@@ -10,7 +11,6 @@
         <?php if(validation_errors()){?>
         	<div class="validation-errors center-align span7"><?php echo validation_errors();?></div>
         <?php }
-		echo $this->session->flashdata('message') ? $this->session->flashdata('message') : '';
 		echo form_open('start/register',array('class'=>'form-horizontal center big-form','data-validate'=>'parsley'));?>
         
         <?php echo $this->html->formField('input','name-required','',array('placeholder'=>'Full Name','class'=>'span7','data-required'=>"true"));
@@ -39,7 +39,8 @@ echo $this->html->formField('dropdown','birthday_year-required',yearArray(),arra
   </div>           
 
 <?php 
-echo $this->html->formField('dropdown','city-required',cityArray(),array('class'=>'span7 offset1 city-select','data-required'=>"true"),userdata('cityid'));
+//echo $this->html->formField('dropdown','city-required',cityArray(),array('class'=>'span7 offset1 city-select','data-required'=>"true"),userdata('cityid'));
+echo $this->html->formField('input','cityname-required','',array('placeholder'=>'City','class'=>'span7','data-required'=>"true"));
 ?>
 
 <?php 

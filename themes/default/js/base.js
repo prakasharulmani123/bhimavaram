@@ -83,9 +83,15 @@ jQuery(document).ready(function() {
         var searchText = jQuery(this).find("option:selected").text();
 //        console.log(searchText);
 		jQuery("#nav-search-in-content").text(searchText);
+		var search_text = jQuery('#twotabsearchtextbox').val();
         jQuery.post(baseUrl + 'index.php/start/setsearch', {type: searchType, text: searchText}, function(data) {
             jQuery('.searchtext').empty().append(searchText + '<b class="caret"></b>');
             jQuery('input[name=searchtype]').val(searchType);
+			
+			if(search_text == ''){
+				window.location.href = baseUrl+"index.php/"+searchType;
+			}
+			
         });
     });
 	

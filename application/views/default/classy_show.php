@@ -1,8 +1,11 @@
+<?php
+echo $this->session->flashdata('message') ? $this->session->flashdata('message') : '';
+?>
 <?php $itemtitle=$content['ad']['title'];
 $itemid=$content['ad']['id'];
 $itemtype='classifieds';
 ?>
-<div class="clearfix span12 abovePadding10 sidePadding10 center " style="margin-left:10px;">
+<div class="clearfix span19 abovePadding10 sidePadding10 center " style="margin-left:10px;">
 <?php echo showAd('image','468','60');?>
 </div>
 <div class="clear">&nbsp;</div>
@@ -13,32 +16,38 @@ Posted in <?php echo anchor('classifieds/ads/'.$content['ad']['category'],$this-
 </div>
 
 <div class="clear">&nbsp;</div>
-<div class="listing-img pull-left span6">
+<div class="listing-img pull-left span8">
  <?php echo showBigAvatar($content['ad']['picture'],$content['ad']['title'],array('class'=>''));?>
 </div>
-<div class="ad-details span7 pull-left">
+<div class="ad-details span10 pull-left">
 <div class="meta-label clearfix"><span>Ad Type </span><?php echo $content['ad']['adtype'];?></div>
 <div class="meta-label clearfix"><span>Location </span><?php echo $this->df->get_field_value('cities',array('id'=>$content['ad']['cityid']),'city');?></div>
 <div class="meta-label clearfix"><span>Price </span> <?php echo $price=($content['ad']['price']=='0')?'Free':'<i class="icon-rupee"></i>&nbsp; '.$content['ad']['price'];?></div>
+<?php
+	if(userdata('uid'))
+	{
+?>
 <div class="meta-label clearfix"><span>Contact Person </span><?php echo $this->df->get_field_value('users',array('uid'=>$content['ad']['uid']),'name');?></div>
+<div class="meta-label clearfix"><span>Email </span><?php echo $content['ad']['email'];?></div>
 <div class="meta-label clearfix"><span>Phone </span><?php echo $content['ad']['phone'];?></div>
+<?php } ?>
 </div>
 </div><!--Listing-Meta-Right Ends-->
 <div class="meta-divider">&nbsp;</div>
 
-<div class="span12">
+<div class="span18">
 <?php echo showBookmark('classifieds',$content['ad']['id']);?>    
 <?php echo showReport('classifieds',$content['ad']['id']);?>
 <?php
 	if(userdata('uid'))
 	{
 ?>
-    <a href="#send-message" class="btn btn-primary pull-right big-text abovePadding10 span7" role="button" data-toggle="modal"><i class="icon-envelope-alt"></i>&nbsp; Reply to this Ad</a>
+    <a href="#send-message" class="btn btn-primary pull-right big-text abovePadding10 span7" role="button" data-toggle="modal"><i class="icon-envelope-alt"></i>&nbsp; Contact Advertiser</a>
 <?php }
 else
 {
 ?>    
-    <a href="<?php echo base_url().'index.php/start/signin';?>" class="btn btn-primary pull-right big-text abovePadding10 span6" role="button" data-toggle="modal"><i class="icon-envelope-alt"></i>&nbsp; Reply to this Ad</a>
+    <a href="<?php echo base_url().'index.php/classifieds/contact/'.$content['ad']['slug'];?>" class="btn btn-primary pull-right big-text abovePadding10 span6" role="button" data-toggle="modal"><i class="icon-envelope-alt"></i>&nbsp; Contact Advertiser</a>
 <?php
 }
 ?>
@@ -46,7 +55,7 @@ else
 <div class="meta-divider">&nbsp;</div>
 
 <?php if(strlen($content['ad']['description'])>3){?>
-<div class="span12 description">
+<div class="span18 description">
 <h4 class="underline">Description</h4>
 <?php echo htmlspecialchars_decode($content['ad']['description']);?>
 </div>
@@ -59,7 +68,7 @@ else
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="messageModal">Send a message to <span class="to-email"><?php echo $itemtitle;?></span></h3>
   </div>
-  <div class="modal-body">
+  <div class="modal-body" style="max-height:450px !important;">
    <?php
    		echo form_open('classifieds/message',array('class'=>'bigform','data-validate'=>'parsley'));
 	?> 

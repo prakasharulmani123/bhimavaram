@@ -1,14 +1,3 @@
-<script type="text/javascript">
-$(document).ready(function() {
-	$('#searchdropdownbox').on('change', function(){
-		var search_text = $('#twotabsearchtextbox').val();
-		
-		if(search_text == ''){
-			window.location.href = "<?php echo base_url() ?>index.php/"+$(this).val();
-		}
-	});
-});
-</script>
 <div class="bhinew-scroll" style="visibility:hidden" id="bhinew-scroll">
     <div class="bhinew-scrollheading"> Wishes </div>
     <div class="bhinew-scrolltxt">
@@ -105,7 +94,7 @@ $(document).ready(function() {
                                 </span>
                                 <?php echo form_open('start/searchresults', array("class" => "form-search", 'data-validate' => 'parsley')); ?>
                                 <div class="nav-searchfield-outer nav-sprite">
-                                    <input type="text" id="twotabsearchtextbox" placeholder="Search..." name="q" data-required="true"  value="<?php echo (uridata('2') == 'searchresults') ? uridata('3') : '';  ?>" autocomplete="off" />
+                                    <input type="text" id="twotabsearchtextbox" placeholder="Search..." name="q" value="<?php (uridata('2') == 'searchresults') ? uridata('3') : '';  ?>" autocomplete="off" data-required="true"/>
                                 </div>
                                 <div class="nav-submit-button">
                                     <input type="hidden" name="searchtype" value="<?php echo userdata('searchtype') ? userdata('searchtype') : 'yellowpages';  ?>" />

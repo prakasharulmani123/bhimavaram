@@ -4,7 +4,8 @@
         <ul>
           <?php $citieslist=$this->df->get_multi_row('cities'); ?>
       	  <?php	foreach($citieslist as $cl)	{ ?>
-      		<li><?php echo anchor('start/setcity/'.$cl['id'].'/'.str_replace('/','--',uri_string()),$cl['city']);?></li>
+      		<?php /*?><li><?php echo anchor('start/setcity/'.$cl['id'].'/'.str_replace('/','--',uri_string()),$cl['city']);?></li><?php */?>
+      		<li><a href="<?php echo $cl['domain'];?>" target="_blank"><?php echo $cl['city'];?></a></li>
       	  <?php	} ?>
         </ul>
       </div>
@@ -44,8 +45,8 @@ function citychange(){
   <div class="modal-body">
     <?php
 		$hidden = array('changecity' => '1');
-   		echo form_open('',array('class'=>'bigform','data-validate'=>'parsley'), $hidden);
-//   		echo form_open('start/changecity',array('class'=>'bigform','data-validate'=>'parsley'));
+//   		echo form_open('',array('class'=>'bigform','data-validate'=>'parsley'), $hidden);
+   		echo form_open('start/changecity',array('class'=>'bigform','data-validate'=>'parsley'));
 		echo $this->html->formField('label','city','Please choose your city to continue',array('class'=>'email'));
 		echo $this->html->formField('dropdown','city-required',cityArray(),array('class'=>'span10','data-required'=>"true", 'onchange'=>"citychange()", 'id' => 'cityid'),userdata('cityid'));
 		echo $this->html->formField('input','cityname', '', array('style'=>'display:none', 'id' => 'cityname'));
@@ -58,7 +59,7 @@ function citychange(){
 </div>
 <div id="post-wish" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Post Wishes" aria-hidden="true">
   <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
     <h3 id="twitterModal">Post Wishes</h3>
   </div>
   <div class="modal-body">
@@ -86,7 +87,7 @@ function citychange(){
 <!--about model-->
 <div id="about-us" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="About us" aria-hidden="true">
   <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ã—</button>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
     <h3 id="twitterModal">About us</h3>
   </div>
   <div class="modal-body">
@@ -99,7 +100,7 @@ function citychange(){
 <!--privacy model-->
 <div id="privacy-policy" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="About us" aria-hidden="true">
   <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ã—</button>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
     <h3 id="twitterModal">Privacy Policy</h3>
   </div>
   <div class="modal-body">
@@ -111,7 +112,7 @@ function citychange(){
 <!--terms model-->
 <div id="terms-use" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="About us" aria-hidden="true">
   <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ã—</button>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
     <h3 id="twitterModal">Terms of use</h3>
   </div>
   <div class="modal-body">

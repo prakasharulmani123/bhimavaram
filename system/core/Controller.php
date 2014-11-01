@@ -51,16 +51,6 @@ class CI_Controller {
 		$this->load->initialize();
 		
 		log_message('debug', "Controller Class Initialized");
-		
-		$data=$this->general->get_post_values();
-		if(isset($data['changecity']) && $this->general->validateForm($data))
-		{
-			$data=$this->general->processData($data);
-//			$city=$this->df->get_single_row('cities',array('id'=>$data['city']));
-			set_session('city',$data['cityname']);
-			set_session('cityid',$data['city']);
-		}
-		
 	}
 
 	public static function &get_instance()

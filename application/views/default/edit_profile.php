@@ -32,7 +32,8 @@
     <label class="control-label" for="inputName">Your City</label>
     <div class="controls">
     <?php //print_r(cityArray());?>
-      <?php echo $this->html->formField('dropdown','cityid-required',cityArray(),array('class'=>'span5 offset1 city-select','data-required'=>"true"),$content['user']['cityid']);?>
+    <?php  echo $this->html->formField('input','cityname-required',$content['user']['cityname'],array('placeholder'=>'City Name','class'=>'span5','data-required'=>"true"));?>
+      <?php //echo $this->html->formField('dropdown','cityid-required',cityArray(),array('class'=>'span5 offset1 city-select','data-required'=>"true"),$content['user']['cityid']);?>
     </div>
   </div>
   

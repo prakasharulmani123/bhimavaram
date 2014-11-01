@@ -65,6 +65,7 @@ $route['classifieds/message'] = "classifieds/message";
 $route['classifieds/ads'] = "classifieds/ads";
 $route['classifieds/ads/:any'] = "classifieds/ads/$1";
 $route['classifieds/reply'] = "classifieds/reply";
+$route['classifieds/contact/:any'] = "classifieds/checkcontactuser/$1";
 $route['classifieds/:any'] = "classifieds/show/$1";
 
 //News

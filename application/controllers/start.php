@@ -84,7 +84,8 @@ class Start extends CI_Controller {
 				'ipaddress'=>ip(),
 				'password'=>$data['password'],
 				'question_id' => $data['question_id'],
-				'answer' => $data['answer']
+				'answer' => $data['answer'],
+				'cityname' => $data['cityname']
 			);
 			
 			//Add new user
@@ -257,14 +258,18 @@ class Start extends CI_Controller {
 	{
 		$data=$this->general->get_post_values();
 		$data=$this->general->processData($data);
-		$list=array(
-		'yellowpages'=>'yellowpages/search/'.$data['q'],
-		'classifieds'=>'classifieds/search/'.$data['q'],
-		'news'=>'news/searchresults/'.$data['q'],
-		'deals'=>'deals/searchresults/'.$data['q'],
-		'movies'=>'movies/searchresults/'.$data['q'],
-		'jobs'=>'jobs/searchresults/'.$data['q'],
-		);
+		if($data['q'] == ''){
+			$list[$data['searchtype']] = $data['searchtype'];
+		}else{
+			$list=array(
+			'yellowpages'=>'yellowpages/search/'.$data['q'],
+			'classifieds'=>'classifieds/search/'.$data['q'],
+			'news'=>'news/searchresults/'.$data['q'],
+			'deals'=>'deals/searchresults/'.$data['q'],
+			'movies'=>'movies/searchresults/'.$data['q'],
+			'jobs'=>'jobs/searchresults/'.$data['q'],
+			);
+		}
 		redirect($list[$data['searchtype']]);
 	}
 	

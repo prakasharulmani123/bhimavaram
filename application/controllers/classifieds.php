@@ -75,7 +75,13 @@ class Classifieds extends CI_Controller {
 		$data['footer']['js']=array('jquery.raty.min.js','yp_listings.js','wysihtml5-0.3.0.min.js','bootstrap-wysihtml5.js');
 		$data['content']['user']=$this->df->get_single_row('users',array('uid'=>userdata('uid')));
 		$data['content']['template']='classy_show.php';	
-		$this->layout->publish($data);
+		$this->layout->publish($data, 'full_layout_inner');
+	}
+	
+	function checkcontactuser(){
+		$this->auth->checkLogin();
+		$slug=uridata(3);
+		redirect('classifieds/'.$slug);
 	}
 	
 	function message()
@@ -243,6 +249,6 @@ class Classifieds extends CI_Controller {
 		//$data['content']['category']=$category;
 		$this->layout->publish($data);		
 	}
-		
+	
 }/* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */
