@@ -1,5 +1,6 @@
 <div id="user-account" class="span10 center-align">
 	<div class="span10 ">
+    	<?php echo $this->session->flashdata('message') ? $this->session->flashdata('message') : ''; ?>
     	<h2 class="split-title"><span>Forgor your password?</span></h2>
         <?php if(validation_errors()){?>
         	<div class="validation-errors center-align span7"><?php echo validation_errors();?></div>
@@ -8,8 +9,10 @@
         
         <?php
 		 echo $this->html->formField('input','email-required-valid_email','',array('placeholder'=>'Email Address','class'=>'span7','data-required'=>"true",'data-type'=>'email'));
-		   //echo $this->html->formField('input','email-required-valid_email','',array('placeholder'=>'Email Address','class'=>'span7'));		   
-		   ?>
+		echo $this->html->formField('dropdown','question_id-required',questionArray(),array('class'=>'span7 offset1 question-select','data-required'=>"true"));
+		echo $this->html->formField('input','answer-required','',array('placeholder'=>'Answer','class'=>'span7','data-required'=>"true"));
+		//echo $this->html->formField('input','email-required-valid_email','',array('placeholder'=>'Email Address','class'=>'span7'));		   
+		?>
   <div class="clear">&nbsp;</div>
       <button type="submit" class="btn btn-danger center-align span7 submit-btn">Send Reset Link</button>  
 

@@ -950,24 +950,24 @@ select:focus:required:invalid:focus {
   background-color: #fbb450 \9;
 }
 .btn-success {
-  border: 1px solid #359947;
+  border: 1px solid #156EB0;
   color: #ffffff;
-  background-color: #35aa47;
-  background-image: -moz-linear-gradient(top, #35aa47, #35aa47);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#35aa47), to(#35aa47));
-  background-image: -webkit-linear-gradient(top, #35aa47, #35aa47);
-  background-image: -o-linear-gradient(top, #35aa47, #35aa47);
-  background-image: linear-gradient(to bottom, #35aa47, #35aa47);
+  background-color: #156EB0;
+  background-image: -moz-linear-gradient(top, #156EB0, #156EB0);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#156EB0), to(#156EB0));
+  background-image: -webkit-linear-gradient(top, #156EB0, #156EB0);
+  background-image: -o-linear-gradient(top, #156EB0, #156EB0);
+  background-image: linear-gradient(to bottom, #156EB0, #156EB0);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff35aa47', endColorstr='#ff35aa47', GradientType=0);
-  *background-color: #35aa47;
+  /*background-color: #35aa47;*/
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-success:hover,
 .btn-success:active,
 .btn-success.active,
 .btn-success:focus {
-  border: 1px solid #2e863e;
+  border: 1px solid #156EB0;
   color: #ffffff;
   background-color: #33a244;
   background-image: -moz-linear-gradient(top, #35aa47, #2f973f);

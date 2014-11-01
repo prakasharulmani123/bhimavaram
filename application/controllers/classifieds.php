@@ -59,7 +59,7 @@ class Classifieds extends CI_Controller {
 			$data['content']['template']='classy_add.php';	
 			$data['content']['subcategories']=$this->df->doquery("select * from classy_categories where parentid > 0 order by name asc");
 			$data['content']['categories']=$this->df->get_multi_row('classy_categories',array('parentid'=>0),false,false,array('name'=>'asc'));		
-			$this->layout->publish($data);						
+			$this->layout->publish($data, 'full_layout_inner');						
 		}
 	}   
 	

@@ -1,3 +1,10 @@
+<style>
+.inner-left{
+	width:1000px !important;
+}
+</style>
+
+<?php echo $this->session->flashdata('message') ? $this->session->flashdata('message') : ''; ?>
 <ul class="nav nav-tabs" id="profileTabs">
   <li class="active"><a href="#edit_profile">Edit Profile</a></li>
   <li><a href="#email_settings">Email Settings</a></li>
@@ -34,7 +41,7 @@
     <div class="controls">    
     <?php echo showavatar($content['user']['picture'],$content['user']['name'],array('class'=>'avatar'));?>
       <?php  //echo $this->html->formField('upload','picture','',array('placeholder'=>'Change Picture','class'=>'span5'));?>
-      <input id="fileupload" type="file" name="files[]" data-url="<?php echo base_url();?>uploader/" multiple>
+      <input id="fileupload" type="file" name="" data-url="<?php echo base_url();?>uploader/" multiple>
     </div>
          <div id="progress" class="progress progress-success progress-striped span4 offset4">
             <div class="bar"></div>

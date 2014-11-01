@@ -13,7 +13,7 @@
   <div class="bhinew-inner-conatiner">
   	<div class="bhinew-header">
       <div class="bhinew-inncontainer2">
-        <?php echo $header; ?>
+        <?php 	echo $footerData; echo $header; ?>
       </div>
     <?php echo $body; ?>
     </div>
@@ -22,7 +22,6 @@
 </div>
 <?php
 	echo $footer;
-	echo $footerData;
 ?>
 <script type="text/javascript">
 

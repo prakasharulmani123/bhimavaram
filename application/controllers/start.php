@@ -99,7 +99,7 @@ class Start extends CI_Controller {
 			$this->emails->send_mail($data['email'], 'Thank you for registration', $registration_success);
 			
 //			redirect(base_url());
-			$this->session->set_flashdata('success', 'Thanks for creating a/c with Bhimavaram.com');
+			set_message('success',"Thanks for creating a/c with Bhimavaram.com");
 			redirect(current_url());
 		}
 		else
@@ -112,7 +112,7 @@ class Start extends CI_Controller {
 			//$data['footer']['custom']='signin-footer';		
 			$data['content']['template']='register';
 			$data['sidebar']=false;		
-			$this->layout->publish($data);
+			$this->layout->publish($data, 'full_layout_inner');
 		}		
 	}
 	
@@ -138,7 +138,7 @@ class Start extends CI_Controller {
 			$data['content']['template']='signin';
 		
 			$data['sidebar']=false;			
-			$this->layout->publish($data);			
+			$this->layout->publish($data, 'full_layout_inner');			
 		}
 	}		
 	
@@ -177,7 +177,7 @@ class Start extends CI_Controller {
 				if(count($user)==0)
 				{
 					set_message('error',"We couldn't able to find an account with this email.");
-					$this->showLoginPage();
+					//$this->showLoginPage();
 				}
 				else
 				{

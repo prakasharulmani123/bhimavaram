@@ -37,7 +37,7 @@ class Profile extends CI_Controller {
 			$data['footer']['js']=array('parsley.js','plugins/jquery.ui.widget.js','plugins/jquery.iframe-transport.js','plugins//jquery.fileupload.js','edit_profile.js','picture_upload.js');		
 			$data['content']['user']=$this->df->get_single_row('users',array('uid'=>userdata('uid')));
 			$data['content']['template']='edit_profile';		
-			$this->layout->publish($data);				
+			$this->layout->publish($data, 'full_layout_inner');				
 		}
 	}
 	

@@ -10,6 +10,7 @@ class Ads extends CI_Controller {
 		$adid=uridata(3);
 		$ad=$this->df->get_single_row('ads',array('id'=>$adid));
 		$this->db->simple_query("update ads set clicks=clicks+1 where id='$adid'");		
+		
 		if(strlen($ad['description'])>3 && strlen($ad['add_photos'])>3)
 		{
 			$data['header']['css']=array('ad-show.css');

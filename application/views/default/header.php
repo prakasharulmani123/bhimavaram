@@ -1,4 +1,14 @@
-
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#searchdropdownbox').on('change', function(){
+		var search_text = $('#twotabsearchtextbox').val();
+		
+		if(search_text == ''){
+			window.location.href = "<?php echo base_url() ?>index.php/"+$(this).val();
+		}
+	});
+});
+</script>
 <div class="bhinew-scroll" style="visibility:hidden" id="bhinew-scroll">
     <div class="bhinew-scrollheading"> Wishes </div>
     <div class="bhinew-scrolltxt">
@@ -85,12 +95,12 @@
                                     </span>
                                     <span class="nav-down-arrow nav-sprite"></span>
                                     <select name="search_category" id="searchdropdownbox" class="searchSelect">
-                                        <option value="yellowpages">Yellow Pages</option>
-                                        <option value="classifieds">Classifieds</option>
-                                        <option value="news">News</option>
-                                        <option value="deals">Deals</option>
-                                        <option value="movies">Movies</option>
-                                        <option value="jobs">Jobs</option>
+                                        <option value="yellowpages" <?php echo $this->uri->segment(1) == 'yellowpages' ? 'selected' : ''?>>Yellow Pages</option>
+                                        <option value="classifieds" <?php echo $this->uri->segment(1) == 'classifieds' ? 'selected' : ''?>>Classifieds</option>
+                                        <option value="news" <?php echo $this->uri->segment(1) == 'news' ? 'selected' : ''?>>News</option>
+                                        <option value="deals" <?php echo $this->uri->segment(1) == 'deals' ? 'selected' : ''?>>Deals</option>
+                                        <option value="movies" <?php echo $this->uri->segment(1) == 'movies' ? 'selected' : ''?>>Movies</option>
+                                        <option value="jobs" <?php echo $this->uri->segment(1) == 'jobs' ? 'selected' : ''?>>Jobs</option>
                                     </select>
                                 </span>
                                 <?php echo form_open('start/searchresults', array("class" => "form-search", 'data-validate' => 'parsley')); ?>
@@ -140,11 +150,9 @@
         <div class="span2 pull-left upper center" style="color:#156EAF;">Sponsored :</div>
         <div class="span14 pull-left scrolller">
             <ul>
-                <li><?php echo showAd('text', '750', '24'); ?></li>
-                <li><?php echo showAd('text', '750', '24'); ?></li>
-                <li><?php echo showAd('text', '750', '24'); ?></li>        
-                <li><?php echo showAd('text', '750', '24'); ?></li>        
-                <li><?php echo showAd('text', '750', '24'); ?></li>        
+            	<?php for($i=1; $i<=5; $i++){ ?>
+	                <li><?php echo showAd('text', '750', '24'); ?></li>
+                <?php } ?>
             </ul>
         </div>
     </div>
