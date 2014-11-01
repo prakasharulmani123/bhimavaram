@@ -17,7 +17,7 @@ Posted in <?php echo anchor('classifieds/ads/'.$content['ad']['category'],$this-
 
 <div class="clear">&nbsp;</div>
 <div class="listing-img pull-left span8">
- <?php echo showBigAvatar($content['ad']['picture'],$content['ad']['title'],array('class'=>''));?>
+ <?php echo showBigAvatar($content['ad']['picture'],$content['ad']['title'],array('class'=>'', 'style'=>'height:auto'));?>
 </div>
 <div class="ad-details span10 pull-left">
 <div class="meta-label clearfix"><span>Ad Type </span><?php echo $content['ad']['adtype'];?></div>

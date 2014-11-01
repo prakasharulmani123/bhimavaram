@@ -40,7 +40,7 @@ class Site extends CI_Controller {
 								if($mail)
 									{
 										set_message('success',"We've sent the instructions to your email. Please check your email!");
-										redirect(base_url());
+										redirect('start/signin');
 									}
 							}//insert ends
 					}

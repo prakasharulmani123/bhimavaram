@@ -1,7 +1,7 @@
 <div id="user-account" class="span10 center-align">
 	<div class="span10 ">
     	<?php echo $this->session->flashdata('message') ? $this->session->flashdata('message') : ''; ?>
-    	<h2 class="split-title"><span>Forgor your password?</span></h2>
+    	<h2 class="split-title"><span>Forgot your password?</span></h2>
         <?php if(validation_errors()){?>
         	<div class="validation-errors center-align span7"><?php echo validation_errors();?></div>
         <?php }

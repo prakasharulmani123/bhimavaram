@@ -40,7 +40,7 @@ echo $this->html->formField('dropdown','birthday_year-required',yearArray(),arra
 
 <?php 
 //echo $this->html->formField('dropdown','city-required',cityArray(),array('class'=>'span7 offset1 city-select','data-required'=>"true"),userdata('cityid'));
-echo $this->html->formField('input','cityname-required','',array('placeholder'=>'City','class'=>'span7','data-required'=>"true"));
+echo $this->html->formField('input','cityname','',array('placeholder'=>'City','class'=>'span7'));
 ?>
 
 <?php 

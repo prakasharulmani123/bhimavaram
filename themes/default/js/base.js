@@ -79,9 +79,10 @@ jQuery(function() {
 
 jQuery(document).ready(function() {
     jQuery("#searchdropdownbox").change(function() {
+		
         var searchType = jQuery(this).val();
         var searchText = jQuery(this).find("option:selected").text();
-//        console.log(searchText);
+       // console.log(searchText);
 		jQuery("#nav-search-in-content").text(searchText);
 		var search_text = jQuery('#twotabsearchtextbox').val();
         jQuery.post(baseUrl + 'index.php/start/setsearch', {type: searchType, text: searchText}, function(data) {
@@ -89,6 +90,7 @@ jQuery(document).ready(function() {
             jQuery('input[name=searchtype]').val(searchType);
 			
 			if(search_text == ''){
+				console.log(searchText);
 				window.location.href = baseUrl+"index.php/"+searchType;
 			}
 			
