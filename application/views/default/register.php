@@ -11,11 +11,11 @@
         <?php if(validation_errors()){?>
         	<div class="validation-errors center-align span7"><?php echo validation_errors();?></div>
         <?php }
-		echo form_open('start/register',array('class'=>'form-horizontal center big-form','data-validate'=>'parsley'));?>
+		echo form_open('start/register',array('class'=>'form-horizontal center big-form','data-parsley-validate'=>'true'));?>
         
-        <?php echo $this->html->formField('input','name-required','',array('placeholder'=>'Full Name','class'=>'span7','data-required'=>"true"));
-		 echo $this->html->formField('input','email-required-valid_email-is_unique:users_email','',array('placeholder'=>'Email Address','class'=>'span7','data-required'=>"true",'data-type'=>'email'));
-		  echo $this->html->formField('password','password-required-min_length:8-max_length:30','',array('placeholder'=>'Password (8-30 Characters)','class'=>'span7','data-required'=>"true"));
+        <?php echo $this->html->formField('input','name-required','',array('placeholder'=>'Full Name','class'=>'span7','data-parsley-required'=>"true",'data-parsley-error-message'=>"please enter the name"));
+		 echo $this->html->formField('input','email-required-valid_email-is_unique:users_email','',array('placeholder'=>'Email Address','class'=>'span7','data-parsley-required'=>"true", 'data-parsley-type'=>"email",'data-parsley-error-message'=>"please enter the email id"));
+		  echo $this->html->formField('password','password-required-min_length:8-max_length:30','',array('placeholder'=>'Password (8-30 Characters)','class'=>'span7','data-parsley-required'=>"true",'data-parsley-range'=>"[8,30]",));
 		   //echo $this->html->formField('input','email-required-valid_email','',array('placeholder'=>'Email Address','class'=>'span7'));		   
 		   ?>
            <div class="span7 clearfix">
@@ -32,9 +32,9 @@
            <div class="span7 center-align clearfix birthday-holder">
            <label>Birthday</label>
 <?php 
-echo $this->html->formField('dropdown','birthday_month-required',monthArray(),array('class'=>'span2 pull-right date-dropdown','data-required'=>"true"));
-echo $this->html->formField('dropdown','birthday_date-required',dateArray(),array('class'=>'span1 pull-right date-dropdown','data-required'=>"true"));
-echo $this->html->formField('dropdown','birthday_year-required',yearArray(),array('class'=>'span2 pull-right date-dropdown','data-required'=>"true"));
+echo $this->html->formField('dropdown','birthday_month-required',monthArray(),array('class'=>'span2 pull-right date-dropdown',));//'data-parsley-required'=>"true",'data-parsley-error-message'=>"please select the month"
+echo $this->html->formField('dropdown','birthday_date-required',dateArray(),array('class'=>'span1 pull-right date-dropdown',));//'data-parsley-required'=>"true",'data-parsley-error-message'=>"please select the date"
+echo $this->html->formField('dropdown','birthday_year-required',yearArray(),array('class'=>'span2 pull-right date-dropdown',));//'data-parsley-required'=>"true",'data-parsley-error-message'=>"please select the year"
 ?>
   </div>           
 

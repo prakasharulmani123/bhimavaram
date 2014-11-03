@@ -84,8 +84,7 @@ class Start extends CI_Controller {
 				'ipaddress'=>ip(),
 				'password'=>$data['password'],
 				'question_id' => $data['question_id'],
-				'answer' => $data['answer'],
-				'cityname' => $data['cityname']
+				'answer' => $data['answer']
 			);
 			
 			//Add new user
@@ -108,7 +107,7 @@ class Start extends CI_Controller {
 			//$data['header']['custom']='plain_header';
 			//$data['header']['custom']='signin-header';
 			$data['header']['css']=array('register.css');
-			$data['footer']['js']=array('parsley.js');		
+			$data['footer']['js']=array('valid/parsley.js');		
 			//$data['footer']['custom']='plain_footer';	
 			//$data['footer']['custom']='signin-footer';		
 			$data['content']['template']='register';
@@ -258,18 +257,14 @@ class Start extends CI_Controller {
 	{
 		$data=$this->general->get_post_values();
 		$data=$this->general->processData($data);
-		if($data['q'] == ''){
-			$list[$data['searchtype']] = $data['searchtype'];
-		}else{
-			$list=array(
-			'yellowpages'=>'yellowpages/search/'.$data['q'],
-			'classifieds'=>'classifieds/search/'.$data['q'],
-			'news'=>'news/searchresults/'.$data['q'],
-			'deals'=>'deals/searchresults/'.$data['q'],
-			'movies'=>'movies/searchresults/'.$data['q'],
-			'jobs'=>'jobs/searchresults/'.$data['q'],
-			);
-		}
+		$list=array(
+		'yellowpages'=>'yellowpages/search/'.$data['q'],
+		'classifieds'=>'classifieds/search/'.$data['q'],
+		'news'=>'news/searchresults/'.$data['q'],
+		'deals'=>'deals/searchresults/'.$data['q'],
+		'movies'=>'movies/searchresults/'.$data['q'],
+		'jobs'=>'jobs/searchresults/'.$data['q'],
+		);
 		redirect($list[$data['searchtype']]);
 	}
 	

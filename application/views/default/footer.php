@@ -74,7 +74,7 @@ function citychange(){
 		
 		echo '<span id="name_error"></span>';
 		
-		echo $this->html->formField('input', 'email', '', array('placeholder'=>'Email', 'class'=>'span10', 'data-parsley-required'=>"true", 'data-parsley-type'=>"email", 'data-type'=>"email",'data-parsley-error-message'=>"please enter the email id"));
+		echo $this->html->formField('input', 'email', '', array('placeholder'=>'Email', 'class'=>'span10', 'data-parsley-required'=>"true", 'data-parsley-type'=>"email",'data-parsley-error-message'=>"please enter the email id"));
 		
 		echo $this->html->formField('input', 'phone', '', array('placeholder'=>'Phone', 'class'=>'span10','data-type'=>"number"));
 		
