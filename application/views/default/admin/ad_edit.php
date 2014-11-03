@@ -62,7 +62,7 @@
   <div class="control-group">
     <label class="control-label" for="inputName">Ad Link*</label>
     <div class="controls">
-      <?php  echo $this->html->formField('input','adlink-required',$content['ad']['adlink'],array('placeholder'=>'','class'=>'span4','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','adlink-required',$content['ad']['adlink'],array('placeholder'=>'','class'=>'span4','data-required'=>"true", 'data-type'=>'url'));?>
     </div>
   </div>
    <div class="control-group">

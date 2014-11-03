@@ -133,5 +133,37 @@ class News extends CI_Controller {
 		$this->layout->publish($data);
 	}	
 	
+	function checkuserlogin(){
+		$this->auth->checkLogin();
+		$slug=uridata(3);
+		redirect('news/'.$slug);
+	}
+
+	function message()
+	{
+		$this->auth->checkLogin();
+		$uid=userdata('uid');
+		$data=$this->general->get_post_values();
+		$data=$this->general->processData($data);
+		$listing=$this->df->get_single_row('news_listings',array('id'=>$data['listingid']));
+		$user=$this->df->get_single_row('users',array('uid'=>$uid));
+		$email=$listing['email'];
+		$content="You've received a message from ".$user['name']." for your news : ".anchor('news/'.$listing['slug'],$listing['title']).'<br><br>';
+		$content.='<div style="font-weight:bold;text-decoration:underline" >Message</div><br>';
+		$content.='<div style="font-style:italic">'.$data['message'].'</div>';
+		$this->load->library('emails');
+		$send=$this->emails->send_mail($email,'['.$this->settings->siteName()."] You've got a message",$content,false,$user['email']);
+		if($send)
+		{
+//			$this->df->insert_data('yp_messages',array('listingid'=>$listing['id'],'uid'=>$uid,'message'=>$data['message'],'ip'=>ip()));
+			set_message('success',"Your message has been sent successfully!");
+		}
+		else
+		{
+			set_message('error','Oops! Something went wrong!');
+		}
+		redirect('news/'.$data['slug']);							
+	}
+	
 }/* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */

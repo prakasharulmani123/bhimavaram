@@ -4,34 +4,8 @@ $itemid = $content['news']['id'];
 $itemtype = 'news';
 ?>
 
-<div class="bhi-topscroll">
-    <div class="carousel" data-ride="carousel" id="inner-topad">
-      <div class="carousel-inner">
-        <?php $executive_ads = showAdsInArray('image', '650', '90', 15, 'span6',$this->uri->segment(1)); ?>
-        <div class="item active ads300">
-          <?php
-                $initial_executive_ads_count = 0;
-                $executive_ads_count = count($executive_ads);
+<?php echo $this->load->view('default/sidebars/top_ad_banner', '', true);?>
 
-                foreach ($executive_ads as $executive_ad) {
-                    $initial_executive_ads_count++;
-					
-					echo '<div class="topad">';
-                    echo $executive_ad;
-					echo '</div>';
-					
-                    if ($initial_executive_ads_count % 1 == 0) {
-                        if ($executive_ads_count > $initial_executive_ads_count) {
-                            echo '</div>';
-                            echo '<div class="item ads300">';
-                        }
-                    }
-                }
-          ?>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!--<div class="center clearfix" style="text-align:left !important"><?php echo showAd('image','600','90');?></div>-->
 
@@ -122,13 +96,29 @@ if (userdata('uid')) {
     <?php
 } else {
     ?>
-        <a href="<?php echo base_url() . 'index.php/start/signin'; ?>" class="btn btn-mini btn-primary comment-item" role="button" data-toggle="modal"><i class="icon-comment-alt"></i>&nbsp; Post a comment</a>
+        <a href="<?php echo base_url() . 'index.php/news/checkuserlogin/'.$content['news']['slug']; ?>" class="btn btn-mini btn-primary comment-item" role="button" data-toggle="modal"><i class="icon-comment-alt"></i>&nbsp; Post a comment</a>
 
-    <?php }
-    ?>
-    <?php // echo showBookmark('news', $content['news']['id']); ?>    
-    <?php echo showReport('news', $content['news']['id']); ?>
+    <?php }?>
 </div>
+<div class="meta-divider">&nbsp;</div>
+<div class="span12 well well-mini" style="margin-left:10px;">
+	<a href="#send-message" class="btn send-message" role="button" data-toggle="modal"><i class="icon-envelope-alt"></i>&nbsp; Send a Message</a>
+    <?php echo showBookmark('yellowpages',$content['listing']['id']);?>
+    <?php echo showReport('news', $content['news']['id']); ?>
+   <?php /*?><?php
+	if(userdata('uid'))
+	{
+?>
+<a href="#review-item" class="btn send-message btn-primary pull-right" role="button" data-toggle="modal"><i class="icon-star-empty"></i>&nbsp; Review this listing</a>
+<?php }
+else
+{
+?>
+<a href="<?php echo base_url().'index.php/start/signin';?>" class="btn send-message btn-primary pull-right" role="button" data-toggle="modal"><i class="icon-star-empty"></i>&nbsp; Review this listing</a>
+
+<?php
+}
+?><?php */?></div>
 <div class="meta-divider">&nbsp;</div>
 <div class="related-news">
     <?php if (count($content['related']) > 0) { ?>
@@ -160,10 +150,35 @@ if (userdata('uid')) {
         </ul>
 <?php } ?>
 </div><!--related-news Ends-->
+
+
 <div id="reviews-box">
 <?php echo $this->general->getComments($itemtype, $itemid, uri_string()) ?>
 </div><!--Reviews-List Ends-->
 <!--==========Modal Boxes Starts============-->
+
+<div id="send-message" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Send a Message" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="messageModal">Send a message to <span class="to-email"><?php echo $content['news']['title'];?></span></h3>
+  </div>
+  <div class="modal-body">
+   <?php
+   		echo form_open('news/message',array('class'=>'bigform','data-validate'=>'parsley'));
+		echo $this->html->formField('label','Message','Please enter your message',array('class'=>'email'));
+		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your message','class'=>'span10','rows'=>'5','data-required'=>"true"));		
+   ?>
+   <input type="hidden" value="<?php echo $content['news']['id'];?>" name="listingid" />
+   <input type="hidden" value="<?php echo $content['news']['slug'];?>" name="slug" />
+   		<button class="btn btn-primary submit-btn">Send Message</button>
+        </form>
+   
+  </div>
+  <div class="modal-footer">
+    
+  </div>
+</div>
+
 
 <div id="report-item" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Report this page" aria-hidden="true">
     <div class="modal-header">
@@ -217,4 +232,34 @@ echo $this->html->formField('textarea', 'comment-required', '', array('placehold
     <div class="modal-footer">
 
     </div>
+</div>
+
+<div id="review-item" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Review this page" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="messageModal">Rate this page (<?php echo $itemtitle;?>)</h3>
+  </div>
+  <div class="modal-body">
+   <?php
+   		echo form_open('actions/review',array('class'=>'bigform','data-validate'=>'parsley'));
+		echo $this->html->formField('label','Report Type','Please choose a rating',array('class'=>'email'));
+		//echo $this->html->formField('dropdown','category-required',array(''=>'Select','illegal'=>'Illegal Content','spam'=>'Spam Content','duplicate'=>'Duplicate Content','others'=>'Others'),array('class'=>'span10','data-required'=>"true",'id'=>'category'));
+	?>
+	<div class="rating-active-container pull-left"></div><div class="rating-text pull-left"></div>
+    <div class="clearbig">&nbsp;</div>
+	<?php
+		echo $this->html->formField('label','Message','Please write your review',array('class'=>'email'));
+		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your review','class'=>'span10 wysiwyg','rows'=>'5','data-required'=>"true"));		
+   ?>
+   <input type="hidden" value="<?php echo $itemid;?>" name="itemid" />
+   <input type="hidden" value="<?php echo $itemtype;?>" name="itemtype" />
+   <input type="hidden" value="<?php echo uri_string();?>" name="itemurl" /> 
+   <input type="hidden" id="rating-active-score" name="score-required" value="" data-required="true" />
+   		<button class="btn btn-primary submit-btn">Submit Review</button>
+        </form>
+   
+  </div>
+  <div class="modal-footer">
+    
+  </div>
 </div>

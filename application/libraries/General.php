@@ -131,7 +131,7 @@ class General
 		$CI =& get_instance();
 		
 		//
-		$alltable=array('yellowpages'=>'yp_listings','movies'=>'movies_listings','theatres'=>'movies_theatres','deals'=>'offers_listings');
+		$alltable=array('yellowpages'=>'yp_listings','movies'=>'movies_listings','theatres'=>'movies_theatres','deals'=>'offers_listings', 'news' => 'news_listings');
 		$table=$alltable[$itemtype];
 		$reviews=$CI->df->get_multi_row('reviews',array('itemtype'=>$itemtype,'itemid'=>$itemid,'active'=>'1'));
 		$listing=$CI->df->get_single_row($table,array('id'=>$itemid));
@@ -162,7 +162,7 @@ class General
 		}
 		else
 		{
-			$output.='<div class="center-align center padding20 no-data clearfix">Be the first one to review. '.anchor('#review-item','Click here to post review!',array('class'=>'','role'=>"button",'data-toggle'=>"modal")).'</div>';			
+			$output.='<div class="center-align center padding20 no-data clearfix">Be the first one to review. '.anchor('#review-item','Click here to post review!',array('class'=>'','role'=>"button",'data-toggle'=>"modal")).'</div>';
 		}
 		return $output;
 	}
@@ -203,7 +203,12 @@ class General
 		}
 		else
 		{
-			$output.='<div class="center-align center padding20 no-data clearfix">Be the first one to comment. '.anchor('#comment-item','Click here to post comment!',array('class'=>'','role'=>"button",'data-toggle'=>"modal")).'</div>';			
+			if (userdata('uid')) {
+				$output.='<div class="center-align center padding20 no-data clearfix">Be the first one to comment. '.anchor('#comment-item','Click here to post comment!',array('class'=>'','role'=>"button",'data-toggle'=>"modal")).'</div>';			
+			}
+			else{
+				$output.='<div class="center-align center padding20 no-data clearfix">Be the first one to comment. '.anchor('news/checkuserlogin/'.$listing['slug'],'Click here to post comment!',array('class'=>'','role'=>"button",'data-toggle'=>"modal")).'</div>';			
+			}
 		}
 		return $output;
 	}	

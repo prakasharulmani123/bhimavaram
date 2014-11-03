@@ -59,7 +59,7 @@ class Actions extends CI_Controller {
 			$insert=$this->df->insert_data_id('reviews',$rvw);
 			if($insert)			
 			{
-				$alltable=array('yellowpages'=>'yp_listings','movies'=>'movies_listings','deals'=>'offers_listings','theatres'=>'movies_theatres');
+				$alltable=array('yellowpages'=>'yp_listings','movies'=>'movies_listings','deals'=>'offers_listings','theatres'=>'movies_theatres', 'news' => 'news_listings');
 				$table=$alltable[$data['itemtype']];
 				$id=$data['itemid'];
 				$item=$this->df->get_single_row($table,array('id'=>$id));

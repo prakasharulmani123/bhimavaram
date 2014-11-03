@@ -73,6 +73,8 @@ $route['news/index'] = "news/index";
 $route['news/index/:any'] = "news/index/$1";
 $route['news/searchresults/:any'] = "news/searchresults/$1";
 $route['news/add'] = "news/add";
+$route['news/message'] = "news/message";
+$route['news/checkuserlogin/:any'] = "news/checkuserlogin/$1";
 $route['news/:any'] = "news/show/$1";
 
 //Events

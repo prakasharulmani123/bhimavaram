@@ -79,7 +79,6 @@ jQuery(function() {
 
 jQuery(document).ready(function() {
     jQuery("#searchdropdownbox").change(function() {
-		
         var searchType = jQuery(this).val();
         var searchText = jQuery(this).find("option:selected").text();
        // console.log(searchText);
@@ -89,15 +88,23 @@ jQuery(document).ready(function() {
             jQuery('.searchtext').empty().append(searchText + '<b class="caret"></b>');
             jQuery('input[name=searchtype]').val(searchType);
 			
-			if(search_text == ''){
-				console.log(searchText);
+			if(search_text == '' || search_text == 'Search...'){
 				window.location.href = baseUrl+"index.php/"+searchType;
 			}
 			
         });
     });
 	
-	jQuery('#inner-topad, .right-side-ad, .left-side-ad').carousel({
+	jQuery('#inner-topad').innerfade({
+			speed: 2000,
+			timeout: 6000,
+			type: 'sequence',
+			containerheight: 'auto'
+	});
+
+	jQuery('#inner-topad').show();
+	
+	jQuery(/*'#inner-topad,*/'.right-side-ad, .left-side-ad').carousel({
         interval: 4000,
         cycle: true,
     });
