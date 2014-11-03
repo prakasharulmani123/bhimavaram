@@ -146,8 +146,11 @@ class News extends CI_Controller {
 		$data=$this->general->get_post_values();
 		$data=$this->general->processData($data);
 		$listing=$this->df->get_single_row('news_listings',array('id'=>$data['listingid']));
-		$user=$this->df->get_single_row('users',array('uid'=>$uid));
-		$email=$listing['email'];
+		
+		$news_user = $this->df->get_single_row('users',array('uid'=>$listing['uid']));
+		$email=$news_user['email'];
+		
+		$user=$this->df->get_single_row('users',array('uid'=>$uid));		
 		$content="You've received a message from ".$user['name']." for your news : ".anchor('news/'.$listing['slug'],$listing['title']).'<br><br>';
 		$content.='<div style="font-weight:bold;text-decoration:underline" >Message</div><br>';
 		$content.='<div style="font-style:italic">'.$data['message'].'</div>';

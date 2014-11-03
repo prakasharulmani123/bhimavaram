@@ -78,7 +78,7 @@ function citychange(){
 		
 		echo $this->html->formField('input', 'phone', '', array('placeholder'=>'Phone', 'class'=>'span10','data-type'=>"number"));
 		
-		echo $this->html->formField('textarea','message-required--max_length:150','',array('data-parsley-required'=>"true",'placeholder'=>'Write your wish message (Maximum 150 Charaters)','class'=>'span10','rows'=>"4",'max'=>"150",'data-parsley-error-message'=>"please enter the email wishes"));
+		echo $this->html->formField('textarea','message-required--max_length:150','',array('data-parsley-required'=>"true",'placeholder'=>'Write your wish message (Maximum 150 Charaters)','class'=>'span10','rows'=>"4",'data-parsley-maxlength'=>"150", 'data-parsley-error-message'=>"please enter the wishes"));
    		?>
     <input type="hidden" name="currenturl" value="<?php echo uri_string();?>" />
     <button class="btn btn-primary submit-btn span10" style="padding:7px">Submit Message</button>
