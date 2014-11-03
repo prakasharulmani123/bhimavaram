@@ -64,18 +64,21 @@ function citychange(){
   </div>
   <div class="modal-body">
     <?php
-   		echo form_open('start/postwish',array('class'=>'bigform','data-validate'=>'parsley'));
+   		echo form_open('start/postwish',array('class'=>'bigform','data-parsley-validate'=>'true'));
 		
 		echo $this->html->formField('label','wish','Posting as '.userdata('name'),array('class'=>'email'));
 		
-		echo $this->html->formField('input', 'name', '', array('placeholder'=>'Name', 'class'=>'span10', 'data-required'=>"true", 'data-error-container'=>"#name_error", 'data-error-message' => 'error'));
+		echo $this->html->formField('input', 'name', '', array('placeholder'=>'Name', 'class'=>'span10', 'data-parsley-required'=>"true",'data-parsley-error-message'=>"please enter the name"));
+		
+	
+		
 		echo '<span id="name_error"></span>';
 		
-		echo $this->html->formField('input', 'email', '', array('placeholder'=>'Email', 'class'=>'span10', 'data-required'=>"true", 'data-type'=>"email"));
+		echo $this->html->formField('input', 'email', '', array('placeholder'=>'Email', 'class'=>'span10', 'data-parsley-required'=>"true", 'data-parsley-type'=>"email", 'data-type'=>"email",'data-parsley-error-message'=>"please enter the email id"));
 		
 		echo $this->html->formField('input', 'phone', '', array('placeholder'=>'Phone', 'class'=>'span10','data-type'=>"number"));
 		
-		echo $this->html->formField('textarea','message-required--max_length:150','',array('placeholder'=>'Write your wish message (Maximum 150 Charaters)','class'=>'span10','rows'=>"4",'data-required'=>'true','data-maxlength'=>"150"));
+		echo $this->html->formField('textarea','message-required--max_length:150','',array('data-parsley-required'=>"true",'placeholder'=>'Write your wish message (Maximum 150 Charaters)','class'=>'span10','rows'=>"4",'max'=>"150",'data-parsley-error-message'=>"please enter the email wishes"));
    		?>
     <input type="hidden" name="currenturl" value="<?php echo uri_string();?>" />
     <button class="btn btn-primary submit-btn span10" style="padding:7px">Submit Message</button>

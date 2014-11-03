@@ -182,7 +182,7 @@ class Layout
 		$output.=$this->getScriptLink('jquery.li-scroller.1.0.js');
 		$output.=$this->getScriptLink('jquery.vticker.min.js');	
 		$output.=$this->getScriptLink('base.js');
-		$output.=$this->getScriptLink('parsley.js');
+		$output.=$this->getScriptLink('valid/parsley.js');
 		$output.=$this->getScriptLink('innerfade/jquery.innerfade.js');
 		$output.=$this->getScriptLink('external.js');
 		$output.=$this->getScriptLink('ddsmoothmenu.js');
