@@ -103,6 +103,8 @@ class Events extends CI_Controller {
 		$this->layout->publish($data); 		
 	}
 	
+	
+	
  	function add()
 	{
 		$this->auth->checkLogin();
@@ -110,11 +112,13 @@ class Events extends CI_Controller {
 		if($this->general->validateForm($data))
 		{
 			$data=$this->general->processData($data);	
+			
 			$data['uid']=userdata('uid');
 			$data['cityid']=userdata('cityid');
 			$data['description']=htmlspecialchars($data['description']);
-			$data['ipaddress']=ip();
+			$data['ipaddress']=ip();			
 			unset($data['_wysihtml5_mode']);
+			unset($data['files']);
 			$insert=$this->df->insert_data_id('events_listings',$data);
 			if($insert)
 			{
@@ -138,7 +142,7 @@ class Events extends CI_Controller {
 			$data['content']['user']=$this->df->get_single_row('users',array('uid'=>userdata('uid')));
 			$data['content']['template']='event_add.php';	
 			$data['content']['categories']=$this->df->get_multi_row('news_categories');		
-			$this->layout->publish($data);						
+			$this->layout->publish($data, 'full_layout_inner');						
 		}
 	}  	
 	

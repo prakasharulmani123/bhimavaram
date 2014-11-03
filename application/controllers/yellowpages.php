@@ -346,6 +346,11 @@ class Yellowpages extends CI_Controller {
 		}
 		
 	}
+	
+	function yellow_auth(){
+ 		$this->auth->checkLogin();
+		redirect('yellowpages/'.uridata(3));
+	}
 		
 }//controller ends
 

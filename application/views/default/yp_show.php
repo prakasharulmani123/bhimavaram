@@ -103,23 +103,19 @@ foreach($timings as $k=>$v)
 <div class="meta-divider">&nbsp;</div>
 
 <div class="span12 well well-mini" style="margin-left:10px;">
+	<?php if(userdata('uid')) { ?>
 	<a href="#send-message" class="btn send-message" role="button" data-toggle="modal"><i class="icon-envelope-alt"></i>&nbsp; Send a Message</a>
+    <?php } else {?>
+    <a href="<?php echo base_url().'index.php/yellowpages/yellow_auth/'.$content['listing']['slug'];?>" class="btn send-message" role="button" data-toggle="modal"><i class="icon-envelope-alt"></i>&nbsp; Send a Message</a>
+    <?php } ?>
     <?php echo showBookmark('yellowpages',$content['listing']['id']);?>
     <?php echo showReport('yellowpages',$content['listing']['id']);?>
-   <?php
-	if(userdata('uid'))
-	{
-?>
-<a href="#review-item" class="btn send-message btn-primary pull-right" role="button" data-toggle="modal"><i class="icon-star-empty"></i>&nbsp; Review this listing</a>
-<?php }
-else
-{
-?>
-<a href="<?php echo base_url().'index.php/start/signin';?>" class="btn send-message btn-primary pull-right" role="button" data-toggle="modal"><i class="icon-star-empty"></i>&nbsp; Review this listing</a>
-
-<?php
-}
-?></div>
+    <?php if(userdata('uid')) { ?>
+	<a href="#review-item" class="btn send-message btn-primary pull-right" role="button" data-toggle="modal"><i class="icon-star-empty"></i>&nbsp; Review this listing</a>
+	<?php } else { ?>
+	<a href="<?php echo base_url().'index.php/yellowpages/yellow_auth/'.$content['listing']['slug'];?>" class="btn send-message btn-primary pull-right" role="button" data-toggle="modal"><i class="icon-star-empty"></i>&nbsp; Review this listing</a>
+	<?php } ?>
+</div>
 
 <div id="reviews-box">
     <?php echo $this->general->getReviews($itemtype,$itemid,uri_string())?>

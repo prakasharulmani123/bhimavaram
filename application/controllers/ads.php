@@ -28,8 +28,8 @@ class Ads extends CI_Controller {
 	function go()
    {
 	   $adid=uridata(3);
-		$ad=$this->df->get_single_row('ads',array('id'=>$adid));
-		redirect($ad['adlink']);
+	   $ad=$this->df->get_single_row('ads',array('id'=>$adid));
+	   redirect($ad['adlink']);
    }
 	
 }/* End of file welcome.php */

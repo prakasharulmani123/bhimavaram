@@ -51,7 +51,9 @@ $route['yellowpages/add'] = "yellowpages/add";
 $route['yellowpages/contactinfo'] = "yellowpages/contactinfo";
 $route['yellowpages/complete'] = "yellowpages/complete";
 $route['yellowpages/message'] = "yellowpages/message";
+$route['yellowpages/yellow_auth/:any'] = "yellowpages/yellow_auth/$1";
 $route['yellowpages/:any'] = "yellowpages/show/$1";
+
 
 //Classifieds
 $route['classifieds/index'] = "classifieds/index";
