@@ -139,7 +139,7 @@ echo $this->html->formField('dropdown','parentcategory-required',YpCategory(),ar
     <label class="control-label" for="inputName">Payment Options</label>
      <div class="controls">
 <label class="checkbox inline">
-  <input type="checkbox" value="Cash" name="payment_options[]">Cash
+  <input type="checkbox" value="Cash" name="payment_options[]" data-parsley-required="true">Cash
 </label>
      <label class="checkbox inline">
   <input type="checkbox" value="VISA" name="payment_options[]">VISA Card
@@ -160,7 +160,7 @@ echo $this->html->formField('dropdown','parentcategory-required',YpCategory(),ar
 </label>
 <div class="clear">&nbsp;</div>
 <label class="checkbox inline">
-  <input type="checkbox" value="Diner's Club" name="payment_options[]"> Diner's Club
+  <input type="checkbox" value="Diner's Club" name="payment_options[]" > Diner's Club
 </label>
     </div>  
    </div>

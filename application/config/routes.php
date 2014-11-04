@@ -117,7 +117,8 @@ $route['deals/index'] = "deals/index";
 $route['deals/index/:any'] = "deals/index/$1";
 $route['deals/searchresults/:any'] = "deals/searchresults/$1";
 $route['deals/add'] = "deals/add";
-//$route['movies/add'] = "movies/add";
+$route['deals/message'] = "deals/message";
+$route['deals/checkuserlogin/:any'] = "deals/checkuserlogin/$1";
 $route['deals/:any'] = "deals/show/$1";
 
 //Polls

@@ -108,7 +108,7 @@ class Yellowpages extends CI_Controller {
 		$data['content']['template']='yp_add.php';	
 		$data['content']['subcategories']=$this->df->doquery("select * from yp_categories where parentid > 0 order by name asc");
 		$data['content']['categories']=$this->df->get_multi_row('yp_categories',array('parentid'=>0),false,false,array('name'=>'asc'));		
-		$this->layout->publish($data);						
+		$this->layout->publish($data, 'full_layout_inner');						
 	}
 	
 	function contactinfo()
@@ -131,7 +131,6 @@ class Yellowpages extends CI_Controller {
 			$data['footer']['js']=array('parsley.js','plugins/jquery.ui.widget.js','plugins/jquery.iframe-transport.js','plugins/jquery.fileupload.js','edit_profile.js','picture_upload.js');		
 			$data['content']['user']=$this->df->get_single_row('users',array('uid'=>userdata('uid')));
 			$data['content']['template']='yp_contact.php';		
-			$this->layout->publish($data);				
 		}
 		else
 		{
@@ -144,8 +143,8 @@ class Yellowpages extends CI_Controller {
 			$data['content']['template']='yp_add.php';	
 			$data['content']['subcategories']=$this->df->doquery("select * from yp_categories where parentid > 0 order by name asc");
 			$data['content']['categories']=$this->df->get_multi_row('yp_categories',array('parentid'=>0),false,false,array('name'=>'asc'));		
-			$this->layout->publish($data);	
 		}
+		$this->layout->publish($data, 'full_layout_inner');	
 	}	
 
 	function complete()
@@ -191,6 +190,7 @@ class Yellowpages extends CI_Controller {
 				'emailaddress'=>$prevdata['email'],
 				'website'=>$prevdata['website'],
 				'description'=>$prevdata['description'],
+				'approved' => '0'
 			);//Listing Ends
 				
 			//print_r($listing);
@@ -201,8 +201,9 @@ class Yellowpages extends CI_Controller {
 			{
 				$slug=$this->_createSlug($list.'-'.$prevdata['title']);
 				$this->df->update_record('yp_listings',array('slug'=>$slug),array('id'=>$list));	
-				set_message('success','Business listing created successfully!');
-				redirect('yellowpages/'.$slug);
+				set_message('success','Business listing created successfully!, waiting for admin approval.');
+				//redirect('yellowpages/'.$slug);
+				redirect('yellowpages/index');
 			}
 			else
 			{

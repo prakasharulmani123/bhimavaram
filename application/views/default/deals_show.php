@@ -65,23 +65,23 @@ $itemtype='deals';
 </div><!--Listing-Meta-Right Ends-->
 <div class="meta-divider">&nbsp;</div>
 
-<div class="span11 well well-mini">	
+<div class="span11 well well-mini">
+	
+ 	<?php if (userdata('uid')) { ?>
+	<a href="#send-message" class="btn send-message" role="button" data-toggle="modal"><i class="icon-envelope-alt"></i>&nbsp; Send a Message</a> 
+	<?php } else { ?>
+	<a href="<?php echo base_url() . 'index.php/deals/checkuserlogin/'.$content['deal']['slug']; ?>" class="btn send-message" role="button" data-toggle="modal"><i class="icon-envelope-alt"></i>&nbsp; Send a Message</a>
+	<?php } ?>
+
     <?php echo showBookmark('deals',$content['deal']['id']);?>
     <?php echo showReport('deals',$content['deal']['id']);?>
-    <?php
-	if(userdata('uid'))
-	{
-?>
-<a href="#review-item" class="btn send-message btn-primary pull-right" role="button" data-toggle="modal"><i class="icon-star-empty"></i>&nbsp; Review this deal</a>
-<?php }
-else
-{
-?>
-<a href="<?php echo base_url().'index.php/start/signin';?>" class="btn send-message btn-primary pull-right" role="button" data-toggle="modal"><i class="icon-star-empty"></i>&nbsp; Review this deal</a>
-
-<?php
-}
-?>
+    
+    <?php if(userdata('uid')){ ?>
+	<a href="#review-item" class="btn send-message btn-primary pull-right" role="button" data-toggle="modal"><i class="icon-star-empty"></i>&nbsp; Review this deal</a>
+	<?php } else { ?>
+	<a href="<?php echo base_url() . 'index.php/deals/checkuserlogin/'.$content['deal']['slug']; ?>" class="btn send-message btn-primary pull-right" role="button" data-toggle="modal"><i class="icon-star-empty"></i>&nbsp; Review this deal</a>
+	<?php } ?>
+    
 </div>
 
 <div id="reviews-box">
@@ -91,7 +91,24 @@ else
 <!--==========Modal Boxes Starts============-->
 
 
-
+<div id="send-message" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Send a Message" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="messageModal">Send a message to <span class="to-email"><?php echo $content['deal']['title'];?></span></h3>
+  </div>
+  <div class="modal-body">
+    <?php
+   		echo form_open('deals/message',array('class'=>'bigform','data-validate'=>'parsley'));
+		echo $this->html->formField('label','Message','Please enter your message',array('class'=>'email'));
+		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your message','class'=>'span10','rows'=>'5','data-required'=>"true"));		
+   ?>
+    <input type="hidden" value="<?php echo $content['deal']['id'];?>" name="listingid" />
+    <input type="hidden" value="<?php echo $content['deal']['slug'];?>" name="slug" />
+    <button class="btn btn-primary submit-btn">Send Message</button>
+    </form>
+  </div>
+  <div class="modal-footer"> </div>
+</div>
 
 
 <div id="report-item" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Report this page" aria-hidden="true">

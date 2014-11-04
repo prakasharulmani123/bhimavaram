@@ -5,8 +5,7 @@
       <li data-target="#step2" class="active"><span class="badge badge-info">2</span>Contact Information<span class="chevron"></span></li>
 </ul>
 </div>  
-       <?php echo form_open('admin/yellowpages/complete',array('class'=>'form-horizontal password-form','data-parsley-validate'=>'true'));?>  
-   
+       <?php echo form_open('yellowpages/complete',array('class'=>'form-horizontal password-form','data-parsley-validate'=>'true'));?>  
 <div class="form-title">Contact Information</div>  
   <div class="control-group">
     <label class="control-label" for="inputName">Address*</label>
@@ -47,9 +46,9 @@
     </div>
   </div> 
   <div class="control-group">
-    <label class="control-label" for="inputName">Email Address</label>
+    <label class="control-label" for="inputName">Email Address*</label>
     <div class="controls">
-      <?php  echo $this->html->formField('input','email-valid_email','',array('placeholder'=>'Email Address','class'=>'span6'));?>
+      <?php  echo $this->html->formField('input','email-valid_email','',array('placeholder'=>'Email Address','class'=>'span6','data-parsley-required'=>"true"));?>
     </div>
   </div> 
   <div class="control-group">

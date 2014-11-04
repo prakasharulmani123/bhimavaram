@@ -221,6 +221,34 @@ class Yellowpages extends CI_Controller {
 		}		
 	}
 	
+	function updatead()
+	{
+		$values=postdata('values');
+		$values=explode(':',$values);
+		
+		$update=$this->db->simple_query("update yp_listings set approved='".$values[1]."' where id='".$values[0]."'");
+		if($update)
+		{
+			if($values[1] == '1')
+			{
+				$yp_list=$this->df->get_single_row('yp_listings',array('id'=>$values[0]));
+				$email=$yp_list['emailaddress'];	
+				if($email){
+					$content="Your yellow page has been approved : Now you can see by click this link ".anchor('yellowpages/'.$yp_list['slug'],$yp_list['title']);
+					$this->load->library('emails');
+					$send=$this->emails->send_mail($email,'['.$this->settings->siteName()."] You've got a message",$content,false,'hello@maaswarnandhra.com');
+				}
+								
+			}
+			echo 'Yellow page updated successfully!';
+		}
+		else
+		{
+			echo 'Oops! Something went wrong!';
+		}
+		
+	}
+	
 	function deletelisting()
 	{
 		$id=uridata(4);

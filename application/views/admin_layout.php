@@ -22,14 +22,14 @@ line-height: 30px;}
 
 <?php 
 	echo $meta;
+	echo $footerData;
 	echo $header;
 	echo $body;
 ?>
 </div><!--#content-box Ends-->
 <?php
 	echo $sidebar;
-	echo $footer;
-	echo $footerData;
+	echo $footer;	
 ?>
 <script type="application/javascript">
 	jQuery(function(){

@@ -6,7 +6,7 @@
 <ul class="span4 pull-left" id="categories-list">
   <li><?php echo anchor('movies/theatres','Browse Theatres',array('class'=>'btn btn-danger btn-block'));?></li>
   <div class="clearbig">&nbsp;</div>
-  <li class="filter-heading">Movie Category <?php echo anchor('movies/resetfilter/category','Reset',array('class'=>'reset'));?></li>
+  <li class="filter-heading">Movie Category <?php //echo anchor('movies/resetfilter/category','Reset',array('class'=>'reset'));?></li>
   <?php
     foreach($content['categories'] as $category)
 	{
@@ -21,7 +21,7 @@
 	}
 	?>
   <div class="clearbig">&nbsp;</div>
-  <li class="filter-heading">Language <?php echo anchor('movies/resetfilter/language','Reset',array('class'=>'reset'));?></li>
+  <li class="filter-heading">Language <?php //echo anchor('movies/resetfilter/language','Reset',array('class'=>'reset'));?></li>
   <?php
     foreach($content['languages'] as $language)
 	{

@@ -23,7 +23,7 @@
     <?php //echo showavatar($content['user']['picture'],$content['user']['name'],array('class'=>'avatar'));?>
     <img src="<?php echo $this->settings->imgPath().'business.png';?>" class="avatar" />
       <?php  //echo $this->html->formField('upload','picture','',array('placeholder'=>'Change Picture','class'=>'span5'));?>
-      <input id="fileupload" type="file" name="" data-url="<?php echo base_url();?>uploader/" multiple>
+      <input id="fileupload" type="file" name="" data-url="<?php echo base_url();?>uploader/">
       <input type="hidden" name="picture" value="" />
     </div>
          <div id="progress" class="progress progress-success progress-striped span4 offset4">
