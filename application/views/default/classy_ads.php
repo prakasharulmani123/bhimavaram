@@ -1,4 +1,4 @@
-<div class="center clearfix"><?php echo showAd('image','600','90');?></div>
+<?php echo $this->load->view('default/sidebars/top_ad_banner', '', true);?>
 <div class="clearfix">&nbsp;</div>
 
 <h1><?php echo anchor('classifieds/index','Browse Ads');?> / <?php echo anchor('classifieds/ads/'.$content['category']['id'],$content['category']['name']);?></h1><?php if(count($content['listings'])==0){?>

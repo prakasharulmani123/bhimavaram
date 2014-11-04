@@ -22,6 +22,7 @@
             <option value="photos">Photos</option>
             <option value="videos">Videos</option>
             <option value="areas">Areas</option>
+            <option value="classifieds">Classifieds</option>
         </select>
     </div>
   </div>

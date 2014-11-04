@@ -3,7 +3,7 @@
 	display:none;
 }
 </style>
-<div class="span20 center clearfix"><?php echo showAd('image','600','90');?></div>
+<?php echo $this->load->view('default/sidebars/top_ad_banner', '', true);?>
 <div class="clearfix">&nbsp;</div>
 
 <div class="search-holder curve4 clearfix alert">	

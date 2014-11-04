@@ -87,7 +87,7 @@ echo $this->html->formField('dropdown','parentcategory-required',Classy_Category
   <div class="control-group">
     <label class="control-label" for="inputName">Email Address*</label>
     <div class="controls">
-      <?php  echo $this->html->formField('input','email-valid_email','',array('placeholder'=>'','class'=>'span6','data-type'=>"email"));?>
+      <?php  echo $this->html->formField('input','email-valid_email','',array('placeholder'=>'','class'=>'span6','data-parsley-required'=>"true",'data-parsley-type'=>"email"));?>
       <div class="field-hint">Your email address won't be shared</div>
     </div>
   </div>

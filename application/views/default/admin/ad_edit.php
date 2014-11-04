@@ -23,6 +23,7 @@
             <option value="photos" <?php if($content['ad']['category']=='photos'){ echo ' selected="selected" ';} ?>>Photos</option>
             <option value="videos" <?php if($content['ad']['category']=='videos'){ echo ' selected="selected" ';} ?>>Videos</option>
             <option value="areas" <?php if($content['ad']['category']=='areas'){ echo ' selected="selected" ';} ?>>Areas</option>
+            <option value="classifieds" <?php if($content['ad']['category']=='classifieds'){ echo ' selected="selected" ';} ?>>Classifieds</option>
         </select>
     </div>
   </div>
