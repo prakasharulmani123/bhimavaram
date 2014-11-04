@@ -66,80 +66,87 @@ echo $this->html->formField('dropdown','parentcategory-required',YpCategory(),ar
     <label class="control-label" for="inputName">Working Hours</label>
         <div class="controls">
         <div class="day-label">Monday</div>
-      <?php  echo $this->html->formField('input','monday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','monday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true", "data-parsley-errors-container"=>"#monday_error"));?>
       <span class="divide-label">to</span>
-      <?php  echo $this->html->formField('input','monday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','monday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true", "data-parsley-errors-container"=>"#monday_error"));?>
       
-      <label class="checkbox inline">
+      	<label class="checkbox inline">
  		 <input type="checkbox"  value="1" name="closed[]" class="closed-box"> Closed
 		</label>
+        <span id="monday_error"></span>
     </div>
         <div class="controls">
         <div class="day-label">Tuesday</div>
-      <?php  echo $this->html->formField('input','tuesday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','tuesday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true", "data-parsley-errors-container"=>"#tuesday_error"));?>
       <span class="divide-label">to</span>
-      <?php  echo $this->html->formField('input','tuesday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','tuesday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true", "data-parsley-errors-container"=>"#tuesday_error"));?>
       
       <label class="checkbox inline">
  		 <input type="checkbox"  value="1" name="closed[]" class="closed-box"> Closed
 		</label>
+        <span id="tuesday_error"></span>
     </div>
         <div class="controls">
         <div class="day-label">Wednesday</div>
-      <?php  echo $this->html->formField('input','wednesday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','wednesday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true", "data-parsley-errors-container"=>"#wednesday_error"));?>
       <span class="divide-label">to</span>
-      <?php  echo $this->html->formField('input','wednesday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','wednesday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true", "data-parsley-errors-container"=>"#wednesday_error"));?>
       
       <label class="checkbox inline">
  		 <input type="checkbox"  value="1" name="closed[]" class="closed-box"> Closed
 		</label>
+        <span id="wednesday_error"></span>
     </div>
         <div class="controls">
         <div class="day-label">Thursday</div>
-      <?php  echo $this->html->formField('input','thursday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','thursday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true", "data-parsley-errors-container"=>"#thursday_error"));?>
       <span class="divide-label">to</span>
-      <?php  echo $this->html->formField('input','thursday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','thursday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true", "data-parsley-errors-container"=>"#thursday_error"));?>
       
       <label class="checkbox inline">
  		 <input type="checkbox"  value="1" name="closed[]" class="closed-box"> Closed
 		</label>
+        <span id="thursday_error"></span>
     </div>
         <div class="controls">
         <div class="day-label">Friday</div>
-      <?php  echo $this->html->formField('input','friday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','friday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true", "data-parsley-errors-container"=>"#friday_error"));?>
       <span class="divide-label">to</span>
-      <?php  echo $this->html->formField('input','friday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','friday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true", "data-parsley-errors-container"=>"#friday_error"));?>
       
       <label class="checkbox inline">
  		 <input type="checkbox"  value="1" name="closed[]" class="closed-box"> Closed
 		</label>
+        <span id="friday_error"></span>
     </div>
         <div class="controls">
         <div class="day-label">Saturday</div>
-      <?php  echo $this->html->formField('input','saturday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','saturday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true", "data-parsley-errors-container"=>"#saturday_error"));?>
       <span class="divide-label">to</span>
-      <?php  echo $this->html->formField('input','saturday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','saturday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true", "data-parsley-errors-container"=>"#saturday_error"));?>
       
       <label class="checkbox inline">
  		<input type="checkbox"  value="1" name="closed[]" class="closed-box"> Closed
 		</label>
+        <span id="saturday_error"></span>
     </div>
         <div class="controls">
         <div class="day-label">Sunday</div>
-      <?php  echo $this->html->formField('input','sunday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','sunday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true", "data-parsley-errors-container"=>"#sunday_error"));?>
       <span class="divide-label">to</span>
-      <?php  echo $this->html->formField('input','sunday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','sunday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true", "data-parsley-errors-container"=>"#sunday_error"));?>
       
       <label class="checkbox inline">
  		 <input type="checkbox"  value="1" name="closed[]" class="closed-box"> Closed
 		</label>
+        <span id="sunday_error"></span>
     </div>                        
   </div> 
   <div class="control-group payment-options">
     <label class="control-label" for="inputName">Payment Options</label>
      <div class="controls">
 <label class="checkbox inline">
-  <input type="checkbox" value="Cash" name="payment_options[]" data-parsley-required="true">Cash
+  <input type="checkbox" value="Cash" name="payment_options[]" data-parsley-required="true" data-parsley-errors-container="#payment_options_error">Cash
 </label>
      <label class="checkbox inline">
   <input type="checkbox" value="VISA" name="payment_options[]">VISA Card
@@ -161,7 +168,8 @@ echo $this->html->formField('dropdown','parentcategory-required',YpCategory(),ar
 <div class="clear">&nbsp;</div>
 <label class="checkbox inline">
   <input type="checkbox" value="Diner's Club" name="payment_options[]" > Diner's Club
-</label>
+</label><br />
+     <span id="payment_options_error"></span>
     </div>  
    </div>
 <div class="span6" style="margin-left:230px;">
