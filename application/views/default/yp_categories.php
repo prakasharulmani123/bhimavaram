@@ -5,13 +5,16 @@
 <div class="span14 pull-left">
 <div class="search-holder curve4 clearfix">	
 	  <?php  
-	  echo form_open('yellowpages/search',array('class'=>'span6','data-validate'=>'parsley'));
-	  echo $this->html->formField('input','q-required',postdata('q'),array('placeholder'=>'Search business listings','class'=>'abovePadding10 span3 ','data-parsley-required'=>"true"));?>
+	  echo form_open('yellowpages/search',array('class'=>'span6','data-parsley-validate'=>'true'));
+	  echo $this->html->formField('input','q-required',postdata('q'),array('placeholder'=>'Search business listings','class'=>'abovePadding10 span3 ','data-parsley-required'=>"true", 'data-parsley-errors-container' => '#search_error_yp'));?>
       <input type="submit" class="btn abovePadding10 span3" value="Search Listings">
       </form>
+      
       <div class="span1 divider"> or </div>
       <?php echo anchor('yellowpages/add',"List your business (It's absolutely free!)",array('class'=>'btn btn-info abovePadding10 span5 pull-right'));?>
-</div><!--Search-Holder Ends-->
+</div>
+<div><span id="search_error_yp"></span></div>
+<!--Search-Holder Ends-->
 <div class="clearfix">&nbsp;</div>
 <div class="widget-heading">
 <h1>Browse Listings</h1>

@@ -98,9 +98,9 @@ $itemtype='deals';
   </div>
   <div class="modal-body">
     <?php
-   		echo form_open('deals/message',array('class'=>'bigform','data-validate'=>'parsley'));
+   		echo form_open('deals/message',array('class'=>'bigform','data-parsley-validate'=>'true'));
 		echo $this->html->formField('label','Message','Please enter your message',array('class'=>'email'));
-		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your message','class'=>'span10','rows'=>'5','data-required'=>"true"));		
+		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your message','class'=>'span10','rows'=>'5','data-parsley-required'=>"true"));		
    ?>
     <input type="hidden" value="<?php echo $content['deal']['id'];?>" name="listingid" />
     <input type="hidden" value="<?php echo $content['deal']['slug'];?>" name="slug" />

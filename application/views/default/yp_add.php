@@ -9,7 +9,7 @@
       <li data-target="#step2"><span class="badge">2</span>Contact Information<span class="chevron"></span></li>
 </ul>
 </div>    
-       <?php echo form_open('admin/yellowpages/contactinfo',array('class'=>'form-horizontal password-form','data-parsley-validate'=>'true'));?>
+       <?php echo form_open('yellowpages/contactinfo',array('class'=>'form-horizontal password-form','data-parsley-validate'=>'true'));?>
   <div class="control-group">
     <label class="control-label" for="inputName">City*</label>
     <div class="controls">

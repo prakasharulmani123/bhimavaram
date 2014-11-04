@@ -1,20 +1,16 @@
-<style>
-.parsley-errors-list{
-	display:none;
-}
-</style>
 <?php echo $this->load->view('default/sidebars/top_ad_banner', '', true);?>
 <div class="clearfix">&nbsp;</div>
 
 <div class="search-holder curve4 clearfix alert">	
 	  <?php  
 	  echo form_open('classifieds/search',array('class'=>'span6','data-parsley-validate'=>'true'));
-	  echo $this->html->formField('input','q-required',postdata('q'),array('placeholder'=>'Search Classifieds','class'=>'abovePadding10 span3 ','data-parsley-required'=>"true"));?>
+	  echo $this->html->formField('input','q-required',postdata('q'),array('placeholder'=>'Search Classifieds','class'=>'abovePadding10 span3 ','data-parsley-required'=>"true", 'data-parsley-errors-container' => '#search_error_yp'));?>
       <input type="submit" class="btn abovePadding10 span3" value="Search Ads">
       </form>
       <div class="span1 divider"> or </div>
       <?php echo anchor('classifieds/add',"Post a Free Ad!",array('class'=>'btn btn-info abovePadding10 span5 pull-right'));?>
-</div><!--Search-Holder Ends-->
+</div>
+<div><span id="search_error_yp"></span></div><!--Search-Holder Ends-->
 <h1>Browse Classifieds</h1>
 <div class="clearbig">&nbsp;</div>
 <ul class="categories span14 pull-left">

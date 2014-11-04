@@ -54,7 +54,7 @@ if ( ! function_exists('word_limiter'))
 			$end_char = '';
 		}
 
-		return rtrim($matches[0]).$end_char;
+		return rtrim(ucfirst($matches[0])).$end_char;
 	}
 }
 

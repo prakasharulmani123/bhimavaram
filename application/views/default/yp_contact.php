@@ -48,7 +48,7 @@
   <div class="control-group">
     <label class="control-label" for="inputName">Email Address*</label>
     <div class="controls">
-      <?php  echo $this->html->formField('input','email-valid_email','',array('placeholder'=>'Email Address','class'=>'span6','data-parsley-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','email-valid_email','',array('placeholder'=>'Email Address','class'=>'span6','data-parsley-required'=>"true", 'data-parsley-type' => 'email'));?>
     </div>
   </div> 
   <div class="control-group">

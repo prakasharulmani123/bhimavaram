@@ -110,7 +110,7 @@ if (userdata('uid')) {
 <?php if (userdata('uid')) {    ?>
 	<a href="#review-item" class="btn send-message btn-primary pull-right" role="button" data-toggle="modal"><i class="icon-star-empty"></i>&nbsp; Review this listing</a>
 <?php } else {?>
-<a href="<?php echo base_url().'index.php/start/signin';?>" class="btn send-message btn-primary pull-right" role="button" data-toggle="modal"><i class="icon-star-empty"></i>&nbsp; Review this listing</a>
+<a href="<?php echo base_url() . 'index.php/news/checkuserlogin/'.$content['news']['slug']; ?>" class="btn send-message btn-primary pull-right" role="button" data-toggle="modal"><i class="icon-star-empty"></i>&nbsp; Review this listing</a>
 <?php } ?>
 
 </div>
