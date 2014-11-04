@@ -119,9 +119,9 @@ else
   </div>
   <div class="modal-body">
    <?php
-   		echo form_open('jobs/message',array('class'=>'bigform','data-validate'=>'parsley'));
+   		echo form_open('jobs/message',array('class'=>'bigform','data-parsley-validate'=>'true'));
 		echo $this->html->formField('label','Message','Please enter your message',array('class'=>'email'));
-		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your message','class'=>'span10','rows'=>'5','data-required'=>"true"));		
+		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your message','class'=>'span10','rows'=>'5','data-parsley-required'=>"true"));		
    ?>
    <input type="hidden" value="<?php echo $content['listing']['id'];?>" name="listingid" />
    <input type="hidden" value="<?php echo $content['listing']['slug'];?>" name="slug" />
@@ -143,11 +143,11 @@ else
   </div>
   <div class="modal-body">
    <?php
-   		echo form_open('actions/report',array('class'=>'bigform','data-validate'=>'parsley'));
+   		echo form_open('actions/report',array('class'=>'bigform','data-parsley-validate'=>'true'));
 		echo $this->html->formField('label','Report Type','Please choose report type',array('class'=>'email'));
-		echo $this->html->formField('dropdown','category-required',array(''=>'Select','illegal'=>'Illegal Content','spam'=>'Spam Content','duplicate'=>'Duplicate Content','others'=>'Others'),array('class'=>'span10','data-required'=>"true",'id'=>'category'));
+		echo $this->html->formField('dropdown','category-required',array(''=>'Select','illegal'=>'Illegal Content','spam'=>'Spam Content','duplicate'=>'Duplicate Content','others'=>'Others'),array('class'=>'span10','data-parsley-required'=>"true",'id'=>'category'));
 		echo $this->html->formField('label','Message','Please enter your message',array('class'=>'email'));
-		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your message','class'=>'span10','rows'=>'5','data-required'=>"true"));		
+		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your message','class'=>'span10','rows'=>'5','data-parsley-required'=>"true"));		
    ?>
    <input type="hidden" value="<?php echo $itemid;?>" name="itemid" />
    <input type="hidden" value="<?php echo $itemtype;?>" name="itemtype" />

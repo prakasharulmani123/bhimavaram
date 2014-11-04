@@ -279,7 +279,7 @@
                 <div class="listing-details pull-left">	
                         <h3><?php echo anchor('polls/'.$content['poll']['slug'],$content['poll']['question'].' ('.$content['poll']['total_votes'].' Votes)',array('class'=>'grey-link'));?></h3>    
 
- <?php echo form_open('polls/vote',array('class'=>'form-horizontal password-form','data-validate'=>'parsley'));?>
+ <?php echo form_open('polls/vote',array('class'=>'form-horizontal password-form','data-parsley-validate'=>'true'));?>
 	<?php
 	$answers=$this->df->get_multi_row('poll_answers',array('questionid'=>$content['poll']['id']));
     	foreach($answers as $ans)
@@ -295,7 +295,7 @@
   
   <?php }?>
   <?php 
-  echo '<div class="poll-option btn pull-left span5 left">'.'<label class="radio"><input type="radio" name="answer"  value="'.$ans['id'].'" data-required="true">'.$ans['answer'].' ('.$percent.'%)'.'</label></div>';
+  echo '<div class="poll-option btn pull-left span5 left">'.'<label class="radio"><input type="radio" name="answer"  value="'.$ans['id'].'" data-parsley-required="true">'.$ans['answer'].' ('.$percent.'%)'.'</label></div>';
   //echo '<div class="poll-option btn pull-left span2">'.$ans['answer'].' ('.$percent.'% )'.'</div>';
   
   ?>

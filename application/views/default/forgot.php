@@ -5,12 +5,12 @@
         <?php if(validation_errors()){?>
         	<div class="validation-errors center-align span7"><?php echo validation_errors();?></div>
         <?php }
-		echo form_open('site/forgot',array('class'=>'form-horizontal center big-form','data-validate'=>'parsley'));?>
+		echo form_open('site/forgot',array('class'=>'form-horizontal center big-form','data-parsley-validate'=>'true'));?>
         
         <?php
-		 echo $this->html->formField('input','email-required-valid_email','',array('placeholder'=>'Email Address','class'=>'span7','data-required'=>"true",'data-type'=>'email'));
-		echo $this->html->formField('dropdown','question_id-required',questionArray(),array('class'=>'span7 offset1 question-select','data-required'=>"true"));
-		echo $this->html->formField('input','answer-required','',array('placeholder'=>'Answer','class'=>'span7','data-required'=>"true"));
+		 echo $this->html->formField('input','email-required-valid_email','',array('placeholder'=>'Email Address','class'=>'span7','data-parsley-required'=>"true",'data-parsley-type'=>'email'));
+		echo $this->html->formField('dropdown','question_id-required',questionArray(),array('class'=>'span7 offset1 question-select','data-parsley-required'=>"true"));
+		echo $this->html->formField('input','answer-required','',array('placeholder'=>'Answer','class'=>'span7','data-parsley-required'=>"true"));
 		//echo $this->html->formField('input','email-required-valid_email','',array('placeholder'=>'Email Address','class'=>'span7'));		   
 		?>
   <div class="clear">&nbsp;</div>

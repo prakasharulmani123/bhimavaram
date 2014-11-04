@@ -1,3 +1,9 @@
+<style>
+.nav-searchfield-outer .parsley-errors-list{
+	visibility:hidden !important;
+}
+</style>
+
 <div class="bhinew-scroll" style="visibility:hidden" id="bhinew-scroll">
     <div class="bhinew-scrollheading"> Wishes </div>
     <div class="bhinew-scrolltxt">
@@ -92,9 +98,10 @@
                                         <option value="jobs" <?php echo $this->uri->segment(1) == 'jobs' ? 'selected' : ''?>>Jobs</option>
                                     </select>
                                 </span>
-                                <?php echo form_open('start/searchresults', array("class" => "form-search", 'data-validate' => 'parsley')); ?>
+                                <?php echo form_open('start/searchresults', array("class" => "form-search", 'data-parsley-validate' => 'true')); ?>
                                 <div class="nav-searchfield-outer nav-sprite">
-                                    <input type="text" id="twotabsearchtextbox" placeholder="Search..." name="q" value="<?php (uridata('2') == 'searchresults') ? uridata('3') : '';  ?>" autocomplete="off" data-required="true"/>
+                                    <input type="text" id="twotabsearchtextbox" placeholder="Search..." name="q" value="<?php (uridata('2') == 'searchresults') ? uridata('3') : '';  ?>" autocomplete="off" data-parsley-required="true" data-parsley-error-container="#search_error"/>
+                                    <span id="search_error"></span>
                                 </div>
                                 <div class="nav-submit-button">
                                     <input type="hidden" name="searchtype" value="<?php echo userdata('searchtype') ? userdata('searchtype') : 'yellowpages';  ?>" />

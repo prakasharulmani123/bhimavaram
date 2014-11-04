@@ -22,10 +22,10 @@
            <label class="radio inline inline-label">
   Choose Gender
 </label>         <label class="radio inline">
-  <?php echo $this->html->formField('radio','gender','male',array('data-required'=>"true"),true);?> Male
+  <?php echo $this->html->formField('radio','gender','male',array(),true);?> Male
 </label>
            <label class="radio inline">
-   <?php echo $this->html->formField('radio','gender','female',array('data-required'=>"true"),false);?> Female
+   <?php echo $this->html->formField('radio','gender','female',array(),false);?> Female
 </label>
 <div class="clear">&nbsp;</div>
 </div>
@@ -44,8 +44,8 @@ echo $this->html->formField('input','cityname','',array('placeholder'=>'City','c
 ?>
 
 <?php 
-echo $this->html->formField('dropdown','question_id-required',questionArray(),array('class'=>'span7 offset1 question-select','data-required'=>"true"));
-echo $this->html->formField('input','answer-required','',array('placeholder'=>'Answer','class'=>'span7','data-required'=>"true"));
+echo $this->html->formField('dropdown','question_id-required',questionArray(),array('class'=>'span7 offset1 question-select','data-parsley-required'=>"true"));
+echo $this->html->formField('input','answer-required','',array('placeholder'=>'Answer','class'=>'span7','data-parsley-required'=>"true"));
 ?>
 
       <button type="submit" class="btn btn-danger center-align span7 submit-btn">Create Account</button>  

@@ -9,13 +9,13 @@
       <li data-target="#step2"><span class="badge">2</span>Contact Information<span class="chevron"></span></li>
 </ul>
 </div>    
-       <?php echo form_open('admin/yellowpages/contactinfo',array('class'=>'form-horizontal password-form','data-validate'=>'parsley'));?>
+       <?php echo form_open('admin/yellowpages/contactinfo',array('class'=>'form-horizontal password-form','data-parsley-validate'=>'true'));?>
   <div class="control-group">
     <label class="control-label" for="inputName">City*</label>
     <div class="controls">
 <?php 
-//echo $this->html->formField('dropdown','business-required',Business_Listings(),array('class'=>'span6 offset1 city-select','data-required'=>"true",'id'=>'category'));
-echo $this->html->formField('dropdown','cityid-required',cityArray(),array('class'=>'span6','data-required'=>"true"),'');
+//echo $this->html->formField('dropdown','business-required',Business_Listings(),array('class'=>'span6 offset1 city-select','data-parsley-required'=>"true",'id'=>'category'));
+echo $this->html->formField('dropdown','cityid-required',cityArray(),array('class'=>'span6','data-parsley-required'=>"true"),'');
 ?>    
 </div>
   </div>       
@@ -23,21 +23,21 @@ echo $this->html->formField('dropdown','cityid-required',cityArray(),array('clas
     <div class="control-group">
     <label class="control-label" for="inputName">Business Name</label>
     <div class="controls">
-      <?php  echo $this->html->formField('input','title-required','',array('placeholder'=>'Business Name','class'=>'span6','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','title-required','',array('placeholder'=>'Business Name','class'=>'span6','data-parsley-required'=>"true"));?>
     </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="inputName">Category</label>
     <div class="controls">
 <?php 
-echo $this->html->formField('dropdown','parentcategory-required',YpCategory(),array('class'=>'span6 offset1 city-select','data-required'=>"true",'id'=>'category'));
+echo $this->html->formField('dropdown','parentcategory-required',YpCategory(),array('class'=>'span6 offset1 city-select','data-parsley-required'=>"true",'id'=>'category'));
 ?>    
 </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="inputName">Sub Category</label>
     <div class="controls">
-    	<select name="category" id="subcategory" class="span6 offset1 city-select" data-required="true">
+    	<select name="category" id="subcategory" class="span6 offset1 city-select" data-parsley-required="true">
         <?php 
 			foreach($content['subcategories'] as $sub)
 			{
@@ -46,7 +46,7 @@ echo $this->html->formField('dropdown','parentcategory-required',YpCategory(),ar
 			?>
         </select>
 <?php 
-//echo $this->html->formField('dropdown','category-required',array(''=>'Select Sub Category'),array('class'=>'span6 offset1 city-select','data-required'=>"true",'disabled'=>'disabled'));
+//echo $this->html->formField('dropdown','category-required',array(''=>'Select Sub Category'),array('class'=>'span6 offset1 city-select','data-parsley-required'=>"true",'disabled'=>'disabled'));
 ?>    </div>
   </div>  
     <div class="control-group">
@@ -66,9 +66,9 @@ echo $this->html->formField('dropdown','parentcategory-required',YpCategory(),ar
     <label class="control-label" for="inputName">Working Hours</label>
         <div class="controls">
         <div class="day-label">Monday</div>
-      <?php  echo $this->html->formField('input','monday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','monday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true"));?>
       <span class="divide-label">to</span>
-      <?php  echo $this->html->formField('input','monday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','monday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true"));?>
       
       <label class="checkbox inline">
  		 <input type="checkbox"  value="1" name="closed[]" class="closed-box"> Closed
@@ -76,9 +76,9 @@ echo $this->html->formField('dropdown','parentcategory-required',YpCategory(),ar
     </div>
         <div class="controls">
         <div class="day-label">Tuesday</div>
-      <?php  echo $this->html->formField('input','tuesday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','tuesday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true"));?>
       <span class="divide-label">to</span>
-      <?php  echo $this->html->formField('input','tuesday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','tuesday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true"));?>
       
       <label class="checkbox inline">
  		 <input type="checkbox"  value="1" name="closed[]" class="closed-box"> Closed
@@ -86,9 +86,9 @@ echo $this->html->formField('dropdown','parentcategory-required',YpCategory(),ar
     </div>
         <div class="controls">
         <div class="day-label">Wednesday</div>
-      <?php  echo $this->html->formField('input','wednesday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','wednesday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true"));?>
       <span class="divide-label">to</span>
-      <?php  echo $this->html->formField('input','wednesday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','wednesday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true"));?>
       
       <label class="checkbox inline">
  		 <input type="checkbox"  value="1" name="closed[]" class="closed-box"> Closed
@@ -96,9 +96,9 @@ echo $this->html->formField('dropdown','parentcategory-required',YpCategory(),ar
     </div>
         <div class="controls">
         <div class="day-label">Thursday</div>
-      <?php  echo $this->html->formField('input','thursday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','thursday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true"));?>
       <span class="divide-label">to</span>
-      <?php  echo $this->html->formField('input','thursday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','thursday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true"));?>
       
       <label class="checkbox inline">
  		 <input type="checkbox"  value="1" name="closed[]" class="closed-box"> Closed
@@ -106,9 +106,9 @@ echo $this->html->formField('dropdown','parentcategory-required',YpCategory(),ar
     </div>
         <div class="controls">
         <div class="day-label">Friday</div>
-      <?php  echo $this->html->formField('input','friday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','friday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true"));?>
       <span class="divide-label">to</span>
-      <?php  echo $this->html->formField('input','friday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','friday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true"));?>
       
       <label class="checkbox inline">
  		 <input type="checkbox"  value="1" name="closed[]" class="closed-box"> Closed
@@ -116,9 +116,9 @@ echo $this->html->formField('dropdown','parentcategory-required',YpCategory(),ar
     </div>
         <div class="controls">
         <div class="day-label">Saturday</div>
-      <?php  echo $this->html->formField('input','saturday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','saturday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true"));?>
       <span class="divide-label">to</span>
-      <?php  echo $this->html->formField('input','saturday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','saturday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true"));?>
       
       <label class="checkbox inline">
  		<input type="checkbox"  value="1" name="closed[]" class="closed-box"> Closed
@@ -126,9 +126,9 @@ echo $this->html->formField('dropdown','parentcategory-required',YpCategory(),ar
     </div>
         <div class="controls">
         <div class="day-label">Sunday</div>
-      <?php  echo $this->html->formField('input','sunday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','sunday_from','',array('placeholder'=>'09:00 AM','class'=>'span2 from','data-parsley-required'=>"true"));?>
       <span class="divide-label">to</span>
-      <?php  echo $this->html->formField('input','sunday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','sunday_to','',array('placeholder'=>'06:00 PM','class'=>'span2 to','data-parsley-required'=>"true"));?>
       
       <label class="checkbox inline">
  		 <input type="checkbox"  value="1" name="closed[]" class="closed-box"> Closed

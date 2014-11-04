@@ -173,7 +173,7 @@ class Layout
 		$CI =& get_instance();
 		$output="";
 		/*$output.='<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>';*/
-                $output.=$this->getScriptLink('jquery.min.js');
+		$output.=$this->getScriptLink('jquery.min.js');
 		$output.='<script>var baseUrl="'.$CI->settings->baseUrl().'";</script>';
 		$output.=$this->getScriptLink('bootstrap.min.js');
 		$output.=$this->getScriptLink('jquery.raty.min.js');
@@ -182,10 +182,11 @@ class Layout
 		$output.=$this->getScriptLink('jquery.li-scroller.1.0.js');
 		$output.=$this->getScriptLink('jquery.vticker.min.js');	
 		$output.=$this->getScriptLink('base.js');
-		$output.=$this->getScriptLink('valid/parsley.js');
 		$output.=$this->getScriptLink('innerfade/jquery.innerfade.js');
 		$output.=$this->getScriptLink('external.js');
 		$output.=$this->getScriptLink('ddsmoothmenu.js');
+		$output.=$this->getScriptLink('parsley-remote.js');
+		$output.=$this->getScriptLink('parsley.js');
 		
 				
 		if(array_key_exists('js',$foot) && $foot['js']!==false)

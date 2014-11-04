@@ -6,7 +6,7 @@
 <div class="search-holder curve4 clearfix">	
 	  <?php  
 	  echo form_open('yellowpages/search',array('class'=>'span6','data-validate'=>'parsley'));
-	  echo $this->html->formField('input','q-required',postdata('q'),array('placeholder'=>'Search business listings','class'=>'abovePadding10 span3 ','data-required'=>"true"));?>
+	  echo $this->html->formField('input','q-required',postdata('q'),array('placeholder'=>'Search business listings','class'=>'abovePadding10 span3 ','data-parsley-required'=>"true"));?>
       <input type="submit" class="btn abovePadding10 span3" value="Search Listings">
       </form>
       <div class="span1 divider"> or </div>

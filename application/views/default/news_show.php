@@ -30,6 +30,13 @@ $itemtype = 'news';
         }
         ?>
   </div>
+  <div style="height:25px;">
+  	<div class="rating-container" title="<?php echo $content['news']['review_score'];?>" style="float: left;text-align:center;"></div>
+    <div class="users-count"><?php echo '<a href="#reviews-box">'.$content['news']['total_reviews'].' Reviews</a>';?>
+   <?php if(userdata('uid'))	{?>| <a href="#review-item" role="button" data-toggle="modal">Rate this</a> <?php }?>
+	</div>
+ </div>
+
   <div class="news-content"> 
     <!--           <?php if (strlen($content['news']['picture']) > 2) { ?>
                     
@@ -89,30 +96,23 @@ if (userdata('uid')) {
   <?php }?>
 </div>
 <div class="meta-divider">&nbsp;</div>
+
 <div class="span12 well well-mini" style="margin-left:10px;"> 
-  <?php
-if (userdata('uid')) {
-    ?>
-<a href="#send-message" class="btn send-message" role="button" data-toggle="modal"><i class="icon-envelope-alt"></i>&nbsp; Send a Message</a> 
-
+<?php if (userdata('uid')) { ?>
+	<a href="#send-message" class="btn send-message" role="button" data-toggle="modal"><i class="icon-envelope-alt"></i>&nbsp; Send a Message</a> 
 <?php } else {?>
-<a href="<?php echo base_url() . 'index.php/news/checkuserlogin/'.$content['news']['slug']; ?>" class="btn send-message" role="button" data-toggle="modal"><i class="icon-envelope-alt"></i>&nbsp; Send a Message</a>
+	<a href="<?php echo base_url() . 'index.php/news/checkuserlogin/'.$content['news']['slug']; ?>" class="btn send-message" role="button" data-toggle="modal"><i class="icon-envelope-alt"></i>&nbsp; Send a Message</a>
 <?php } ?>
-<?php echo showBookmark('yellowpages',$content['listing']['id']);?> <?php echo showReport('news', $content['news']['id']); ?>
-  <?php /*?><?php
-	if(userdata('uid'))
-	{
-?>
-<a href="#review-item" class="btn send-message btn-primary pull-right" role="button" data-toggle="modal"><i class="icon-star-empty"></i>&nbsp; Review this listing</a>
-<?php }
-else
-{
-?>
-<a href="<?php echo base_url().'index.php/start/signin';?>" class="btn send-message btn-primary pull-right" role="button" data-toggle="modal"><i class="icon-star-empty"></i>&nbsp; Review this listing</a>
 
-<?php
-}
-?><?php */?>
+<?php echo showBookmark('news',$content['news']['id']);?> 
+<?php echo showReport('theatres',$content['theatre']['id']);?>
+
+<?php if (userdata('uid')) {    ?>
+	<a href="#review-item" class="btn send-message btn-primary pull-right" role="button" data-toggle="modal"><i class="icon-star-empty"></i>&nbsp; Review this listing</a>
+<?php } else {?>
+<a href="<?php echo base_url().'index.php/start/signin';?>" class="btn send-message btn-primary pull-right" role="button" data-toggle="modal"><i class="icon-star-empty"></i>&nbsp; Review this listing</a>
+<?php } ?>
+
 </div>
 <div class="meta-divider">&nbsp;</div>
 <div class="related-news">
@@ -148,6 +148,9 @@ else
 <!--related-news Ends-->
 
 <div id="reviews-box"> <?php echo $this->general->getComments($itemtype, $itemid, uri_string()) ?> </div>
+<div id="reviews-box">
+    <?php echo $this->general->getReviews($itemtype,$itemid,uri_string())?>
+</div>
 <!--Reviews-List Ends--> 
 <!--==========Modal Boxes Starts============-->
 
@@ -158,9 +161,9 @@ else
   </div>
   <div class="modal-body">
     <?php
-   		echo form_open('news/message',array('class'=>'bigform','data-validate'=>'parsley'));
+   		echo form_open('news/message',array('class'=>'bigform','data-parsley-validate'=>'true'));
 		echo $this->html->formField('label','Message','Please enter your message',array('class'=>'email'));
-		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your message','class'=>'span10','rows'=>'5','data-required'=>"true"));		
+		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your message','class'=>'span10','rows'=>'5','data-parsley-required'=>"true"));		
    ?>
     <input type="hidden" value="<?php echo $content['news']['id'];?>" name="listingid" />
     <input type="hidden" value="<?php echo $content['news']['slug'];?>" name="slug" />
@@ -169,6 +172,7 @@ else
   </div>
   <div class="modal-footer"> </div>
 </div>
+
 <div id="report-item" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Report this page" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -178,9 +182,9 @@ else
     <?php
 echo form_open('actions/report', array('class' => 'bigform', 'data-validate' => 'parsley'));
 echo $this->html->formField('label', 'Report Type', 'Please choose report type', array('class' => 'email'));
-echo $this->html->formField('dropdown', 'category-required', array('' => 'Select', 'illegal' => 'Illegal Content', 'spam' => 'Spam Content', 'duplicate' => 'Duplicate Content', 'others' => 'Others'), array('class' => 'span10', 'data-required' => "true", 'id' => 'category'));
+echo $this->html->formField('dropdown', 'category-required', array('' => 'Select', 'illegal' => 'Illegal Content', 'spam' => 'Spam Content', 'duplicate' => 'Duplicate Content', 'others' => 'Others'), array('class' => 'span10', 'data-parsley-required' => "true", 'id' => 'category'));
 echo $this->html->formField('label', 'Message', 'Please enter your message', array('class' => 'email'));
-echo $this->html->formField('textarea', 'message-required', '', array('placeholder' => 'Your message', 'class' => 'span10', 'rows' => '5', 'data-required' => "true"));
+echo $this->html->formField('textarea', 'message-required', '', array('placeholder' => 'Your message', 'class' => 'span10', 'rows' => '5', 'data-parsley-required' => "true"));
 ?>
     <input type="hidden" value="<?php echo $itemid; ?>" name="itemid" />
     <input type="hidden" value="<?php echo $itemtype; ?>" name="itemtype" />
@@ -190,6 +194,7 @@ echo $this->html->formField('textarea', 'message-required', '', array('placehold
   </div>
   <div class="modal-footer"> </div>
 </div>
+
 <div id="comment-item" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Post a comment" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -199,12 +204,12 @@ echo $this->html->formField('textarea', 'message-required', '', array('placehold
     <?php
 echo form_open('actions/comment', array('class' => 'bigform', 'data-validate' => 'parsley'));
 //echo $this->html->formField('label','Report Type','Please choose a rating',array('class'=>'email'));
-//echo $this->html->formField('dropdown','category-required',array(''=>'Select','illegal'=>'Illegal Content','spam'=>'Spam Content','duplicate'=>'Duplicate Content','others'=>'Others'),array('class'=>'span10','data-required'=>"true",'id'=>'category'));
+//echo $this->html->formField('dropdown','category-required',array(''=>'Select','illegal'=>'Illegal Content','spam'=>'Spam Content','duplicate'=>'Duplicate Content','others'=>'Others'),array('class'=>'span10','data-parsley-required'=>"true",'id'=>'category'));
 ?>
     <div class="clearbig">&nbsp;</div>
     <?php
 echo $this->html->formField('label', 'Message', 'Your Comment', array('class' => 'email'));
-echo $this->html->formField('textarea', 'comment-required', '', array('placeholder' => 'Your review', 'class' => 'span10 wysiwyg', 'rows' => '5', 'data-required' => "true"));
+echo $this->html->formField('textarea', 'comment-required', '', array('placeholder' => 'Your review', 'class' => 'span10 wysiwyg', 'rows' => '5', 'data-parsley-required' => "true"));
 ?>
     <input type="hidden" value="<?php echo $itemid; ?>" name="itemid" />
     <input type="hidden" value="<?php echo $itemtype; ?>" name="itemtype" />
@@ -214,6 +219,7 @@ echo $this->html->formField('textarea', 'comment-required', '', array('placehold
   </div>
   <div class="modal-footer"> </div>
 </div>
+
 <div id="review-item" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Review this page" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -221,21 +227,21 @@ echo $this->html->formField('textarea', 'comment-required', '', array('placehold
   </div>
   <div class="modal-body">
     <?php
-   		echo form_open('actions/review',array('class'=>'bigform','data-validate'=>'parsley'));
+   		echo form_open('actions/review',array('class'=>'bigform','data-parsley-validate'=>'true'));
 		echo $this->html->formField('label','Report Type','Please choose a rating',array('class'=>'email'));
-		//echo $this->html->formField('dropdown','category-required',array(''=>'Select','illegal'=>'Illegal Content','spam'=>'Spam Content','duplicate'=>'Duplicate Content','others'=>'Others'),array('class'=>'span10','data-required'=>"true",'id'=>'category'));
+		//echo $this->html->formField('dropdown','category-required',array(''=>'Select','illegal'=>'Illegal Content','spam'=>'Spam Content','duplicate'=>'Duplicate Content','others'=>'Others'),array('class'=>'span10','data-parsley-required'=>"true",'id'=>'category'));
 	?>
     <div class="rating-active-container pull-left"></div>
     <div class="rating-text pull-left"></div>
     <div class="clearbig">&nbsp;</div>
     <?php
 		echo $this->html->formField('label','Message','Please write your review',array('class'=>'email'));
-		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your review','class'=>'span10 wysiwyg','rows'=>'5','data-required'=>"true"));		
+		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your review','class'=>'span10 wysiwyg','rows'=>'5','data-parsley-required'=>"true"));		
    ?>
     <input type="hidden" value="<?php echo $itemid;?>" name="itemid" />
     <input type="hidden" value="<?php echo $itemtype;?>" name="itemtype" />
     <input type="hidden" value="<?php echo uri_string();?>" name="itemurl" />
-    <input type="hidden" id="rating-active-score" name="score-required" value="" data-required="true" />
+    <input type="hidden" id="rating-active-score" name="score-required" value="" data-parsley-required="true" />
     <button class="btn btn-primary submit-btn">Submit Review</button>
     </form>
   </div>

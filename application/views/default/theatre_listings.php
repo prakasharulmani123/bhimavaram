@@ -1,4 +1,4 @@
-<div class="center clearfix"><?php echo showAd('image','600','90');?></div>
+<?php echo $this->load->view('default/sidebars/top_ad_banner', '', true);?>
 <div class="clearfix">&nbsp;</div>
 
 <h1><?php echo anchor('movies/theatres','Browse Theatres');?></h1>

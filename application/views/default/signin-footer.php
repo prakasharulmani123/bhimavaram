@@ -50,9 +50,9 @@
   </div>
   <div class="modal-body">
    <?php
-   		echo form_open('start/changecity',array('class'=>'bigform','data-validate'=>'parsley'));
+   		echo form_open('start/changecity',array('class'=>'bigform','data-parsley-validate'=>'true'));
 		echo $this->html->formField('label','city','Please choose your city to continue',array('class'=>'email'));
-		echo $this->html->formField('dropdown','city-required',cityArray(),array('class'=>'span10','data-required'=>"true"),userdata('cityid'));
+		echo $this->html->formField('dropdown','city-required',cityArray(),array('class'=>'span10','data-parsley-required'=>"true"),userdata('cityid'));
    ?>
    	<input type="hidden" name="currenturl" value="<?php echo uri_string();?>" />
    		<button class="btn btn-primary submit-btn span10" style="padding:7px">Change City</button>
@@ -75,13 +75,13 @@
 		
 		echo $this->html->formField('label','wish','Posting as '.userdata('name'),array('class'=>'email'));
 		
-		echo $this->html->formField('input', 'name', '', array('placeholder'=>'Name', 'class'=>'span10', 'data-required'=>"true"));
+		echo $this->html->formField('input', 'name', '', array('placeholder'=>'Name', 'class'=>'span10', 'data-parsley-required'=>"true"));
 		
-		echo $this->html->formField('input', 'email', '', array('placeholder'=>'Email', 'class'=>'span10', 'data-required'=>"true", 'data-type'=>"email"));
+		echo $this->html->formField('input', 'email', '', array('placeholder'=>'Email', 'class'=>'span10', 'data-parsley-required'=>"true", 'data-parsley-type'=>"email"));
 		
-		echo $this->html->formField('input', 'phone', '', array('placeholder'=>'Phone', 'class'=>'span10','data-type'=>"number"));
+		echo $this->html->formField('input', 'phone', '', array('placeholder'=>'Phone', 'class'=>'span10','data-parsley-type'=>"number"));
 		
-		echo $this->html->formField('textarea','message-required--max_length:150','',array('placeholder'=>'Write your wish message (Maximum 150 Charaters)','class'=>'span10','rows'=>"4",'data-required'=>'true','data-maxlength'=>"150"));
+		echo $this->html->formField('textarea','message-required--max_length:150','',array('placeholder'=>'Write your wish message (Maximum 150 Charaters)','class'=>'span10','rows'=>"4",'data-parsley-required'=>'true','data-parsley-maxlength'=>"150"));
    		?>
    		<input type="hidden" name="currenturl" value="<?php echo uri_string();?>" />
 

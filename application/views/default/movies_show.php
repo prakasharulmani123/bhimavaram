@@ -17,7 +17,7 @@ $itemtype='movies';
  <li><?php echo word_limiter($content['movie']['name'],8);?></li></ul>
 
 <div class="widget-heading">
-<h1 style="line-height:normal"><?php echo $content['movie']['name'].' ('.urldecode($this->df->get_field_value('movie_certificate',array('id'=>$content['movie']['certificate']),'name'));
+<h1 style="line-height:normal"><?php echo $content['movie']['name'].' ('.urldecode($this->df->get_field_value('movie_certificate',array('id'=>$content['movie']['certificate']),'name')).')';
 //echo anchor('movies/'.$content['movie']['slug'],$content['movie']['name']).' ('.urldecode($this->df->get_field_value('movie_certificate',array('id'=>$content['movie']['certificate']),'name')).')';?></h1>
 </div>
 <div class="listing-img detail-img">
@@ -87,7 +87,7 @@ $itemtype='movies';
 else
 {
 ?>
-<a href="<?php echo base_url().'index.php/start/signin';?>" class="btn send-message btn-primary pull-right" role="button" data-toggle="modal"><i class="icon-star-empty"></i>&nbsp; Review this movie</a>
+<a href="<?php echo base_url() . 'index.php/movies/checkuserlogin/'.$content['movie']['slug'].'/'.'movie'; ?>" class="btn send-message btn-primary pull-right" role="button" data-toggle="modal"><i class="icon-star-empty"></i>&nbsp; Review this movie</a>
 
 <?php
 }
@@ -110,11 +110,11 @@ else
   </div>
   <div class="modal-body">
    <?php
-   		echo form_open('actions/report',array('class'=>'bigform','data-validate'=>'parsley'));
+   		echo form_open('actions/report',array('class'=>'bigform','data-parsley-validate'=>'true'));
 		echo $this->html->formField('label','Report Type','Please choose report type',array('class'=>'email'));
-		echo $this->html->formField('dropdown','category-required',array(''=>'Select','illegal'=>'Illegal Content','spam'=>'Spam Content','duplicate'=>'Duplicate Content','others'=>'Others'),array('class'=>'span10','data-required'=>"true",'id'=>'category'));
+		echo $this->html->formField('dropdown','category-required',array(''=>'Select','illegal'=>'Illegal Content','spam'=>'Spam Content','duplicate'=>'Duplicate Content','others'=>'Others'),array('class'=>'span10','data-parsley-required'=>"true",'id'=>'category'));
 		echo $this->html->formField('label','Message','Please enter your message',array('class'=>'email'));
-		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your message','class'=>'span10','rows'=>'5','data-required'=>"true"));		
+		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your message','class'=>'span10','rows'=>'5','data-parsley-required'=>"true"));		
    ?>
    <input type="hidden" value="<?php echo $itemid;?>" name="itemid" />
    <input type="hidden" value="<?php echo $itemtype;?>" name="itemtype" />
@@ -135,20 +135,20 @@ else
   </div>
   <div class="modal-body">
    <?php
-   		echo form_open('actions/review',array('class'=>'bigform','data-validate'=>'parsley'));
+   		echo form_open('actions/review',array('class'=>'bigform','data-parsley-validate'=>'true'));
 		echo $this->html->formField('label','Report Type','Please choose a rating',array('class'=>'email'));
-		//echo $this->html->formField('dropdown','category-required',array(''=>'Select','illegal'=>'Illegal Content','spam'=>'Spam Content','duplicate'=>'Duplicate Content','others'=>'Others'),array('class'=>'span10','data-required'=>"true",'id'=>'category'));
+		//echo $this->html->formField('dropdown','category-required',array(''=>'Select','illegal'=>'Illegal Content','spam'=>'Spam Content','duplicate'=>'Duplicate Content','others'=>'Others'),array('class'=>'span10','data-parsley-required'=>"true",'id'=>'category'));
 	?>
 	<div class="rating-active-container pull-left"></div><div class="rating-text pull-left"></div>
     <div class="clearbig">&nbsp;</div>
 	<?php
 		echo $this->html->formField('label','Message','Please write your review',array('class'=>'email'));
-		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your review','class'=>'span10 wysiwyg','rows'=>'5','data-required'=>"true"));		
+		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your review','class'=>'span10 wysiwyg','rows'=>'5','data-parsley-required'=>"true"));		
    ?>
    <input type="hidden" value="<?php echo $itemid;?>" name="itemid" />
    <input type="hidden" value="<?php echo $itemtype;?>" name="itemtype" />
    <input type="hidden" value="<?php echo uri_string();?>" name="itemurl" /> 
-   <input type="hidden" id="rating-active-score" name="score-required" value="" data-required="true" />
+   <input type="hidden" id="rating-active-score" name="score-required" value="" data-parsley-required="true" />
    		<button class="btn btn-primary submit-btn">Submit Review</button>
         </form>
    

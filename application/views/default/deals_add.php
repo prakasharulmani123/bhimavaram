@@ -1,12 +1,12 @@
 <h1>Post a New Deal</h1>
 
 <div class="clearbig">&nbsp;</div>
-       <?php echo form_open('deals/add',array('class'=>'form-horizontal password-form','data-validate'=>'parsley'));?>
+       <?php echo form_open('deals/add',array('class'=>'form-horizontal password-form','data-parsley-validate'=>'true'));?>
   <div class="control-group">
     <label class="control-label" for="inputName">Business/Organisation*</label>
     <div class="controls">
 <?php 
-echo $this->html->formField('dropdown','business-required',Business_Listings(),array('class'=>'span6 offset1 city-select','data-required'=>"true",'id'=>'category'));
+echo $this->html->formField('dropdown','business-required',Business_Listings(),array('class'=>'span6 offset1 city-select','data-parsley-required'=>"true",'id'=>'category'));
 ?>    
 <div class="field-hint">Can't find your busines here? <br /><?php echo anchor('yellowpages/add','Please add your business here');?> and try posting again</div>
 </div>
@@ -14,7 +14,7 @@ echo $this->html->formField('dropdown','business-required',Business_Listings(),a
   <div class="control-group">
     <label class="control-label" for="inputName">Title*</label>
     <div class="controls">
-      <?php  echo $this->html->formField('input','title-required','',array('placeholder'=>'','class'=>'span6','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','title-required','',array('placeholder'=>'','class'=>'span6','data-parsley-required'=>"true"));?>
     </div>
   </div>       
   <div class="control-group">
@@ -27,8 +27,8 @@ echo $this->html->formField('dropdown','business-required',Business_Listings(),a
   <div class="control-group">
     <label class="control-label" for="inputName">Deal Period*</label>
     <div class="controls">
-      <?php  echo $this->html->formField('input','starts_on-required','',array('placeholder'=>'Starts on','class'=>'span3 datepicker','data-required'=>"true","data-type"=>"dateIso"));?>
-      <?php  echo $this->html->formField('input','closes_on-required','',array('placeholder'=>'Closes on','class'=>'span3 datepicker','data-required'=>"true","data-type"=>"dateIso"));?>
+      <?php  echo $this->html->formField('input','starts_on-required','',array('placeholder'=>'Starts on','class'=>'span3 datepicker','data-parsley-required'=>"true",/*"data-parsley-type"=>"dateIso"*/));?>
+      <?php  echo $this->html->formField('input','closes_on-required','',array('placeholder'=>'Closes on','class'=>'span3 datepicker','data-parsley-required'=>"true",/*"data-parsley-type"=>"dateIso"*/));?>
     </div>
   </div> 
    <div class="control-group">

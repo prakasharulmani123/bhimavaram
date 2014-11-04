@@ -70,28 +70,28 @@ else
   </div>
   <div class="modal-body" style="max-height:450px !important;">
    <?php
-   		echo form_open('classifieds/message',array('class'=>'bigform','data-validate'=>'parsley'));
+   		echo form_open('classifieds/message',array('class'=>'bigform','data-parsley-validate'=>'true'));
 	?> 
 	<?php
 		echo $this->html->formField('label','Message','Please enter your message*',array('class'=>'email'));
-		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your message','class'=>'span10','rows'=>'5','data-required'=>"true"));		
+		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your message','class'=>'span10','rows'=>'5','data-parsley-required'=>"true"));		
    ?>
    	 <div class="control-group">
     <label class="control-label" for="inputName">Name*</label>
     <div class="controls">
-      <?php  echo $this->html->formField('input','name-required',userdata('name'),array('placeholder'=>'Your Name','class'=>'span6','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','name-required',userdata('name'),array('placeholder'=>'Your Name','class'=>'span6','data-parsley-required'=>"true"));?>
     </div>
   </div>
 	 <div class="control-group">
     <label class="control-label" for="inputName">Email Address*</label>
     <div class="controls">
-      <?php  echo $this->html->formField('input','email-required-valid_email',userdata('email'),array('placeholder'=>'','class'=>'span6','data-required'=>"true",'data-type'=>"email"));?>
+      <?php  echo $this->html->formField('input','email-required-valid_email',userdata('email'),array('placeholder'=>'','class'=>'span6','data-parsley-required'=>"true",'data-parsley-type'=>"email"));?>
     </div>
   </div> 
 	 <div class="control-group">
     <label class="control-label" for="inputName">Phone Number</label>
     <div class="controls">
-      <?php  echo $this->html->formField('input','phone-numeric','',array('placeholder'=>'Only digits allowed','class'=>'span6','data-type'=>"digits"));?>      
+      <?php  echo $this->html->formField('input','phone-numeric','',array('placeholder'=>'Only digits allowed','class'=>'span6','data-parsley-type'=>"digits"));?>      
     </div>
   </div>   
    <input type="hidden" value="<?php echo $itemid;?>" name="listingid" />
@@ -113,11 +113,11 @@ else
   </div>
   <div class="modal-body">
    <?php
-   		echo form_open('actions/report',array('class'=>'bigform','data-validate'=>'parsley'));
+   		echo form_open('actions/report',array('class'=>'bigform','data-parsley-validate'=>'true'));
 		echo $this->html->formField('label','Report Type','Please choose report type',array('class'=>'email'));
-		echo $this->html->formField('dropdown','category-required',array(''=>'Select','illegal'=>'Illegal Content','spam'=>'Spam Content','duplicate'=>'Duplicate Content','others'=>'Others'),array('class'=>'span10','data-required'=>"true",'id'=>'category'));
+		echo $this->html->formField('dropdown','category-required',array(''=>'Select','illegal'=>'Illegal Content','spam'=>'Spam Content','duplicate'=>'Duplicate Content','others'=>'Others'),array('class'=>'span10','data-parsley-required'=>"true",'id'=>'category'));
 		echo $this->html->formField('label','Message','Please enter your message',array('class'=>'email'));
-		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your message','class'=>'span10','rows'=>'5','data-required'=>"true"));		
+		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your message','class'=>'span10','rows'=>'5','data-parsley-required'=>"true"));		
    ?>
    <input type="hidden" value="<?php echo $itemid;?>" name="itemid" />
    <input type="hidden" value="<?php echo $itemtype;?>" name="itemtype" />
@@ -139,20 +139,20 @@ else
   </div>
   <div class="modal-body">
    <?php
-   		echo form_open('actions/review',array('class'=>'bigform','data-validate'=>'parsley'));
+   		echo form_open('actions/review',array('class'=>'bigform','data-parsley-validate'=>'true'));
 		echo $this->html->formField('label','Report Type','Please choose a rating',array('class'=>'email'));
-		//echo $this->html->formField('dropdown','category-required',array(''=>'Select','illegal'=>'Illegal Content','spam'=>'Spam Content','duplicate'=>'Duplicate Content','others'=>'Others'),array('class'=>'span10','data-required'=>"true",'id'=>'category'));
+		//echo $this->html->formField('dropdown','category-required',array(''=>'Select','illegal'=>'Illegal Content','spam'=>'Spam Content','duplicate'=>'Duplicate Content','others'=>'Others'),array('class'=>'span10','data-parsley-required'=>"true",'id'=>'category'));
 	?>
 	<div class="rating-active-container pull-left"></div><div class="rating-text pull-left"></div>
     <div class="clearbig">&nbsp;</div>
 	<?php
 		echo $this->html->formField('label','Message','Please write your review',array('class'=>'email'));
-		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your review','class'=>'span10 wysiwyg','rows'=>'5','data-required'=>"true"));		
+		echo $this->html->formField('textarea','message-required','',array('placeholder'=>'Your review','class'=>'span10 wysiwyg','rows'=>'5','data-parsley-required'=>"true"));		
    ?>
    <input type="hidden" value="<?php echo $itemid;?>" name="itemid" />
    <input type="hidden" value="<?php echo $itemtype;?>" name="itemtype" />
    <input type="hidden" value="<?php echo uri_string();?>" name="itemurl" /> 
-   <input type="hidden" id="rating-active-score" name="score-required" value="" data-required="true" />
+   <input type="hidden" id="rating-active-score" name="score-required" value="" data-parsley-required="true" />
    		<button class="btn btn-primary submit-btn">Submit Review</button>
         </form>
    

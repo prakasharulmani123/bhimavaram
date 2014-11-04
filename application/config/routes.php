@@ -95,6 +95,7 @@ $route['movies/theatre/:any'] = "movies/theatre/$1";
 $route['movies/index/:any'] = "movies/index/$1";
 $route['movies/resetfilter/:any'] = "movies/resetfilter/$1";
 //$route['movies/add'] = "movies/add";
+$route['movies/checkuserlogin/:any'] = "movies/checkuserlogin/$1";
 $route['movies/:any'] = "movies/show/$1";
 
 //Jobs

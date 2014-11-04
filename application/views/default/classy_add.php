@@ -4,19 +4,19 @@
 </div>
 </h1>
 <div class="">&nbsp;</div>
-       <?php echo form_open('classifieds/add',array('class'=>'form-horizontal password-form','data-validate'=>'parsley'));?>
+       <?php echo form_open('classifieds/add',array('class'=>'form-horizontal password-form','data-parsley-validate'=>'true'));?>
   <div class="control-group">
     <label class="control-label" for="inputName">Category*</label>
     <div class="controls">
 <?php 
-echo $this->html->formField('dropdown','parentcategory-required',Classy_Category(),array('class'=>'span6 offset1 city-select','data-required'=>"true",'id'=>'category'));
+echo $this->html->formField('dropdown','parentcategory-required',Classy_Category(),array('class'=>'span6 offset1 city-select','data-parsley-required'=>"true",'id'=>'category'));
 ?>    
 </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="inputName">Sub Category*</label>
     <div class="controls">
-    	<select name="category" id="subcategory" class="span6 offset1 city-select" data-required="true">
+    	<select name="category" id="subcategory" class="span6 offset1 city-select" data-parsley-required="true">
         <?php 
 			foreach($content['subcategories'] as $sub)
 			{
@@ -25,7 +25,7 @@ echo $this->html->formField('dropdown','parentcategory-required',Classy_Category
 			?>
         </select>
 <?php 
-//echo $this->html->formField('dropdown','category-required',array(''=>'Select Sub Category'),array('class'=>'span6 offset1 city-select','data-required'=>"true",'disabled'=>'disabled'));
+//echo $this->html->formField('dropdown','category-required',array(''=>'Select Sub Category'),array('class'=>'span6 offset1 city-select','data-parsley-required'=>"true",'disabled'=>'disabled'));
 ?>    </div>
   </div>  
     <div class="control-group">
@@ -44,14 +44,14 @@ echo $this->html->formField('dropdown','parentcategory-required',Classy_Category
   <div class="control-group">
     <label class="control-label" for="inputName">Ad Title*</label>
     <div class="controls">
-      <?php  echo $this->html->formField('input','title-required','',array('placeholder'=>'','class'=>'span6','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','title-required','',array('placeholder'=>'','class'=>'span6','data-parsley-required'=>"true"));?>
       <div class="field-hint">A good title needs at least 60 characters.</div>
     </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="inputBio">Description*</label>
     <div class="controls">
-      <?php  echo $this->html->formField('textarea','description','',array('placeholder'=>'','class'=>'span8 wysiwyg','rows'=>"6",'data-required'=>'true'));?>
+      <?php  echo $this->html->formField('textarea','description','',array('placeholder'=>'','class'=>'span8 wysiwyg','rows'=>"6",'data-parsley-required'=>'true'));?>
     </div>
   </div>  
     <div class="control-group">
@@ -70,7 +70,7 @@ echo $this->html->formField('dropdown','parentcategory-required',Classy_Category
  <div class="control-group">
     <label class="control-label" for="inputName">Price* (Rupees)</label>
       <div class="controls">
-      <?php  echo $this->html->formField('input','price','',array('placeholder'=>'','class'=>'span2 from','data-required'=>"true",'data-type'=>'number'));?>
+      <?php  echo $this->html->formField('input','price','',array('placeholder'=>'','class'=>'span2 from','data-parsley-required'=>"true",'data-type'=>'number'));?>
       <label class="checkbox inline">
  		 <input type="checkbox"  value="1" name="free" class="free-box"> Free
 		</label>
@@ -80,7 +80,7 @@ echo $this->html->formField('dropdown','parentcategory-required',Classy_Category
   <div class="control-group">
     <label class="control-label" for="inputName">Contact Person*</label>
     <div class="controls">
-      <?php  echo $this->html->formField('input','contact_person-required','',array('placeholder'=>'','class'=>'span6','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','contact_person-required','',array('placeholder'=>'','class'=>'span6','data-parsley-required'=>"true"));?>
       
     </div>
   </div>

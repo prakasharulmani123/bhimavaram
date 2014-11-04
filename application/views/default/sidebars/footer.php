@@ -50,9 +50,9 @@
   </div>
   <div class="modal-body">
    <?php
-   		echo form_open('start/changecity',array('class'=>'bigform','data-validate'=>'parsley'));
+   		echo form_open('start/changecity',array('class'=>'bigform','data-parsley-validate'=>'true'));
 		echo $this->html->formField('label','city','Please choose your city to continue',array('class'=>'email'));
-		echo $this->html->formField('dropdown','city-required',cityArray(),array('class'=>'span10','data-required'=>"true"),userdata('cityid'));
+		echo $this->html->formField('dropdown','city-required',cityArray(),array('class'=>'span10','data-parsley-required'=>"true"),userdata('cityid'));
    ?>
    	<input type="hidden" name="currenturl" value="<?php echo uri_string();?>" />
    		<button class="btn btn-primary submit-btn span10" style="padding:7px">Change City</button>
@@ -70,11 +70,11 @@
   </div>
   <div class="modal-body">
    <?php
-   		echo form_open('start/postwish',array('class'=>'bigform','data-validate'=>'parsley'));
+   		echo form_open('start/postwish',array('class'=>'bigform','data-parsley-validate'=>'true'));
 		echo $this->html->formField('label','wish','Posting as '.userdata('name'),array('class'=>'email'));
-		//echo $this->html->formField('dropdown','city-required',cityArray(),array('class'=>'span10','data-required'=>"true"),userdata('cityid'));
+		//echo $this->html->formField('dropdown','city-required',cityArray(),array('class'=>'span10','data-parsley-required'=>"true"),userdata('cityid'));
    ?>
-    <?php  echo $this->html->formField('textarea','message-required--max_length:150','',array('placeholder'=>'Write your wish message (Maximum 150 Charaters)','class'=>'span10','rows'=>"4",'data-required'=>'true','data-maxlength'=>"150"));?>
+    <?php  echo $this->html->formField('textarea','message-required--max_length:150','',array('placeholder'=>'Write your wish message (Maximum 150 Charaters)','class'=>'span10','rows'=>"4",'data-parsley-required'=>'true','data-maxlength'=>"150"));?>
    	<input type="hidden" name="currenturl" value="<?php echo uri_string();?>" />
    		<button class="btn btn-primary submit-btn span10" style="padding:7px">Submit Message</button>
         </form>

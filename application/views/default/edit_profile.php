@@ -15,25 +15,25 @@
 	
   <div class="tab-pane active" id="edit_profile">
   <h2><span>Edit Profile</span></h2>
-  <?php echo form_open_multipart('profile/index',array('class'=>'form-horizontal profile-form','data-validate'=>'parsley'));?>
+  <?php echo form_open_multipart('profile/index',array('class'=>'form-horizontal profile-form','data-parsley-validate'=>'true'));?>
   <div class="control-group">
     <label class="control-label" for="inputName">Full Name</label>
     <div class="controls">
-      <?php  echo $this->html->formField('input','name-required',$content['user']['name'],array('placeholder'=>'Full Name','class'=>'span5','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','name-required',$content['user']['name'],array('placeholder'=>'Full Name','class'=>'span5','data-parsley-required'=>"true"));?>
     </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="inputBio">Bio</label>
     <div class="controls">
-      <?php  echo $this->html->formField('textarea','bio-required',$content['user']['bio'],array('placeholder'=>'Tell us about yourself','class'=>'span5','data-required'=>"true",'rows'=>"3"));?>
+      <?php  echo $this->html->formField('textarea','bio-required',$content['user']['bio'],array('placeholder'=>'Tell us about yourself','class'=>'span5','data-parsley-required'=>"true",'rows'=>"3"));?>
     </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="inputName">Your City</label>
     <div class="controls">
     <?php //print_r(cityArray());?>
-    <?php  echo $this->html->formField('input','cityname-required',$content['user']['cityname'],array('placeholder'=>'City Name','class'=>'span5','data-required'=>"true"));?>
-      <?php //echo $this->html->formField('dropdown','cityid-required',cityArray(),array('class'=>'span5 offset1 city-select','data-required'=>"true"),$content['user']['cityid']);?>
+    <?php  echo $this->html->formField('input','cityname-required',$content['user']['cityname'],array('placeholder'=>'City Name','class'=>'span5','data-parsley-required'=>"true"));?>
+      <?php //echo $this->html->formField('dropdown','cityid-required',cityArray(),array('class'=>'span5 offset1 city-select','data-parsley-required'=>"true"),$content['user']['cityid']);?>
     </div>
   </div>
   
@@ -55,7 +55,7 @@
 </form></div><!--Edit_Profile Ends-->
   <div class="tab-pane" id="email_settings">
    <h2><span>Email Notifications</span></h2>
-    <?php echo form_open('profile/notifications',array('class'=>'form-horizontal password-form','data-validate'=>'parsley'));?>
+    <?php echo form_open('profile/notifications',array('class'=>'form-horizontal password-form','data-parsley-validate'=>'true'));?>
   	<label class="checkbox">
   <?php echo $this->html->formField('checkbox','newsletter','1',false,true);?> I would like to receive newsletters
 </label>
@@ -70,17 +70,17 @@
   </div><!--Email_Settings Ends-->
   <div class="tab-pane" id="change_password">
      <h2><span>Change Password</span></h2>
-       <?php echo form_open('profile/password',array('class'=>'form-horizontal password-form','data-validate'=>'parsley'));?>
+       <?php echo form_open('profile/password',array('class'=>'form-horizontal password-form','data-parsley-validate'=>'true'));?>
   <div class="control-group">
     <label class="control-label" for="inputName">New Password</label>
     <div class="controls">
-      <?php  echo $this->html->formField('password','password-required','',array('placeholder'=>'New Password (8-30 Characters)','class'=>'span5','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('password','password-required','',array('placeholder'=>'New Password (8-30 Characters)','class'=>'span5','data-parsley-required'=>"true"));?>
     </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="inputName">Retype New Password</label>
     <div class="controls">
-      <?php  echo $this->html->formField('password','confirmpassword-required','',array('placeholder'=>'Retype Password','class'=>'span5','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('password','confirmpassword-required','',array('placeholder'=>'Retype Password','class'=>'span5','data-parsley-required'=>"true"));?>
     </div>
   </div>  
 

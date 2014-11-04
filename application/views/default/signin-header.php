@@ -98,8 +98,8 @@
 		),
 		array('class'=>'menubar upper'),true);*/?>
         <li class="last">
-                <?php echo form_open('start/searchresults',array("class"=>"form-search",'data-validate'=>'parsley'));?>
-                       <input type="text" class="input-medium search-query input-search-box span3" name="q" data-required="true" placeholder="Search" value="<?php echo (uridata('2')=='searchresults')?uridata('3'):'';?>">
+                <?php echo form_open('start/searchresults',array("class"=>"form-search",'data-parsley-validate'=>'true'));?>
+                       <input type="text" class="input-medium search-query input-search-box span3" name="q" data-parsley-required="true" placeholder="Search" value="<?php echo (uridata('2')=='searchresults')?uridata('3'):'';?>">
 
   <input type="hidden" name="searchtype" value="<?php echo userdata('searchtype')?userdata('searchtype'):'yellowpages';?>" />
   <button type="submit" class="search-btn"><i class="icon-search icon-white"></i></button>

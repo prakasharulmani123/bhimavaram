@@ -200,6 +200,14 @@ class Movies extends CI_Controller {
 		//$data['content']['related']=$this->df->doquery("select * from movies_listings where slug='$slug'");
 		$this->layout->publish($data);
 	}	
+
+	function checkuserlogin(){
+		$this->auth->checkLogin();
+		$slug=uridata(3);
+		$item_type=uridata(4);
+		$item_type == 'theatre' ? $url = 'movies/'.$item_type.'/'.$slug : $url = 'movies/'.$slug;
+		redirect($url);
+	}
 		
 }/* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */

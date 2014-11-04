@@ -13,11 +13,11 @@ echo $this->session->flashdata('message') ? $this->session->flashdata('message')
         <?php if(validation_errors()){?>
         	<div class="validation-errors center-align span7"><?php echo validation_errors();?></div>
         <?php }
-		echo form_open('start/signin',array('class'=>'form-horizontal center big-form','data-validate'=>'parsley'));?>
+		echo form_open('start/signin',array('class'=>'form-horizontal center big-form','data-parsley-validate'=>'true'));?>
         
         <?php
-		 echo $this->html->formField('input','email-required-valid_email','',array('placeholder'=>'Email Address','class'=>'span7','data-required'=>"true",'data-type'=>'email'));
-		  echo $this->html->formField('password','password-required-min_length:8-max_length:30','',array('placeholder'=>'Password (8-30 Characters)','class'=>'span7','data-required'=>"true"));
+		 echo $this->html->formField('input','email-required-valid_email','',array('placeholder'=>'Email Address','class'=>'span7','data-parsley-required'=>"true",'data-parsley-type'=>'email'));
+		  echo $this->html->formField('password','password-required-min_length:8-max_length:30','',array('placeholder'=>'Password (8-30 Characters)','class'=>'span7','data-parsley-required'=>"true"));
 		  echo anchor('site/forgot','Forgot password? click here',array('class'=>'block'));
 		   //echo $this->html->formField('input','email-required-valid_email','',array('placeholder'=>'Email Address','class'=>'span7'));		   
 		   ?>

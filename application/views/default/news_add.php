@@ -1,11 +1,11 @@
 <h1>Submit News</h1>
 <div class="clearbig">&nbsp;</div>
-       <?php echo form_open('news/add',array('class'=>'form-horizontal password-form','data-validate'=>'parsley'));?>
+       <?php echo form_open('news/add',array('class'=>'form-horizontal password-form','data-parsley-validate'=>'true'));?>
   <div class="control-group">
     <label class="control-label" for="inputName">News Category*</label>
     <div class="controls">
 <?php 
-echo $this->html->formField('dropdown','category-required',News_Category(),array('class'=>'span6 offset1 city-select','data-required'=>"true",'id'=>'category'));
+echo $this->html->formField('dropdown','category-required',News_Category(),array('class'=>'span6 offset1 city-select','data-parsley-required'=>"true",'id'=>'category'));
 ?>    
 </div>
   </div>  
@@ -13,14 +13,14 @@ echo $this->html->formField('dropdown','category-required',News_Category(),array
   <div class="control-group">
     <label class="control-label" for="inputName">News Title*</label>
     <div class="controls">
-      <?php  echo $this->html->formField('input','title-required','',array('placeholder'=>'','class'=>'span6','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','title-required','',array('placeholder'=>'','class'=>'span6','data-parsley-required'=>"true"));?>
    
     </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="inputBio">Content*</label>
     <div class="controls">
-      <?php  echo $this->html->formField('textarea','content','',array('placeholder'=>'','class'=>'span8 wysiwyg','rows'=>"12",'data-required'=>'true'));?>
+      <?php  echo $this->html->formField('textarea','content','',array('placeholder'=>'','class'=>'span8 wysiwyg','rows'=>"12",'data-parsley-required'=>'true'));?>
     </div>
   </div>  
     <div class="control-group">

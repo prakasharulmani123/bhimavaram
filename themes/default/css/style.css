@@ -192,7 +192,7 @@ opacity:0.8;
 color:#FFF;
 display:none;
 }
-div.rating-text{ float:left; background:#666;}
+div.rating-text{ float:left; /*background:#666;*/}
 div.rating-active-container{ width:150px;}
 
 ul.wysihtml5-toolbar {

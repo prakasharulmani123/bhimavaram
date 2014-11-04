@@ -46,9 +46,9 @@ function citychange(){
     <?php
 		$hidden = array('changecity' => '1');
 //   		echo form_open('',array('class'=>'bigform','data-validate'=>'parsley'), $hidden);
-   		echo form_open('start/changecity',array('class'=>'bigform','data-validate'=>'parsley'));
+   		echo form_open('start/changecity',array('class'=>'bigform','data-parsley-validate'=>'true'));
 		echo $this->html->formField('label','city','Please choose your city to continue',array('class'=>'email'));
-		echo $this->html->formField('dropdown','city-required',cityArray(),array('class'=>'span10','data-required'=>"true", 'onchange'=>"citychange()", 'id' => 'cityid'),userdata('cityid'));
+		echo $this->html->formField('dropdown','city-required',cityArray(),array('class'=>'span10','data-parsley-required'=>"true", 'onchange'=>"citychange()", 'id' => 'cityid'),userdata('cityid'));
 		echo $this->html->formField('input','cityname', '', array('style'=>'display:none', 'id' => 'cityname'));
    ?>
     <input type="hidden" name="currenturl" value="<?php echo uri_string();?>" />

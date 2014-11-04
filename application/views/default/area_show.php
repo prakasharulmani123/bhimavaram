@@ -140,14 +140,14 @@ $itemtype='areas';
   </div>
   <div class="modal-body">
    <?php
-   		echo form_open('actions/comment',array('class'=>'bigform','data-validate'=>'parsley'));
+   		echo form_open('actions/comment',array('class'=>'bigform','data-parsley-validate'=>'true'));
 		//echo $this->html->formField('label','Report Type','Please choose a rating',array('class'=>'email'));
 		//echo $this->html->formField('dropdown','category-required',array(''=>'Select','illegal'=>'Illegal Content','spam'=>'Spam Content','duplicate'=>'Duplicate Content','others'=>'Others'),array('class'=>'span10','data-required'=>"true",'id'=>'category'));
 	?>
     <div class="clearbig">&nbsp;</div>
 	<?php
 		echo $this->html->formField('label','Message','Your Comment',array('class'=>'email'));
-		echo $this->html->formField('textarea','comment-required','',array('placeholder'=>'Your review','class'=>'span10 wysiwyg','rows'=>'5','data-required'=>"true"));		
+		echo $this->html->formField('textarea','comment-required','',array('placeholder'=>'Your review','class'=>'span10 wysiwyg','rows'=>'5','data-parsley-required'=>"true"));		
    ?>
    <input type="hidden" value="<?php echo $itemid;?>" name="itemid" />
    <input type="hidden" value="<?php echo $itemtype;?>" name="itemtype" />

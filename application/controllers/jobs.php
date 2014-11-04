@@ -185,7 +185,7 @@ class Jobs extends CI_Controller {
 			$data['content']['template']='jobs_add.php';	
 			$data['content']['categories']=$this->df->get_multi_row('jobs_categories',false,false,false,array('name'=>'asc'));		
 //			$data['content']['qualifications']=$this->df->get_multi_row('jobs_qualifications',false,false,false,array('name'=>'asc'));		
-			$this->layout->publish($data);						
+			$this->layout->publish($data, 'full_layout_inner');						
 		}
 	}   
 	

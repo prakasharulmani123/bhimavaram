@@ -5,38 +5,38 @@
       <li data-target="#step2" class="active"><span class="badge badge-info">2</span>Contact Information<span class="chevron"></span></li>
 </ul>
 </div>  
-       <?php echo form_open('admin/yellowpages/complete',array('class'=>'form-horizontal password-form','data-validate'=>'parsley'));?>  
+       <?php echo form_open('admin/yellowpages/complete',array('class'=>'form-horizontal password-form','data-parsley-validate'=>'true'));?>  
    
 <div class="form-title">Contact Information</div>  
   <div class="control-group">
     <label class="control-label" for="inputName">Address*</label>
     <div class="controls">
-      <?php  echo $this->html->formField('input','address-required','',array('placeholder'=>'Address Line 1','class'=>'span6','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','address-required','',array('placeholder'=>'Address Line 1','class'=>'span6','data-parsley-required'=>"true"));?>
     </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="inputName">&nbsp;</label>
     <div class="controls">
-      <?php  echo $this->html->formField('input','address2-required','',array('placeholder'=>'Address Line 2','class'=>'span6','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','address2-required','',array('placeholder'=>'Address Line 2','class'=>'span6','data-parsley-required'=>"true"));?>
     </div>
   </div>  
   <div class="control-group">
     <label class="control-label" for="inputName">Area Name*</label>
     <div class="controls">
-      <?php  echo $this->html->formField('input','area-required','',array('placeholder'=>'Area/Town Name','class'=>'span6','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','area-required','',array('placeholder'=>'Area/Town Name','class'=>'span6','data-parsley-required'=>"true"));?>
     </div>
   </div> 
   <div class="control-group">
     <label class="control-label" for="inputName">PinCode*</label>
     <div class="controls">
-      <?php  echo $this->html->formField('input','pincode-required','',array('placeholder'=>'PinCode','class'=>'span6','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','pincode-required','',array('placeholder'=>'PinCode','class'=>'span6','data-parsley-required'=>"true"));?>
     </div>
   </div>  
    
   <div class="control-group">
     <label class="control-label" for="inputName">Contact Numbers*</label>
     <div class="controls">
-      <?php  echo $this->html->formField('input','phone-required','',array('placeholder'=>'Phone Number','class'=>'span3','data-required'=>"true"));?>
+      <?php  echo $this->html->formField('input','phone-required','',array('placeholder'=>'Phone Number','class'=>'span3','data-parsley-required'=>"true"));?>
       <?php  echo $this->html->formField('input','mobile','',array('placeholder'=>'Mobile Number','class'=>'span3'));?>
     </div>
   </div>    
