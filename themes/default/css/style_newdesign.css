@@ -25,6 +25,12 @@ div, ul, li, h1, h2, h3, h4
     padding:0px;
 }
 
+
+a {
+    color: #425e72;
+    text-decoration: none;
+}
+
 .bhinew-container
 {
     width:1000px;
@@ -80,7 +86,7 @@ div, ul, li, h1, h2, h3, h4
     width:173px;
     float:right;
     color:#FFFFFF;
-    background:url(../images/submit-wishbg.png) no-repeat;
+    background:url(../images/submit-wishbg.jpg) no-repeat;
     height:36px;
     text-align:center;
     font-size:15px;
@@ -441,7 +447,7 @@ background:#e43333 !important;
     float:left;
     background:url(../images/border.jpg) bottom repeat-x;
 
-    color:#156eaf;
+    color:#425e72;
 
     padding:0px 0px 12px 0px;
 }
@@ -451,7 +457,7 @@ background:#e43333 !important;
     /*font-size:15px;*/
     font-size:20px;
     font-weight:normal;
-    color:#156eaf;
+    color:#425e72;
     float:left !important;
     line-height:20px;
 }
@@ -460,7 +466,7 @@ background:#e43333 !important;
 {
     float:right;
     background:url(../images/icon.png) right no-repeat;
-    color:#156eaf;
+    color:#425e72;
     text-decoration:none;
     padding-right:10px;
     font-size:14px;
@@ -541,7 +547,7 @@ background:#e43333 !important;
 .movie-name
 {
     width:194px;
-    background:#156eaf;
+    background:#425e72;
     padding:10px 5px;
     text-align:center;
     font-size:20px;
@@ -576,7 +582,7 @@ background:#e43333 !important;
 
 .bhi-tabs-content a
 {
-    color:#156eaf;
+    color:#425e72;
     font-weight:bold;
     text-decoration:none;
     font-size:17px;
@@ -626,7 +632,7 @@ background:#e43333 !important;
 
 .bhi-tabs-content ul li a
 {
-   /* color:#156eaf;*/
+   /* color:#425e72;*/
     font-size:13px;
 
 }
@@ -670,7 +676,7 @@ background:#e43333 !important;
 {
     width:100%;
     float:left;
-    background:#156eaf;
+    background:#425e72;
     color:#FFFFFF;
     font-size:15px;
 }
@@ -718,7 +724,7 @@ background:#e43333 !important;
 {
     width:98%;
     float:left;
-    background:#0060a6;
+    background:#2a485c;
     padding:1%;
 }
 
@@ -1046,4 +1052,8 @@ background:#e43333 !important;
 .right-side-ad img{
 	height:300px;
 	max-height:300px;
+}
+
+.sponsored{
+	color:#425e72;
 }

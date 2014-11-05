@@ -143,7 +143,7 @@
         <div class="bhi-menuright"> </div>
     </div>
     <div class="span19" id="header-scroll-ad" style="visibility:hidden">
-        <div class="span2 pull-left upper center" style="color:#156EAF;">Sponsored :</div>
+        <div class="span2 pull-left upper center sponsored" >Sponsored :</div>
         <div class="span14 pull-left scrolller">
             <ul>
             	<?php for($i=1; $i<=5; $i++){ ?>

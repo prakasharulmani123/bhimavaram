@@ -50,10 +50,12 @@
 #homeslider div.mc-caption-bg 
 {
     /* NOTE: Its opacity is to be set through the sliderOptions.captionOpacity setting in the js-image-slider.js file.*/
-	background:#156EB0;/* or any other colors such as White, or: background:none; */
+	/*background:#156EB0; or any other colors such as White, or: background:none; */
+	background:#425e72;
 }
 #homeslider div.mc-caption-bg2 {
-    background:#156EB0;
+    /*background:#156EB0;*/
+	background:#425e72;
 }
 #homeslider div.mc-caption {
 	font: bold 14px/20px Arial;
@@ -124,7 +126,7 @@
 #homeslider>a, #homeslider video, #homeslider audio {display:none;}
 
 .caption-news {
-    background-color: #156eb0;
+    background-color: #425e72;
   color: #fff;
   float: left;
   height: 257px;
