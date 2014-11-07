@@ -56,7 +56,7 @@ a {
 {
     width:100%;
     float:left;
-    border-bottom:#79bdee solid 2px;
+    border-bottom:#3F5C6E solid 2px;
 }
 
 .bhinew-scrollheading
@@ -137,7 +137,7 @@ a {
 
 .bhinew-profilelink
 {
-	width:92px;
+	width:93px;
 	float:right;
 	text-align:center;
 	font-size:13px;
@@ -387,7 +387,7 @@ background:#e43333 !important;
 
 .bhi-social {
     float: right;
-    margin: -40px 0 0;
+    margin: -33px 0 0;
     width: 100px;
     text-align: center;
 }
@@ -425,7 +425,7 @@ background:#e43333 !important;
 {
     width:700px;
     float:left;
-    margin:25px 0px 0px 0px;
+    margin:10px 0px 0px 0px;
 }
 
 .slider-right
@@ -438,7 +438,7 @@ background:#e43333 !important;
 {
     width:100%;
     float:left;
-    margin:22px 0px 0px 0px;
+    margin:8px 0px 0px 0px;
 }
 
 .widget-heading
@@ -457,7 +457,7 @@ background:#e43333 !important;
     /*font-size:15px;*/
     font-size:20px;
     font-weight:normal;
-    color:#425e72;
+    color:#29465a;
     float:left !important;
     line-height:20px;
 }
@@ -490,7 +490,7 @@ background:#e43333 !important;
 
 .ad1 img
 {
-    height:107px !important;
+    height:225px !important;
 }
 
 .home-left
@@ -505,6 +505,11 @@ background:#e43333 !important;
     width:230px;
     float:left;
     margin-bottom:15px;
+}
+
+.help-lines{
+	margin-bottom:5px;
+	margin-top:10px;
 }
 
 .imp-bg
@@ -569,7 +574,7 @@ background:#e43333 !important;
 {
     width:436px;
     float:left;
-    margin:-15px 0px 0px 0px;
+    margin:-62px 0px 0px 0px;
 }
 
 .bhi-tabs-content

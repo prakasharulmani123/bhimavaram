@@ -293,7 +293,52 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  {
         </div>
       </div>
       
-      <div class="ad">
+      <div class="imp-cont help-lines">
+      <div class="widget-heading">
+        <h2>Help Lines</h2>
+      </div>
+      <div class="imp-bg">
+      <?php $count_numbers = count($content['numbers']);?>
+             <?php if($count_numbers > 0){ ?>
+        <ul id="phone-numbers" class="news-list">
+          <?php
+            foreach ($content['numbers'] as $number) {
+                echo '<li><a href="javascript:void(0)">' . $number['name'] . ' : ' . $number['phone'] . '</a></li>';
+            }
+            ?>
+        </ul>
+         <?php }else{ ?>
+         		<div class="coming-soon" style="min-height:130px !important;">Coming Soon</div>
+		  <?php } ?>
+      </div>
+    </div>   
+      
+    </div>
+  </div>
+  <div class="home-left">
+  
+  <div class="imp-cont">
+      <div class="widget-heading">
+        <h2>Movies </h2><?php echo anchor('movies/index', 'View All'); ?><!--<a href="#">View All </a>--></div>
+      <div class="moviescroll">
+        <div class="movie-thumb">
+          <div id="latest_movie1" class="widget_body carousel slide vertical">
+            <div class="carousel-inner">
+            <marquee direction="up" behavior="scroll" style="overflow: hidden;" onmouseover="this.setAttribute('scrollamount', 0, 0);" onmouseout="this.setAttribute('scrollamount', 6, 0);">
+              <?php foreach($content['movies'] as $x => $movie){ ?>
+              <div class="item <?php if($x == 0) echo "active"?>"> 
+              <?php echo anchor('movies/' . $movie['slug'], '<img src="' . $this->settings->uploaderPath().$movie["picture"] . '" width="204" height="152"/>'); ?>
+                <div class="movie-name"> <?php echo anchor('movies/'.$movie['slug'], word_limiter($movie['name'], 10))?></div>
+              </div>
+              <?php } ?>
+              </marquee>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <div class="ad">
       
         <div class="carousel slide home_page_right_side_ad">
           <div class="carousel-inner">
@@ -318,49 +363,7 @@ html ul.tabs li.active a, html ul.tabs li.active a:hover  {
         </div>
         
       </div>
-      
-    </div>
-  </div>
-  <div class="home-left">
-    <div class="imp-cont">
-      <div class="widget-heading">
-        <h2>IMP Phones</h2>
-      </div>
-      <div class="imp-bg">
-      <?php $count_numbers = count($content['numbers']);?>
-             <?php if($count_numbers > 0){ ?>
-        <ul id="phone-numbers" class="news-list">
-          <?php
-            foreach ($content['numbers'] as $number) {
-                echo '<li><a href="javascript:void(0)">' . $number['name'] . ' : ' . $number['phone'] . '</a></li>';
-            }
-            ?>
-        </ul>
-         <?php }else{ ?>
-         		<div class="coming-soon" style="min-height:130px !important;">Coming Soon</div>
-		  <?php } ?>
-      </div>
-    </div>
-    <div class="imp-cont">
-      <div class="widget-heading">
-        <h2>Movies </h2><?php echo anchor('movies/index', 'View All'); ?><!--<a href="#">View All </a>--></div>
-      <div class="moviescroll">
-        <div class="movie-thumb">
-          <div id="latest_movie1" class="widget_body carousel slide vertical">
-            <div class="carousel-inner">
-            <marquee direction="up" behavior="scroll" style="overflow: hidden;" onmouseover="this.setAttribute('scrollamount', 0, 0);" onmouseout="this.setAttribute('scrollamount', 6, 0);">
-              <?php foreach($content['movies'] as $x => $movie){ ?>
-              <div class="item <?php if($x == 0) echo "active"?>"> 
-              <?php echo anchor('movies/' . $movie['slug'], '<img src="' . $this->settings->uploaderPath().$movie["picture"] . '" width="204" height="152"/>'); ?>
-                <div class="movie-name"> <?php echo anchor('movies/'.$movie['slug'], word_limiter($movie['name'], 10))?></div>
-              </div>
-              <?php } ?>
-              </marquee>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
   </div>
   <div class="home-right">
   
